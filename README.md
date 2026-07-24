@@ -182,14 +182,16 @@ Responsive weather application built with a public weather API, showing real-tim
 
 <br/>
 
-## GitHub Jet Heatmap
+## GitHub Jet Heatmap — Monthly Contributions in Motion
+
+A rocket/jet animates across your month-by-month contribution calendar, tracing your commit activity in real time.
 
 <div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/light.svg">
-  <img alt="GitHub Jet Heatmap" src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg" width="100%">
+  <img alt="GitHub Jet Heatmap — rocket flying across monthly contribution calendar" src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg" width="100%">
 </picture>
 
 </div>
