@@ -196,6 +196,74 @@ Responsive weather application built with a public weather API, showing real-tim
 
 > Generated via the Jet Heatmap `generate.mjs` script (see the [source repo](https://github.com/Sushmitadasari/Sushmitadasari) this animation is based on). Run it locally with your `GH_USERNAME` and a scoped PAT (`read:user`, `public_repo`) to produce `dark.svg` / `light.svg`, then commit them to this repo's root so the images above resolve.
 
+<details>
+<summary><b>⚙️ Setup: generating the Jet Heatmap yourself</b></summary>
+
+<br/>
+
+**1. Clone the generator repo**
+
+```bash
+git clone https://github.com/Sushmitadasari/Sushmitadasari
+cd Sushmitadasari
+```
+
+**2. Install dependencies**
+
+```bash
+npm install
+```
+
+**3. Create a scoped GitHub Personal Access Token**
+
+Go to **GitHub → Settings → Developer settings → Personal access tokens** and generate a new token with only:
+
+- `read:user`
+- `public_repo` (add `repo` instead, only if the target repo is private)
+
+Skip anything broader (`delete_repo`, `workflow`, `admin:org`, etc.) — the script never needs it.
+
+**4. Generate the SVGs**
+
+macOS / Linux (zsh):
+
+```bash
+export GH_USERNAME="Chandru9842"
+export GH_TOKEN="YOUR_GITHUB_TOKEN"
+node generate.mjs
+```
+
+Windows (PowerShell):
+
+```powershell
+$env:GH_USERNAME="Chandru9842"
+$env:GH_TOKEN="YOUR_GITHUB_TOKEN"
+node generate.mjs
+```
+
+**5. Confirm the output**
+
+The script should produce, either at the repo root or under `dist/`:
+
+```
+dark.svg
+light.svg
+```
+
+**6. Commit them into this profile repo**
+
+Copy `dark.svg` and `light.svg` into the root of `Chandru9842/Chandru9842`, then:
+
+```bash
+git add dark.svg light.svg
+git commit -m "Add GitHub Jet Heatmap animation"
+git push
+```
+
+Once pushed, the `<picture>` block above will resolve automatically and the animation will adapt to each visitor's light/dark theme — no further README changes needed.
+
+</details>
+
 <br/>
 
 ## Contribution Snake
