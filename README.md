@@ -184,85 +184,70 @@ Responsive weather application built with a public weather API, showing real-tim
 
 ## GitHub Jet Heatmap — Monthly Contributions in Motion
 
-A rocket/jet animates across your month-by-month contribution calendar, tracing your commit activity in real time.
+A rocket/jet animates across your month-by-month contribution calendar, firing on your busiest days.
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/light.svg">
-  <img alt="GitHub Jet Heatmap — rocket flying across monthly contribution calendar" src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg" width="100%">
-</picture>
+<img alt="GitHub Jet Heatmap — rocket flying across monthly contribution calendar" src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/github-jet.svg" width="100%">
 
 </div>
 
-> Generated via the Jet Heatmap `generate.mjs` script (see the [source repo](https://github.com/Sushmitadasari/Sushmitadasari) this animation is based on). Run it locally with your `GH_USERNAME` and a scoped PAT (`read:user`, `public_repo`) to produce `dark.svg` / `light.svg`, then commit them to this repo's root so the images above resolve.
-
 <details>
-<summary><b>⚙️ Setup: generating the Jet Heatmap yourself</b></summary>
+<summary><b>⚙️ Setup: generating this automatically (no token to create or paste)</b></summary>
 
 <br/>
 
-**1. Clone the generator repo**
+The generator repo ([Sushmitadasari/Sushmitadasari](https://github.com/Sushmitadasari/Sushmitadasari)) ships a ready-made GitHub Action that uses GitHub's own built-in token — you never create, copy, or paste a Personal Access Token anywhere.
 
-```bash
-git clone https://github.com/Sushmitadasari/Sushmitadasari
-cd Sushmitadasari
+**1. Copy these two files into this repo (`Chandru9842/Chandru9842`):**
+
+- `generate.mjs` → repo root
+- `.github/workflows/jet-heatmap.yml` → workflow folder (create the folders if they don't exist)
+
+**2. Workflow contents** (`.github/workflows/jet-heatmap.yml`):
+
+```yaml
+name: Update jet heatmap SVG
+
+on:
+  schedule:
+    - cron: "30 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate SVG
+        env:
+          GH_USERNAME: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_PATH: dist/github-jet.svg
+        run: node generate.mjs
+
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update jet heatmap SVG"
+          file_pattern: dist/github-jet.svg
 ```
 
-**2. Install dependencies**
+**3. Commit and push** `generate.mjs` and the workflow file.
 
-```bash
-npm install
-```
+**4. Run it once manually** to generate the first version: go to your repo's **Actions** tab → select **"Update jet heatmap SVG"** → **Run workflow**. After that it regenerates daily on its own, tracing whatever your real contribution activity looks like.
 
-**3. Create a scoped GitHub Personal Access Token**
-
-Go to **GitHub → Settings → Developer settings → Personal access tokens** and generate a new token with only:
-
-- `read:user`
-- `public_repo` (add `repo` instead, only if the target repo is private)
-
-Skip anything broader (`delete_repo`, `workflow`, `admin:org`, etc.) — the script never needs it.
-
-**4. Generate the SVGs**
-
-macOS / Linux (zsh):
-
-```bash
-export GH_USERNAME="Chandru9842"
-export GH_TOKEN="YOUR_GITHUB_TOKEN"
-node generate.mjs
-```
-
-Windows (PowerShell):
-
-```powershell
-$env:GH_USERNAME="Chandru9842"
-$env:GH_TOKEN="YOUR_GITHUB_TOKEN"
-node generate.mjs
-```
-
-**5. Confirm the output**
-
-The script should produce, either at the repo root or under `dist/`:
-
-```
-dark.svg
-light.svg
-```
-
-**6. Commit them into this profile repo**
-
-Copy `dark.svg` and `light.svg` into the root of `Chandru9842/Chandru9842`, then:
-
-```bash
-git add dark.svg light.svg
-git commit -m "Add GitHub Jet Heatmap animation"
-git push
-```
-
-Once pushed, the `<picture>` block above will resolve automatically and the animation will adapt to each visitor's light/dark theme — no further README changes needed.
+The image above will resolve automatically once `dist/github-jet.svg` exists on your `main` branch — no README edits needed.
 
 </details>
 
