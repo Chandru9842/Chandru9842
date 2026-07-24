@@ -192,16 +192,26 @@ A rocket/jet animates across your month-by-month contribution calendar, firing o
 
 </div>
 
+**This is ready to go live** — `github-jet.svg` (attached alongside this README) is the generated animation file. Commit it to `dist/github-jet.svg` in your `Chandru9842/Chandru9842` repo and the image above will render immediately, no other changes needed.
+
+```bash
+mkdir -p dist
+mv github-jet.svg dist/github-jet.svg
+git add dist/github-jet.svg
+git commit -m "Add GitHub Jet Heatmap animation"
+git push
+```
+
 <details>
-<summary><b>⚙️ Setup: generating this automatically (no token to create or paste)</b></summary>
+<summary><b>⚙️ Keeping it up to date automatically (no token to create or paste)</b></summary>
 
 <br/>
 
-The generator repo ([Sushmitadasari/Sushmitadasari](https://github.com/Sushmitadasari/Sushmitadasari)) ships a ready-made GitHub Action that uses GitHub's own built-in token — you never create, copy, or paste a Personal Access Token anywhere.
+The attached file was generated with mock/sample data so you have a working animation today. To have it regenerate on a schedule using your **real** contribution activity, add the generator's built-in GitHub Action — it uses GitHub's own token, so you never create or paste a Personal Access Token.
 
-**1. Copy these two files into this repo (`Chandru9842/Chandru9842`):**
+**1. Copy these two files into this repo:**
 
-- `generate.mjs` → repo root
+- `generate.mjs` (from [Sushmitadasari/Sushmitadasari](https://github.com/Sushmitadasari/Sushmitadasari)) → repo root
 - `.github/workflows/jet-heatmap.yml` → workflow folder (create the folders if they don't exist)
 
 **2. Workflow contents** (`.github/workflows/jet-heatmap.yml`):
@@ -243,11 +253,7 @@ jobs:
           file_pattern: dist/github-jet.svg
 ```
 
-**3. Commit and push** `generate.mjs` and the workflow file.
-
-**4. Run it once manually** to generate the first version: go to your repo's **Actions** tab → select **"Update jet heatmap SVG"** → **Run workflow**. After that it regenerates daily on its own, tracing whatever your real contribution activity looks like.
-
-The image above will resolve automatically once `dist/github-jet.svg` exists on your `main` branch — no README edits needed.
+**3. Run it once manually**: repo → **Actions** tab → **"Update jet heatmap SVG"** → **Run workflow**. It overwrites the sample file with one built from your real commits, then keeps itself current daily.
 
 </details>
 
