@@ -1,0 +1,81 @@
+name: Sync Profile Cards
+
+# Regenerates every custom card under assets/ from either data/*.json or the
+# live GitHub API. All five are self-hosted, self-contained SVGs (no
+# third-party Vercel/CDN dependency, no external <image> references inside
+# the SVGs) because:
+#   - github-readme-stats.vercel.app (GitHub Stats, Top Languages) and
+#     github-profile-trophy.vercel.app (Trophies) are free, shared,
+#     community-hosted instances with a documented history of downtime /
+#     rate-limiting under global load — which is what broke those three
+#     cards in this README.
+#   - GeeksforGeeks has no public API, and third-party scrapers of its
+#     profile page (gfgstatscard.vercel.app and similar) have started
+#     showing "--" for Coding Score after GFG changed its page markup.
+#   - LinkedIn has no public API/RSS for personal profile metrics, and this
+#     repo does not scrape it, call an unofficial API, or automate a browser
+#     against it.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/gfg-stats.json"
+      - "data/profile-info.json"
+      - "scripts/**"
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 3 * * *"   # daily — also keeps GitHub Stats/Top Langs/Trophies fresh
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Generate GeeksforGeeks card
+        run: node scripts/generate-gfg-card.js
+
+      - name: Generate LinkedIn card
+        run: node scripts/generate-linkedin-card.js
+
+      - name: Generate GitHub Stats card
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node scripts/generate-github-stats-card.js
+
+      - name: Generate Top Languages card
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node scripts/generate-top-langs-card.js
+
+      - name: Generate Trophies card
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node scripts/generate-trophies-card.js
+
+      - name: Validate generated SVGs are well-formed
+        run: |
+          for f in assets/*.svg; do
+            node -e "new (require('node:util').TextDecoder)().decode(require('fs').readFileSync('$f')); require('assert')(require('fs').readFileSync('$f','utf8').trim().startsWith('<svg'), '$f does not start with <svg')"
+          done
+
+      - name: Commit regenerated cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/*.svg
+          git diff --cached --quiet && echo "No changes" || git commit -m "chore: regenerate profile cards [skip ci]"
+          git pull --rebase origin main
+          git push

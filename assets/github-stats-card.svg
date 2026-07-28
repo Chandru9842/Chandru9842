@@ -1,0 +1,228 @@
+<svg
+    width="495"
+    height="220"
+    viewBox="0 0 495 220"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Chandru9842's GitHub stats: 37 public repos, 0 total stars, 0 followers, 686 commits in the past year, 1 pull requests in the past year, 0 issues in the past year">
+
+  <title>GitHub Stats — Chandru9842</title>
+
+  <rect
+    x="1"
+    y="1"
+    width="493"
+    height="218"
+    rx="14"
+    fill="#0D1117"
+    stroke="#8B5CF6"
+    stroke-width="1.4"/>
+
+  <text
+    x="24"
+    y="33"
+    font-family="'Segoe UI', Ubuntu, Sans-Serif"
+    font-size="16"
+    font-weight="700"
+    fill="#A78BFA">
+    GitHub Stats
+  </text>
+
+  
+    <g transform="translate(24, 66)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Public Repos
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        37
+      </text>
+    </g>
+
+    <g transform="translate(181, 66)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Total Stars
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        0
+      </text>
+    </g>
+
+    <g transform="translate(338, 66)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Followers
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        0
+      </text>
+    </g>
+
+  
+    <g transform="translate(24, 122)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Commits (1y)
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        686
+      </text>
+    </g>
+
+    <g transform="translate(181, 122)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        PRs (1y)
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        1
+      </text>
+    </g>
+
+    <g transform="translate(338, 122)">
+      <rect
+        x="0"
+        y="0"
+        width="149"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"
+      />
+      <text
+        x="14"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Issues (1y)
+      </text>
+      <text
+        x="14"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="20"
+        font-weight="700"
+        fill="#F8FAFC">
+        0
+      </text>
+    </g>
+
+  <text
+    x="24"
+    y="202"
+    font-family="'Segoe UI', Ubuntu, Sans-Serif"
+    font-size="10"
+    fill="#94A3B8">
+    @Chandru9842 &#8226; commits/PRs/issues are past 12 months
+  </text>
+
+</svg>

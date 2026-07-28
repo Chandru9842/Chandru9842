@@ -1,0 +1,81 @@
+name: Sync README Content
+
+# Combines three previously-separate scheduled workflows (recent activity,
+# blog posts, last-updated timestamp) into a single pipeline. This:
+#   - avoids 3 overlapping cron schedules fighting over Actions minutes
+#   - avoids concurrent git pushes to main from separate workflow runs
+#   - keeps README-mutation steps to a single serialized chain via `needs`
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-sync
+  cancel-in-progress: false   # let an in-flight sync finish before the next one starts
+
+jobs:
+  recent-activity:
+    name: Refresh recent GitHub activity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Update recent activity section
+        uses: jamesgeorge007/github-activity-readme@v0.4.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          COMMIT_MSG: "chore: refresh recent activity [skip ci]"
+          MAX_LINES: "5"
+
+  blog-posts:
+    name: Refresh blog posts
+    needs: recent-activity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Pull latest posts and update README
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          # Add one or more RSS/Atom feed URLs below, comma-separated
+          # e.g. Hashnode: https://your-blog.hashnode.dev/rss.xml
+          #      Dev.to:   https://dev.to/feed/<username>
+          #      Medium:   https://medium.com/feed/@<username>
+          feed_list: "REPLACE_WITH_YOUR_RSS_FEED_URL"
+          max_post_count: "5"
+          commit_message: "chore: refresh blog posts [skip ci]"
+
+  stamp-timestamp:
+    name: Stamp last-updated timestamp
+    needs: blog-posts
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Update last-updated marker
+        run: |
+          NOW="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          NOW_BADGE="$(date -u '+%Y--%m--%d')"   # shields.io escapes literal dashes as --
+          sed -i -E "s|(<!--LAST_UPDATED-->).*(<!--END_LAST_UPDATED-->)|\1${NOW}\2|" README.md
+          sed -i -E "s|(<!--LAST_UPDATED_BADGE-->).*(<!--END_LAST_UPDATED_BADGE-->)|\1${NOW_BADGE}\2|" README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet && echo "No changes" || git commit -m "chore: refresh README timestamp [skip ci]"
+          git pull --rebase origin main
+          git push

@@ -1,0 +1,169 @@
+<svg
+    width="495"
+    height="220"
+    viewBox="0 0 495 220"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="GeeksforGeeks Stats">
+
+  <title>GeeksforGeeks Stats — chandrumpkjr</title>
+
+  <rect
+    x="1"
+    y="1"
+    width="493"
+    height="218"
+    rx="14"
+    fill="#0D1117"
+    stroke="#8B5CF6"
+    stroke-width="1.4"/>
+
+  <text
+    x="24"
+    y="33"
+    font-family="'Segoe UI', Ubuntu, Sans-Serif"
+    font-size="16"
+    font-weight="700"
+    fill="#A78BFA">
+    GeeksforGeeks Stats
+  </text>
+
+  
+    <g transform="translate(24, 66)">
+      <rect
+        x="0"
+        y="0"
+        width="215"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"/>
+
+      <text
+        x="16"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="12"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Problems Solved
+      </text>
+
+      <text
+        x="16"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="22"
+        font-weight="700"
+        fill="#F8FAFC">
+        149
+      </text>
+    </g>
+
+    <g transform="translate(256, 66)">
+      <rect
+        x="0"
+        y="0"
+        width="215"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"/>
+
+      <text
+        x="16"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="12"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Coding Score
+      </text>
+
+      <text
+        x="16"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="22"
+        font-weight="700"
+        fill="#F8FAFC">
+        445
+      </text>
+    </g>
+
+    <g transform="translate(24, 122)">
+      <rect
+        x="0"
+        y="0"
+        width="215"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"/>
+
+      <text
+        x="16"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="12"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        Institute Rank
+      </text>
+
+      <text
+        x="16"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="22"
+        font-weight="700"
+        fill="#F8FAFC">
+        Unranked
+      </text>
+    </g>
+
+    <g transform="translate(256, 122)">
+      <rect
+        x="0"
+        y="0"
+        width="215"
+        height="58"
+        rx="10"
+        fill="#161B22"
+        stroke="#8B5CF6"
+        stroke-opacity="0.35"/>
+
+      <text
+        x="16"
+        y="24"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="12"
+        fill="#94A3B8"
+        letter-spacing="0.3">
+        POTD Solved
+      </text>
+
+      <text
+        x="16"
+        y="46"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="22"
+        font-weight="700"
+        fill="#F8FAFC">
+        1
+      </text>
+    </g>
+
+  <text
+    x="24"
+    y="202"
+    font-family="'Segoe UI', Ubuntu, Sans-Serif"
+    font-size="10"
+    fill="#94A3B8">
+    @chandrumpkjr &#8226; verified 2026-07-26
+  </text>
+
+</svg>

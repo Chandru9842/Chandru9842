@@ -1,0 +1,26 @@
+name: Refresh Blog Posts
+
+on:
+  schedule:
+    - cron: "0 6 * * *"    # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pull latest posts and update README
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          # Add one or more RSS/Atom feed URLs below, comma-separated
+          # e.g. Hashnode: https://your-blog.hashnode.dev/rss.xml
+          #      Dev.to:   https://dev.to/feed/<username>
+          #      Medium:   https://medium.com/feed/@<username>
+          feed_list: "REPLACE_WITH_YOUR_RSS_FEED_URL"
+          max_post_count: "5"
+          commit_message: "chore: refresh blog posts [skip ci]"
