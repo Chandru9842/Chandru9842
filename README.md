@@ -364,9 +364,9 @@
 
 <td width="50%" align="center">
 <img
-src="https://streak-stats.demolab.com?user=Chandru9842&background=0D1117&ring=8B5CF6&fire=A855F7&currStreakLabel=8B5CF6&sideNums=FFFFFF&currStreakNum=FFFFFF&dates=9CA3AF&sideLabels=C9D1D9"
-width="100%"
-alt="GitHub Streak"
+  src="https://streak-stats.demolab.com?user=Chandru9842&theme=radical"
+  style="width:100%;height:230px;"
+  alt="GitHub Streak"
 />
 </td>
 </tr>
