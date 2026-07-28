@@ -1,12 +1,12 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20%E2%80%A2%20Java%20%2F%20Spring%20Boot%20%E2%80%A2%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" alt="Chandru M — Backend Engineer, Java / Spring Boot, Full Stack Systems"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" />
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=650&height=32&separator=%7C&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=950&height=35&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" />
 </a>
 
-<br/><br/>
+<br><br>
 
 <img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-8B5CF6?style=flat-square&labelColor=0D1117"/>
 
@@ -14,7 +14,7 @@
 
 <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=0D1117"/>
 
-<br/><br/>
+</div>
 
 <a href="https://www.linkedin.com/in/chandru9842">
   <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="LinkedIn"/>
