@@ -8,9 +8,11 @@
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-161B22?style=flat-square&labelColor=0D1117&color=8B5CF6" alt="B.E. Computer Science Engineering"/>
-<img src="https://img.shields.io/badge/SRM%20TRP%20Engineering%20College-Expected%202027-161B22?style=flat-square&labelColor=0D1117&color=8B5CF6" alt="SRM TRP Engineering College"/>
-<img src="https://img.shields.io/badge/Location-Tamil%20Nadu%2C%20India-161B22?style=flat-square&labelColor=0D1117&color=94A3B8" alt="Location"/>
+<img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-8B5CF6?style=flat-square&labelColor=0D1117"/>
+
+<img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-8B5CF6?style=flat-square&labelColor=0D1117"/>
+
+<img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=0D1117"/>
 
 <br/><br/>
 
