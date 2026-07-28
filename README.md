@@ -364,8 +364,7 @@
 
 <td width="50%" align="center">
 
-<img src="https://streak-stats.demolab.com/?user=Chandru9842&hide_border=true&background=0D1117&ring=8B5CF6&fire=8B5CF6&currStreakLabel=A78BFA&sideLabels=F8FAFC&currStreakNum=F8FAFC&sideNums=F8FAFC&dates=94A3B8&border_radius=10" width="100%" alt="GitHub Streak"/>
-
+<img src="https://streak-stats.demolab.com?user=Chandru9842&theme=tokyonight&hide_border=true" width="100%" alt="GitHub Streak"/>
 </td>
 </tr>
 </table>
