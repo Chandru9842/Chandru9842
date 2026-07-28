@@ -47,33 +47,60 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 </div>
-regernerate fully correclt y to paste and cpy
 
-## 📖 &nbsp;About Me
 
-```yaml
-whoami:       Chandru M
-role:         Backend Developer / Full Stack Developer
-stack:        React → Spring Boot → MySQL
-education:    B.E. Computer Science Engineering, SRM TRP Engineering College (Expected 2027)
-location:     Tamil Nadu, India
-focus:        Backend systems, REST APIs, scalable full-stack applications
-open_to:      Software Engineer roles at product-based companies
-```
+## 📖 About Me
 
-&nbsp;
+<table>
+<tr>
+<td width="180"><strong>👤 Who Am I</strong></td>
+<td>Chandru M</td>
+</tr>
 
-- 🛠️&nbsp; Full stack developer with hands-on, production-style experience across the **React → Spring Boot → MySQL** pipeline
-- 🧩&nbsp; Strong foundation in **Data Structures & Algorithms**, applied consistently through independent problem solving
-- 🚀&nbsp; Enjoy owning a feature end-to-end — from REST API design to database schema to UI integration
-- 📐&nbsp; Currently sharpening skills in system design, containerization, and microservices architecture
-- 🎯&nbsp; **Open To:** Backend Engineer&nbsp;·&nbsp;Full Stack Developer&nbsp;·&nbsp;Software Engineer Internships/New-Grad roles
+<tr>
+<td><strong>💼 Role</strong></td>
+<td>Backend Developer / Full Stack Developer</td>
+</tr>
 
-<br/>
+<tr>
+<td><strong>⚡ Tech Stack</strong></td>
+<td>React → Spring Boot → MySQL</td>
+</tr>
+
+<tr>
+<td><strong>🎓 Education</strong></td>
+<td>B.E. Computer Science Engineering<br>SRM TRP Engineering College (Expected 2027)</td>
+</tr>
+
+<tr>
+<td><strong>📍 Location</strong></td>
+<td>Tamil Nadu, India</td>
+</tr>
+
+<tr>
+<td><strong>🎯 Focus</strong></td>
+<td>Backend Systems • REST APIs • Scalable Full-Stack Applications</td>
+</tr>
+
+<tr>
+<td><strong>🚀 Open To</strong></td>
+<td>Backend Engineer • Full Stack Developer • Software Engineer Internships / New Grad</td>
+</tr>
+</table>
+
+<br>
+
+- 🛠️ Full stack developer with hands-on, production-style experience across the **React → Spring Boot → MySQL** pipeline.
+- 🧩 Strong foundation in **Data Structures & Algorithms**, applying efficient problem-solving and clean coding practices.
+- 🚀 Passionate about building end-to-end software—from **REST API design** and **database schema** to **responsive UI development**.
+- 📐 Currently strengthening skills in **System Design**, **Docker**, **Microservices**, and scalable backend architecture.
+- 🎯 Actively seeking opportunities as a **Backend Engineer**, **Full Stack Developer**, or **Software Engineer Intern / New Graduate**.
+
+<br>
 
 <div align="center">
 
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 </div>
 
