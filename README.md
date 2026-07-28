@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" />
 
 <a href="https://git.io/typing-svg">
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=950&height=35&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" />
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=900&height=35&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" />
 </a>
 
 <br><br>
@@ -14,39 +14,38 @@
 
 <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=0D1117"/>
 
-</div>
+<br><br>
 
 <a href="https://www.linkedin.com/in/chandru9842">
-  <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="LinkedIn"/>
+<img src="https://img.shields.io/badge/LinkedIn-8B5CF6?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
 <a href="mailto:chandrumohan550@gmail.com">
-  <img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="Email"/>
+<img src="https://img.shields.io/badge/Email-8B5CF6?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
 
 <a href="https://github.com/Chandru9842">
-  <img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="GitHub"/>
+<img src="https://img.shields.io/badge/GitHub-8B5CF6?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
-<br/><br/>
-<img src="https://komarev.com/ghpvc/?username=Chandru9842&label=Profile%20Views&style=flat-square&color=8B5CF6&labelColor=161B22" alt="Profile Views"/>
+<br><br>
 
-<img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=8B5CF6&labelColor=161B22" alt="Followers"/>
+<img src="https://komarev.com/ghpvc/?username=Chandru9842&label=Profile%20Views&style=flat-square&color=8B5CF6"/>
 
-<img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=8B5CF6&labelColor=161B22" alt="Stars"/>
+<img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=8B5CF6"/>
+
+<img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=8B5CF6"/>
 
 <!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-36-8B5CF6?style=flat-square&labelColor=161B22" alt="Public Repositories"/>
+<img src="https://img.shields.io/badge/Public%20Repos-36-8B5CF6?style=flat-square" alt="Public Repositories"/>
 <!--END_SECTION:public_repos-->
 
-<img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?style=flat-square&label=Last%20Updated&color=8B5CF6&labelColor=161B22"/>
-<br/>
-
-<div align="center">
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=8B5CF6"/>
 
 </div>
+
+---
+
 
 
 ## 📖 About Me
