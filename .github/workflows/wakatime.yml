@@ -2,7 +2,9 @@ name: WakaTime Stats
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    # Runs every day at 12:00 UTC
+    - cron: "0 12 * * *"
+
   workflow_dispatch:
 
 permissions:
@@ -14,17 +16,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Update README
+      - name: Update WakaTime Stats
         uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           SHOW_TITLE: true
-          BLOCKS: █
-          TIME_RANGE: all_time
+          SECTION_NAME: waka
+
+          BLOCKS: █▓░
           LANG_COUNT: 8
+
           SHOW_TOTAL: true
           SHOW_TIME: true
+
+          TIME_RANGE: last_7_days
+
+          SHOW_MASKED_TIME: false
+          STOP_AT_OTHER: false
+          CODE_LANG: true
