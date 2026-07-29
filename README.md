@@ -373,9 +373,7 @@
 </tr>
 </table>
 
-<sub>
-GitHub Stats, Top Languages, GeeksforGeeks, LinkedIn and Milestones are custom-generated SVGs refreshed automatically by the <b>Sync Profile Cards</b> GitHub Action using the official GitHub GraphQL API where applicable. LeetCode and GitHub Streak continue to use their respective public endpoints.
-</sub>
+
 
 <br/>
 
@@ -393,7 +391,7 @@ GitHub Stats, Top Languages, GeeksforGeeks, LinkedIn and Milestones are custom-g
 
 </div>
 
-<sub>Self-hosted SVG generated from the GitHub GraphQL API, replacing the public <code>github-profile-trophy.vercel.app</code> instance after it started rendering broken. Tiers (C/B/A/S/SS) come from a small threshold table we define ourselves in <code>scripts/generate-trophies-card.js</code> — not a copy of any third-party scoring algorithm.</sub>
+
 
 <br/>
 
@@ -436,7 +434,7 @@ GitHub Stats, Top Languages, GeeksforGeeks, LinkedIn and Milestones are custom-g
   </picture>
 </p>
 
-<sub>Regenerated daily by <code>.github/workflows/snake.yml</code> (Platane/snk) and published to the <code>output</code> branch in both light and dark variants.</sub>
+
 
 <br/>
 
