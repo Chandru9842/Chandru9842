@@ -2,8 +2,8 @@ name: Refresh README Timestamp
 
 on:
   schedule:
-    - cron: "0 0 * * *"    # daily at 00:00 UTC
-  workflow_dispatch: {}
+    - cron: "0 0 * * *"    # Daily at 00:00 UTC
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,18 +11,27 @@ permissions:
 jobs:
   stamp:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Update last-updated marker
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Update Last Updated Marker
         run: |
-          NOW="$(date -u '+%Y-%m-%d %H:%M UTC')"
+          NOW="$(date -u '+%d %b %Y')"
           sed -i -E "s|(<!--LAST_UPDATED-->).*(<!--END_LAST_UPDATED-->)|\1${NOW}\2|" README.md
 
-      - name: Commit changes
+      - name: Commit Changes
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add README.md
-          git diff --cached --quiet && echo "No changes" || git commit -m "chore: refresh README timestamp [skip ci]"
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+
+          git commit -m "chore: refresh README timestamp [skip ci]"
           git push
