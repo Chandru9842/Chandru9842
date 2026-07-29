@@ -450,12 +450,17 @@ GitHub Stats, Top Languages, GeeksforGeeks, LinkedIn and Milestones are custom-g
 <!--START_SECTION:waka-->
 
 ```txt
-From: 20 July 2026 - To: 27 July 2026
+From: 21 July 2026 - To: 28 July 2026
 
-Total Time: 23 mins
+Total Time: 3 hrs 14 mins
 
-Java   13 mins         ██████████████▓░░░░░░░░░░   59.25 %
-YAML   9 mins          ██████████▒░░░░░░░░░░░░░░   40.75 %
+Markdown     1 hr 27 mins    ███████████░░░░░░░░░░░░░░   43.52 %
+JavaScript   1 hr 22 mins    ██████████▒░░░░░░░░░░░░░░   41.00 %
+Java         13 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
+YAML         9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   04.80 %
+Other        5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.86 %
+TypeScript   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.60 %
+CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.24 %
 ```
 
 <!--END_SECTION:waka-->
