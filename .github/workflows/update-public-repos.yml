@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: "0 0 * * *"   # Every day at 00:00 UTC
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -21,31 +21,34 @@ jobs:
         id: repos
         run: |
           COUNT=$(curl -s https://api.github.com/users/${{ github.repository_owner }} | jq -r '.public_repos')
-          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
 
       - name: Update README
         env:
           COUNT: ${{ steps.repos.outputs.count }}
         run: |
-          python3 <<EOF
-          import re
+          python3 - <<'EOF'
           import os
+          import re
 
           count = os.environ["COUNT"]
 
           with open("README.md", "r", encoding="utf-8") as f:
-              data = f.read()
+              content = f.read()
 
-          pattern = r'<!--START_SECTION:public_repos-->.*?<!--END_SECTION:public_repos-->'
+          replacement = (
+              "<!--START_SECTION:public_repos-->\n"
+              f'<img src="https://img.shields.io/badge/Public%20Repos-{count}-8B5CF6?style=flat-square&labelColor=161B22" '
+              'alt="Public Repositories"/>\n'
+              "<!--END_SECTION:public_repos-->"
+          )
 
-          replacement = f"""<!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-{count}-8B5CF6?style=flat-square&labelColor=161B22" alt="Public Repositories"/>
-<!--END_SECTION:public_repos-->"""
+          pattern = r"<!--START_SECTION:public_repos-->.*?<!--END_SECTION:public_repos-->"
 
-          data = re.sub(pattern, replacement, data, flags=re.DOTALL)
+          content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
           with open("README.md", "w", encoding="utf-8") as f:
-              f.write(data)
+              f.write(content)
           EOF
 
       - name: Commit Changes
@@ -56,12 +59,9 @@ jobs:
           git add README.md
 
           if git diff --cached --quiet; then
-            echo "README already up-to-date."
+            echo "No changes"
             exit 0
           fi
 
-          git commit -m "chore: update public repository count"
-
-          git pull --rebase origin main
-
+          git commit -m "chore: update public repo count [skip ci]"
           git push
