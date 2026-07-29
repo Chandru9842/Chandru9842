@@ -37,7 +37,9 @@
 <img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=8B5CF6"/>
 
 <!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-36-8B5CF6?style=flat-square" alt="Public Repositories"/>
+<!--START_SECTION:public_repos-->
+<img src="https://img.shields.io/badge/Public%20Repos-37-8B5CF6?style=flat-square&labelColor=161B22" alt="Public Repositories"/>
+<!--END_SECTION:public_repos-->
 <!--END_SECTION:public_repos-->
 
 <img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=8B5CF6"/>
