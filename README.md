@@ -447,17 +447,17 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 21 July 2026 - To: 28 July 2026
+From: 22 July 2026 - To: 29 July 2026
 
-Total Time: 3 hrs 14 mins
+Total Time: 3 hrs 53 mins
 
-Markdown     1 hr 27 mins    ███████████░░░░░░░░░░░░░░   43.52 %
-JavaScript   1 hr 22 mins    ██████████▒░░░░░░░░░░░░░░   41.00 %
-Java         13 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
-YAML         9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   04.80 %
-Other        5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.86 %
-TypeScript   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.60 %
-CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.24 %
+Markdown     1 hr 27 mins    █████████░░░░░░░░░░░░░░░░   36.43 %
+JavaScript   1 hr 22 mins    ████████▓░░░░░░░░░░░░░░░░   34.33 %
+Java         52 mins         █████▓░░░░░░░░░░░░░░░░░░░   22.12 %
+YAML         9 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.02 %
+Other        5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.40 %
+TypeScript   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.50 %
+CSS          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.20 %
 ```
 
 <!--END_SECTION:waka-->
