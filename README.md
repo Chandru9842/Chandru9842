@@ -447,18 +447,17 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 04 August 2026 - To: 11 August 2026
+From: 05 August 2026 - To: 12 August 2026
 
-Total Time: 4 hrs 41 mins
+Total Time: 1 hr 54 mins
 
-Java             2 hrs 3 mins    ███████████░░░░░░░░░░░░░░   43.88 %
-Markdown         59 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.19 %
-TypeScript       59 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.09 %
-XML              29 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.29 %
-TSConfig         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.26 %
-GitIgnore file   1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.69 %
-JSON             1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.48 %
-JavaScript       1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.47 %
+Java             1 hr 16 mins    ██████████████░░░░░░░░░░░   56.59 %
+XML              29 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.54 %
+Other            20 mins         ███▓░░░░░░░░░░░░░░░░░░░░░   15.19 %
+Git Config       3 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.58 %
+TypeScript       3 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.55 %
+GitIgnore file   1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.44 %
+Bash             0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 %
 ```
 
 <!--END_SECTION:waka-->
