@@ -4,7 +4,7 @@
     viewBox="0 0 495 220"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
-    aria-label="Chandru9842's most used languages: TypeScript 79.1%, Java 9.6%, JavaScript 5.6%, HTML 4.3%, CSS 1.2%">
+    aria-label="Chandru9842's most used languages: TypeScript 83.1%, Java 7.8%, JavaScript 4.5%, HTML 3.5%, CSS 1.0%">
 
   <title>Most Used Languages — Chandru9842</title>
 
@@ -53,7 +53,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        79.1%
+        83.1%
       </text>
 
       <rect
@@ -67,7 +67,7 @@
       <rect
         x="0"
         y="16"
-        width="353.7570258232724"
+        width="371.29322641834415"
         height="7"
         rx="3.5"
         fill="#3178c6"/>
@@ -98,7 +98,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        9.6%
+        7.8%
       </text>
 
       <rect
@@ -112,7 +112,7 @@
       <rect
         x="0"
         y="16"
-        width="42.8645998807721"
+        width="34.77737650793083"
         height="7"
         rx="3.5"
         fill="#b07219"/>
@@ -143,7 +143,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        5.6%
+        4.5%
       </text>
 
       <rect
@@ -157,7 +157,7 @@
       <rect
         x="0"
         y="16"
-        width="24.945665186027078"
+        width="20.19477220821692"
         height="7"
         rx="3.5"
         fill="#f1e05a"/>
@@ -188,7 +188,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        4.3%
+        3.5%
       </text>
 
       <rect
@@ -202,7 +202,7 @@
       <rect
         x="0"
         y="16"
-        width="19.17545038007637"
+        width="15.606066282968687"
         height="7"
         rx="3.5"
         fill="#e34c26"/>
@@ -233,7 +233,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        1.2%
+        1.0%
       </text>
 
       <rect
@@ -247,7 +247,7 @@
       <rect
         x="0"
         y="16"
-        width="5.369731308930373"
+        width="4.410060440260998"
         height="7"
         rx="3.5"
         fill="#663399"/>
