@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Dynamic Hero Banner & ASCII Art Generator for Chandru9842.
-Fetches the user's latest GitHub profile photo and converts it
-into a full, high-contrast, centered ASCII portrait inside a
-premium animated SVG banner.
+Pixel-Perfect Hero Banner & ASCII Art Generator for Chandru9842.
+- Perfect aspect-ratio ASCII mapping (88 cols x 44 rows) for natural face proportions.
+- Zero-overlap right panel layout with precise line-heights, clip-paths, and leader dots.
+- Automated avatar fetching from live GitHub profile.
 """
 
 import os
@@ -13,10 +13,10 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=62, rows=47):
+def fetch_avatar_ascii(username=USERNAME, cols=88, rows=44):
     """
-    Fetches the live avatar from GitHub and converts the full face
-    into sharp, high-contrast ASCII art.
+    Fetches avatar from GitHub and converts it to ASCII with
+    perfect terminal aspect ratio compensation.
     """
     try:
         url = f"https://github.com/{username}.png"
@@ -24,42 +24,40 @@ def fetch_avatar_ascii(username=USERNAME, cols=62, rows=47):
         data = urllib.request.urlopen(req, timeout=10).read()
         img = Image.open(io.BytesIO(data)).convert("L")
 
-        # Square center crop to keep full head & face proportion
+        # Square center crop
         w, h = img.size
         min_dim = min(w, h)
         left = (w - min_dim) // 2
         top = (h - min_dim) // 2
         img = img.crop((left, top, left + min_dim, top + min_dim))
 
-        # Enhance contrast and sharpness for defined facial lines
-        img = ImageOps.autocontrast(img, cutoff=1.5)
-        img = ImageEnhance.Contrast(img).enhance(1.45)
-        img = ImageEnhance.Sharpness(img).enhance(1.5)
+        # Enhance contrast and sharpness for crisp facial detail
+        img = ImageOps.autocontrast(img, cutoff=2)
+        img = ImageEnhance.Contrast(img).enhance(1.5)
+        img = ImageEnhance.Sharpness(img).enhance(1.8)
 
-        # Scale to match character aspect ratio (height is ~1.8x width in mono fonts)
-        img = img.resize((cols, rows), Image.Resampling.LANCZOS)
+        # Scale with aspect compensation (chars are ~1.9x taller than wide)
+        img_scaled = img.resize((cols, rows), Image.Resampling.LANCZOS)
 
-        # High-contrast cyber ASCII ramp
-        RAMP = "  ..::--==++**##%%@@"
+        # Clean ASCII ramp
+        RAMP = "   ..::--==++**##%%@@@@"
 
         lines = []
         for y in range(rows):
             line = ""
             for x in range(cols):
-                pixel = img.getpixel((x, y))
-                # Darker facial features -> denser characters
-                idx = int(((255 - pixel) / 255.0) * (len(RAMP) - 1))
+                p = img_scaled.getpixel((x, y))
+                idx = int(((255 - p) / 255.0) * (len(RAMP) - 1))
                 line += RAMP[idx]
             lines.append(line)
         return lines
     except Exception as e:
-        print(f"Warning: Could not fetch live avatar ({e}), using fallback art.")
-        return ["  ...:::---===+++***###%%%@@@  " for _ in range(rows)]
+        print(f"Warning: Avatar fetch fallback ({e})")
+        return [" " * cols for _ in range(rows)]
 
 def build_banner(theme_mode="dark"):
     is_dark = (theme_mode == "dark")
     
-    # Visual Theme Palette
     if is_dark:
         bg_main = "#030712"
         panel_bg = "#0B1120"
@@ -76,7 +74,7 @@ def build_banner(theme_mode="dark"):
         grad_stop_2 = "#7C3AED"
         grad_stop_3 = "#10B981"
         pill_bg = "#1E293B"
-        pill_border = "rgba(56, 189, 248, 0.3)"
+        pill_border = "rgba(56, 189, 248, 0.28)"
         pill_text = "#E2E8F0"
         titlebar_bg = "#0B1120"
         scan_color = "#22D3EE"
@@ -100,7 +98,7 @@ def build_banner(theme_mode="dark"):
         grad_stop_2 = "#06B6D4"
         grad_stop_3 = "#059669"
         pill_bg = "#E2E8F0"
-        pill_border = "rgba(2, 132, 199, 0.3)"
+        pill_border = "rgba(2, 132, 199, 0.28)"
         pill_text = "#0F172A"
         titlebar_bg = "#F8FAFC"
         scan_color = "#06B6D4"
@@ -109,16 +107,16 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=62, rows=47)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=88, rows=44)
 
-    # Format ASCII tspans with exact coordinate spacing
+    # Left ASCII tspans: exact start & spacing
     ascii_tspans = []
     y_start = 104
-    line_h = 9.8
+    line_h = 10.4
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
-        ascii_tspans.append(f'<tspan x="28" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
+        ascii_tspans.append(f'<tspan x="26" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
 
     ascii_text_content = "\n".join(ascii_tspans)
 
@@ -171,7 +169,7 @@ def build_banner(theme_mode="dark"):
 
     <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="white" stop-opacity="0"/>
-      <stop offset="50%" stop-color="white" stop-opacity="{0.12 if is_dark else 0.25}"/>
+      <stop offset="50%" stop-color="white" stop-opacity="{0.12 if is_dark else 0.22}"/>
       <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
 
@@ -190,25 +188,26 @@ def build_banner(theme_mode="dark"):
       <rect width="4" height="1.2" fill="{scan_color}" opacity="{0.04 if is_dark else 0.02}"/>
     </pattern>
 
-    <!-- Reveal Mask for ASCII Line-by-Line Unfold -->
+    <!-- Reveal Mask for Left ASCII Portrait -->
     <mask id="asciiRevealMask">
-      <rect x="20" y="55" width="440" height="0" fill="#FFFFFF">
-        <animate attributeName="height" from="0" to="530" dur="2.2s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+      <rect x="18" y="55" width="440" height="0" fill="#FFFFFF">
+        <animate attributeName="height" from="0" to="530" dur="2.0s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
       </rect>
     </mask>
 
-    <!-- Terminal Sequential Reveal Clip Paths -->
-    <clipPath id="cHeader"><rect x="475" y="65" width="0" height="60"><animate attributeName="width" from="0" to="680" dur="0.6s" begin="0.5s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cRole"><rect x="475" y="125" width="0" height="42"><animate attributeName="width" from="0" to="680" dur="0.6s" begin="0.9s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cSep1"><rect x="475" y="170" width="0" height="15"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="1.1s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cInfo1"><rect x="475" y="188" width="0" height="26"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="1.3s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cInfo2"><rect x="475" y="214" width="0" height="26"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="1.5s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cInfo3"><rect x="475" y="240" width="0" height="26"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="1.7s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cInfo4"><rect x="475" y="266" width="0" height="26"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="1.9s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cInfo5"><rect x="475" y="292" width="0" height="26"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="2.1s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cSep2"><rect x="475" y="322" width="0" height="15"><animate attributeName="width" from="0" to="680" dur="0.4s" begin="2.3s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cSkills"><rect x="475" y="340" width="0" height="120"><animate attributeName="width" from="0" to="680" dur="0.6s" begin="2.5s" fill="freeze"/></rect></clipPath>
-    <clipPath id="cLinks"><rect x="475" y="470" width="0" height="110"><animate attributeName="width" from="0" to="680" dur="0.6s" begin="2.8s" fill="freeze"/></rect></clipPath>
+    <!-- Sequential Clip Paths for Right Terminal Rows -->
+    <clipPath id="cpHeader"><rect x="475" y="60" width="0" height="85"><animate attributeName="width" from="0" to="680" dur="0.5s" begin="0.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpPrompt"><rect x="475" y="148" width="0" height="46"><animate attributeName="width" from="0" to="680" dur="0.5s" begin="0.8s" fill="freeze"/></rect></clipPath>
+    
+    <clipPath id="cpRow1"><rect x="475" y="206" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.1s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpRow2"><rect x="475" y="230" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.25s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpRow3"><rect x="475" y="254" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.40s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpRow4"><rect x="475" y="278" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.55s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpRow5"><rect x="475" y="302" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.70s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpRow6"><rect x="475" y="326" width="0" height="24"><animate attributeName="width" from="0" to="680" dur="0.35s" begin="1.85s" fill="freeze"/></rect></clipPath>
+    
+    <clipPath id="cpSkills"><rect x="475" y="358" width="0" height="100"><animate attributeName="width" from="0" to="680" dur="0.5s" begin="2.1s" fill="freeze"/></rect></clipPath>
+    <clipPath id="cpDock"><rect x="475" y="460" width="0" height="110"><animate attributeName="width" from="0" to="680" dur="0.5s" begin="2.4s" fill="freeze"/></rect></clipPath>
 
     <style>
       @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap');
@@ -216,15 +215,16 @@ def build_banner(theme_mode="dark"):
       .font-mono {{ font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }}
       .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
       
-      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.9px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 500; }}
+      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 5.6px; fill: url(#asciiGrad); letter-spacing: -0.1px; font-weight: 500; }}
       .t-title {{ font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }}
-      .t-greeting {{ font-size: 14px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.5px; }}
-      .t-role {{ font-size: 15px; font-weight: 700; fill: {text_highlight}; }}
-      .t-key {{ font-size: 12.5px; font-weight: 700; fill: {accent_2}; }}
-      .t-val {{ font-size: 12.5px; font-weight: 500; fill: {text_primary}; }}
-      .t-sep {{ font-size: 12px; fill: {text_muted}; opacity: 0.45; }}
-      .t-dim {{ font-size: 11px; fill: {text_muted}; }}
-      .pill-txt {{ font-size: 11.5px; font-weight: 600; fill: {pill_text}; }}
+      .t-greeting {{ font-size: 13.5px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.3px; }}
+      .t-prompt-usr {{ font-size: 13px; font-weight: 700; fill: {accent_2}; }}
+      .t-prompt-cmd {{ font-size: 13px; font-weight: 600; fill: {text_primary}; }}
+      .t-key {{ font-size: 12px; font-weight: 700; fill: {accent_2}; }}
+      .t-val {{ font-size: 12px; font-weight: 500; fill: {text_primary}; }}
+      .t-sep {{ font-size: 12px; fill: {text_muted}; opacity: 0.55; }}
+      .t-dim {{ font-size: 10.5px; fill: {text_muted}; }}
+      .pill-txt {{ font-size: 11px; font-weight: 600; fill: {pill_text}; }}
       .badge-lbl {{ font-size: 10px; font-weight: 700; fill: {accent_2}; letter-spacing: 1.5px; }}
     </style>
   </defs>
@@ -273,7 +273,7 @@ def build_banner(theme_mode="dark"):
   <g id="leftSection" transform="translate(0, 0)">
     <!-- Floating ASCII Module -->
     <g>
-      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3.5; 0 0" dur="7s" repeatCount="indefinite" easeMode="spline"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3; 0 0" dur="6s" repeatCount="indefinite" easeMode="spline"/>
       
       <!-- Panel Border & Background -->
       <rect x="16" y="58" width="444" height="538" rx="16" fill="{panel_bg}" fill-opacity="{0.65 if is_dark else 0.75}" stroke="{panel_border}" stroke-width="1.2"/>
@@ -286,7 +286,7 @@ def build_banner(theme_mode="dark"):
 
       <!-- Full Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
-        <text x="28" y="0" class="ascii-art">
+        <text x="26" y="0" class="ascii-art">
 {ascii_text_content}
         </text>
       </g>
@@ -294,7 +294,7 @@ def build_banner(theme_mode="dark"):
       <!-- Animated Moving Laser Scanline Sweep -->
       <g mask="url(#asciiRevealMask)">
         <rect x="22" y="64" width="432" height="40" fill="url(#laserSweep)" style="mix-blend-mode: {'screen' if is_dark else 'multiply'}">
-          <animateTransform attributeName="transform" type="translate" from="0 -40" to="0 530" dur="3.6s" repeatCount="indefinite"/>
+          <animateTransform attributeName="transform" type="translate" from="0 -40" to="0 530" dur="3.5s" repeatCount="indefinite"/>
         </rect>
       </g>
 
@@ -321,87 +321,74 @@ def build_banner(theme_mode="dark"):
     <text x="492" y="83" class="font-mono badge-lbl">02 // DEV.STATION.PROFILE</text>
     <text x="1144" y="83" text-anchor="end" class="font-mono t-dim">BRANCH: main [clean]</text>
 
-    <!-- Content Row 1: Greeting & Name (Delayed Reveal) -->
-    <g clip-path="url(#cHeader)">
-      <text x="492" y="112" class="font-mono t-greeting">Hi there 👋 Welcome to my workspace</text>
-      <text x="492" y="146" class="font-sans t-title">I'm Chandru M</text>
+    <!-- Block 1: Greeting & Name -->
+    <g clip-path="url(#cpHeader)">
+      <text x="492" y="108" class="font-mono t-greeting">Hi there 👋 Welcome to my workspace</text>
+      <text x="492" y="138" class="font-sans t-title">I'm Chandru M</text>
     </g>
 
-    <!-- Content Row 2: Dynamic Cycling Typewriter Role (SMIL Multi-phrase Typewriter) -->
-    <g clip-path="url(#cRole)">
-      <rect x="492" y="156" width="652" height="30" rx="6" fill="{titlebar_bg}" fill-opacity="0.6" stroke="{panel_border}" stroke-width="1"/>
-      <text x="504" y="176" class="font-mono t-role">
-        <tspan fill="{accent_1}">❯ </tspan>
-        <!-- Phase 1: Backend Engineer -->
-        <tspan>
-          <animate attributeName="display" values="inline;inline;none;none;none" keyTimes="0;0.24;0.25;0.99;1" dur="14s" repeatCount="indefinite"/>
-          Backend Engineer (Java &amp; Spring Boot)
-        </tspan>
-        <!-- Phase 2: Full-Stack Systems Developer -->
-        <tspan>
-          <animate attributeName="display" values="none;none;inline;inline;none" keyTimes="0;0.25;0.26;0.49;1" dur="14s" repeatCount="indefinite"/>
-          Full-Stack Systems Developer (React + Node)
-        </tspan>
-        <!-- Phase 3: Scalable Cloud & REST Architecture -->
-        <tspan>
-          <animate attributeName="display" values="none;none;inline;inline;none" keyTimes="0;0.50;0.51;0.74;1" dur="14s" repeatCount="indefinite"/>
-          REST API Designer &amp; Database Architect
-        </tspan>
-        <!-- Phase 4: Distributed Systems & Microservices -->
-        <tspan>
-          <animate attributeName="display" values="none;none;inline;inline;inline" keyTimes="0;0.75;0.76;0.99;1" dur="14s" repeatCount="indefinite"/>
-          Building Scalable, Production-Ready Systems
-        </tspan>
+    <!-- Block 2: Terminal Interactive Prompt Box -->
+    <g clip-path="url(#cpPrompt)">
+      <rect x="490" y="150" width="656" height="34" rx="8" fill="{titlebar_bg}" fill-opacity="0.75" stroke="{panel_border}" stroke-width="1"/>
+      <text x="504" y="172" class="font-mono">
+        <tspan class="t-prompt-usr">chandru@cloud:~$ </tspan>
+        <tspan class="t-prompt-cmd">Backend Engineer • Java / Spring Boot • Full Stack Systems</tspan>
       </text>
-      <!-- Blinking Typewriter Cursor -->
-      <rect x="880" y="164" width="8" height="14" fill="{accent_2}">
-        <animate attributeName="opacity" values="1;0;1;0" dur="0.8s" repeatCount="indefinite"/>
+      <!-- Blinking Cursor -->
+      <rect x="1005" y="160" width="7.5" height="14" fill="{accent_2}">
+        <animate attributeName="opacity" values="1;0;1;0" dur="0.85s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- Divider Line 1 -->
-    <g clip-path="url(#cSep1)">
-      <text x="492" y="200" class="font-mono t-sep">────────────────────────────────────────────────────────────────────────</text>
-    </g>
+    <!-- Divider 1 -->
+    <line x1="490" y1="196" x2="1146" y2="196" stroke="{panel_border}" stroke-width="1" stroke-dasharray="4 4"/>
 
-    <!-- Specifications / Sequential Details -->
-    <g clip-path="url(#cInfo1)">
-      <text x="492" y="218" class="font-mono">
+    <!-- Block 3: Sequential Spec Details (Exact non-overlapping rows, 24px step) -->
+    <g clip-path="url(#cpRow1)">
+      <text x="492" y="220" class="font-mono">
         <tspan class="t-key">📍 Location</tspan><tspan class="t-sep"> : .......... </tspan><tspan class="t-val">Tamil Nadu, India</tspan>
       </text>
     </g>
-    <g clip-path="url(#cInfo2)">
-      <text x="492" y="242" class="font-mono">
+
+    <g clip-path="url(#cpRow2)">
+      <text x="492" y="244" class="font-mono">
         <tspan class="t-key">🎓 Education</tspan><tspan class="t-sep"> : ......... </tspan><tspan class="t-val">B.E. Computer Science • SRM TRP (Expected 2027)</tspan>
       </text>
     </g>
-    <g clip-path="url(#cInfo3)">
-      <text x="492" y="266" class="font-mono">
+
+    <g clip-path="url(#cpRow3)">
+      <text x="492" y="268" class="font-mono">
         <tspan class="t-key">⚡ Stack Pipeline</tspan><tspan class="t-sep"> : ..... </tspan><tspan class="t-val" font-weight="700" fill="{accent_3}">React → Spring Boot → MySQL</tspan>
       </text>
     </g>
-    <g clip-path="url(#cInfo4)">
-      <text x="492" y="290" class="font-mono">
+
+    <g clip-path="url(#cpRow4)">
+      <text x="492" y="292" class="font-mono">
         <tspan class="t-key">🎯 Current Focus</tspan><tspan class="t-sep"> : ..... </tspan><tspan class="t-val">REST APIs • Microservices • Distributed Systems</tspan>
       </text>
     </g>
-    <g clip-path="url(#cInfo5)">
-      <text x="492" y="314" class="font-mono">
-        <tspan class="t-key">🚀 Open To</tspan><tspan class="t-sep"> : ........... </tspan><tspan class="t-val">Software Engineering / Backend / Full-Stack Internships</tspan>
+
+    <g clip-path="url(#cpRow5)">
+      <text x="492" y="316" class="font-mono">
+        <tspan class="t-key">🚀 Open For</tspan><tspan class="t-sep"> : .......... </tspan><tspan class="t-val">Software Engineering / Backend / Full-Stack Internships</tspan>
       </text>
     </g>
 
-    <!-- Divider Line 2 -->
-    <g clip-path="url(#cSep2)">
-      <text x="492" y="335" class="font-mono t-sep">────────────────────────────────────────────────────────────────────────</text>
+    <g clip-path="url(#cpRow6)">
+      <text x="492" y="340" class="font-mono">
+        <tspan class="t-key">📬 Contact Mail</tspan><tspan class="t-sep"> : ....... </tspan><tspan class="t-val">chandrumohan550@gmail.com</tspan>
+      </text>
     </g>
 
+    <!-- Divider 2 -->
+    <line x1="490" y1="358" x2="1146" y2="358" stroke="{panel_border}" stroke-width="1" stroke-dasharray="4 4"/>
+
     <!-- ==================== SKILLS GLOWING PILLS ==================== -->
-    <g clip-path="url(#cSkills)">
-      <text x="492" y="355" class="font-mono badge-lbl">CORE TECHNOLOGIES &amp; TOOLCHAIN</text>
+    <g clip-path="url(#cpSkills)">
+      <text x="492" y="377" class="font-mono badge-lbl">CORE TECHNOLOGIES &amp; TOOLCHAIN</text>
       
       <!-- Pills Row 1 -->
-      <g transform="translate(492, 368)">
+      <g transform="translate(492, 388)">
         <!-- Java -->
         <g transform="translate(0, 0)">
           <rect width="68" height="26" rx="13" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/>
@@ -440,7 +427,7 @@ def build_banner(theme_mode="dark"):
       </g>
 
       <!-- Pills Row 2 -->
-      <g transform="translate(492, 402)">
+      <g transform="translate(492, 420)">
         <!-- REST APIs -->
         <g transform="translate(0, 0)">
           <rect width="102" height="26" rx="13" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/>
@@ -470,35 +457,35 @@ def build_banner(theme_mode="dark"):
     </g>
 
     <!-- ==================== BOTTOM SOCIAL & CONNECT DOCK ==================== -->
-    <g clip-path="url(#cLinks)">
-      <rect x="492" y="445" width="652" height="74" rx="12" fill="{titlebar_bg}" fill-opacity="0.75" stroke="{panel_border}" stroke-width="1"/>
+    <g clip-path="url(#cpDock)">
+      <rect x="490" y="464" width="656" height="58" rx="10" fill="{titlebar_bg}" fill-opacity="0.75" stroke="{panel_border}" stroke-width="1"/>
       
       <!-- Dock Item: GitHub -->
-      <g transform="translate(506, 457)">
-        <rect width="140" height="50" rx="8" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
-        <text x="70" y="24" text-anchor="middle" class="font-mono badge-lbl">GITHUB</text>
-        <text x="70" y="40" text-anchor="middle" class="font-mono t-val">@Chandru9842</text>
+      <g transform="translate(502, 472)">
+        <rect width="140" height="42" rx="7" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
+        <text x="70" y="20" text-anchor="middle" class="font-mono badge-lbl">GITHUB</text>
+        <text x="70" y="34" text-anchor="middle" class="font-mono t-val">@Chandru9842</text>
       </g>
 
       <!-- Dock Item: LinkedIn -->
-      <g transform="translate(654, 457)">
-        <rect width="150" height="50" rx="8" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
-        <text x="75" y="24" text-anchor="middle" class="font-mono badge-lbl">LINKEDIN</text>
-        <text x="75" y="40" text-anchor="middle" class="font-mono t-val">in/chandru9842</text>
+      <g transform="translate(650, 472)">
+        <rect width="150" height="42" rx="7" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
+        <text x="75" y="20" text-anchor="middle" class="font-mono badge-lbl">LINKEDIN</text>
+        <text x="75" y="34" text-anchor="middle" class="font-mono t-val">in/chandru9842</text>
       </g>
 
       <!-- Dock Item: LeetCode -->
-      <g transform="translate(812, 457)">
-        <rect width="150" height="50" rx="8" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
-        <text x="75" y="24" text-anchor="middle" class="font-mono badge-lbl">LEETCODE</text>
-        <text x="75" y="40" text-anchor="middle" class="font-mono t-val">@Chandrum06</text>
+      <g transform="translate(808, 472)">
+        <rect width="150" height="42" rx="7" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
+        <text x="75" y="20" text-anchor="middle" class="font-mono badge-lbl">LEETCODE</text>
+        <text x="75" y="34" text-anchor="middle" class="font-mono t-val">@Chandrum06</text>
       </g>
 
       <!-- Dock Item: Email -->
-      <g transform="translate(970, 457)">
-        <rect width="162" height="50" rx="8" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
-        <text x="81" y="24" text-anchor="middle" class="font-mono badge-lbl">EMAIL</text>
-        <text x="81" y="40" text-anchor="middle" class="font-mono t-val" font-size="11.5px">chandrumohan550</text>
+      <g transform="translate(966, 472)">
+        <rect width="168" height="42" rx="7" fill="{panel_inner_bg}" stroke="{panel_border}" stroke-width="1"/>
+        <text x="84" y="20" text-anchor="middle" class="font-mono badge-lbl">EMAIL</text>
+        <text x="84" y="34" text-anchor="middle" class="font-mono t-val" font-size="11px">chandrumohan550</text>
       </g>
     </g>
 
@@ -518,7 +505,7 @@ def build_banner(theme_mode="dark"):
     return svg_content
 
 def main():
-    print(f"Generating full face ASCII hero banner for {USERNAME}...")
+    print(f"Generating pixel-perfect full face ASCII hero banner for {USERNAME}...")
     dark_svg = build_banner("dark")
     light_svg = build_banner("light")
 
