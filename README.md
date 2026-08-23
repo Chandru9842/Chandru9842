@@ -633,7 +633,7 @@
 ## 🔄 &nbsp;Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-- Recent commits, PRs, issues, and releases will appear here automatically once `.github/workflows/recent-activity.yml` runs for the first time.
+1. ❗ Opened issue [#1](https://github.com/Chandru9842/Chandru9842/issues/1) in [Chandru9842/Chandru9842](https://github.com/Chandru9842/Chandru9842)
 <!--END_SECTION:activity-->
 
 
