@@ -340,7 +340,7 @@
 <td width="50%" align="center">
 
 <a href="https://github.com/Chandru9842">
-<img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/github-stats-card.svg" width="100%" alt="GitHub Stats"/>
+<img src="https://ghstats.dev/api/card?username=chandru9842&theme=ocean&hide_border=true&hide_title=true&border_radius=6&size=compact&show_emoji=true" width="100%" alt="GitHub Stats Card"/>
 </a>
 
 </td>
