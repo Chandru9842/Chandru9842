@@ -141,8 +141,8 @@ def build_dashboard_svg(data, theme="dark"):
     stat_box_bg = "rgba(30, 41, 59, 0.6)" if is_dark else "rgba(241, 245, 249, 0.9)"
     stat_box_border = "rgba(255, 255, 255, 0.08)" if is_dark else "rgba(0, 0, 0, 0.06)"
     text_primary = "#F8FAFC" if is_dark else "#0F172A"
-    text_secondary = "#94A3B8" if is_dark else "#475569"
-    text_muted = "#64748B" if is_dark else "#94A3B8"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
+    text_muted = "#8BB9FE" if is_dark else "#94A3B8"
     accent = "#38BDF8" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
     bar_bg = "#1E293B" if is_dark else "#E2E8F0"
@@ -215,9 +215,8 @@ def build_dashboard_svg(data, theme="dark"):
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="380" viewBox="0 0 790 380" role="img" aria-label="WakaTime Developer Coding Activity Dashboard">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap');
-      .font-sans {{ font-family: 'Plus Jakarta Sans', sans-serif; }}
-      .font-mono {{ font-family: 'JetBrains Mono', monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
+      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
     </style>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{card_bg}"/>

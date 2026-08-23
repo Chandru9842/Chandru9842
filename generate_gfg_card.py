@@ -115,17 +115,16 @@ def build_gfg_card(theme="dark", stats=DEFAULT_STATS):
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" role="img" aria-label="Chandru M - GeeksforGeeks Stats">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@600;700;800&amp;display=swap');
-      .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }}
-      .font-mono {{ font-family: 'JetBrains Mono', monospace; }}
-      .t-title {{ font-size: 16px; font-weight: 800; fill: {text_primary}; letter-spacing: -0.3px; }}
-      .t-sub {{ font-size: 11px; font-weight: 600; fill: {text_secondary}; }}
-      .t-num-big {{ font-size: 26px; font-weight: 800; fill: {text_primary}; }}
-      .t-lbl-sm {{ font-size: 10px; font-weight: 600; fill: {text_muted}; letter-spacing: 0.5px; text-transform: uppercase; }}
-      .t-diff-name {{ font-size: 12px; font-weight: 700; }}
-      .t-diff-val {{ font-size: 12px; font-weight: 800; fill: {text_primary}; }}
-      .t-bottom-num {{ font-size: 18px; font-weight: 800; fill: {text_primary}; }}
-      .t-bottom-lbl {{ font-size: 10px; font-weight: 600; fill: {text_muted}; text-transform: uppercase; letter-spacing: 0.5px; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
+      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
+      .t-title {{ font-size: 16px; font-weight: 700; fill: {text_primary}; letter-spacing: -0.2px; }}
+      .t-sub {{ font-size: 11.5px; font-weight: 600; fill: #8BB9FE; }}
+      .t-num-big {{ font-size: 26px; font-weight: 700; fill: {text_primary}; }}
+      .t-lbl-sm {{ font-size: 10px; font-weight: 600; fill: #8BB9FE; letter-spacing: 0.5px; text-transform: uppercase; }}
+      .t-diff-name {{ font-size: 12px; font-weight: 600; }}
+      .t-diff-val {{ font-size: 12px; font-weight: 700; fill: {text_primary}; }}
+      .t-bottom-num {{ font-size: 18px; font-weight: 700; fill: {text_primary}; }}
+      .t-bottom-lbl {{ font-size: 10px; font-weight: 600; fill: #8BB9FE; text-transform: uppercase; letter-spacing: 0.5px; }}
     </style>
     <linearGradient id="gfgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="{gfg_green}"/>

@@ -170,9 +170,8 @@ def build_animated_chess_svg(theme="dark"):
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" role="img" aria-label="Automated Animated Chessboard - The Immortal Game">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap');
-      .font-sans {{ font-family: 'Plus Jakarta Sans', sans-serif; }}
-      .font-mono {{ font-family: 'JetBrains Mono', monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
+      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
       {css_block}
     </style>
   </defs>
