@@ -478,7 +478,93 @@
   </picture>
 </p>
 
+<br/>
 
+<div align="center">
+
+</div>
+
+## 🏆 &nbsp;GitHub Achievement Badges
+
+<div align="center">
+  <a href="https://github.com/Chandru9842?tab=achievements" target="_blank">
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" width="95px" alt="Pull Shark" title="Pull Shark - Merged Pull Requests"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" width="95px" alt="Quickdraw" title="Quickdraw - Closed issue/PR within 5 mins"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png" width="95px" alt="YOLO" title="YOLO - Merged PR without code review"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/galaxy-brain-default.png" width="95px" alt="Galaxy Brain" title="Galaxy Brain - Accepted Discussion answer"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/pair-extraordinaire-default.png" width="95px" alt="Pair Extraordinaire" title="Pair Extraordinaire - Co-authored merged PR"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/starstruck-default.png" width="95px" alt="Starstruck" title="Starstruck - 16+ Stars on repository"/>
+    <img src="https://github.githubassets.com/images/modules/profile/achievements/public-sponsor-default.png" width="95px" alt="Public Sponsor" title="Public Sponsor - Sponsored open source creator"/>
+  </a>
+</div>
+
+<br/>
+
+<details>
+<summary><b>📖 Click to expand Complete Guide & How to Unlock All GitHub Badges</b></summary>
+<br/>
+
+### 🎯 Currently Earnable Badges
+
+| Badge | Name | Requirement | Difficulty | Tiers |
+| :---: | :--- | :--- | :---: | :--- |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png" width="40px"/> | **Quickdraw** | Close an Issue or Pull Request within 5 minutes of opening it | 🟢 Easy | Default |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/public-sponsor-default.png" width="40px"/> | **Public Sponsor** | Sponsor any GitHub user or organization | 🟢 Easy | Default |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png" width="40px"/> | **Pull Shark** | Get 2 Pull Requests merged into repositories | 🟡 Medium | ⭐ 2 PRs &nbsp;•&nbsp; 🥉 16 &nbsp;•&nbsp; 🥈 128 &nbsp;•&nbsp; 🥇 1,024 |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png" width="40px"/> | **YOLO** | Merge a Pull Request without a code review | 🟡 Medium | Default |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/galaxy-brain-default.png" width="40px"/> | **Galaxy Brain** | Get 2 accepted answers in GitHub Discussions | 🟡 Medium | ⭐ 2 &nbsp;•&nbsp; 🥉 8 &nbsp;•&nbsp; 🥈 16 &nbsp;•&nbsp; 🥇 32 |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/pair-extraordinaire-default.png" width="40px"/> | **Pair Extraordinaire** | Be a co-author on a merged Pull Request | 🔴 Hard | ⭐ 1 PR &nbsp;•&nbsp; 🥉 10 &nbsp;•&nbsp; 🥈 24 &nbsp;•&nbsp; 🥇 48 |
+| <img src="https://github.githubassets.com/images/modules/profile/achievements/starstruck-default.png" width="40px"/> | **Starstruck** | Get 16 stars on your own repository | 🔴 Hard | ⭐ 16 Stars &nbsp;•&nbsp; 🥉 128 &nbsp;•&nbsp; 🥈 512 &nbsp;•&nbsp; 🥇 4,096 |
+
+<br/>
+
+#### 🔫 Quickdraw
+- **Requirement:** Close an Issue or PR within 5 minutes of creating it.
+- **Steps to Unlock:**
+  1. Open one of your repositories → go to **Issues** → click **New Issue**.
+  2. Enter any title and submit the issue.
+  3. Immediately click **Close Issue** within 5 minutes.
+  *(Can also be earned using a Pull Request).*
+
+#### 💖 Public Sponsor
+- **Requirement:** Sponsor any GitHub user or organization.
+- **Steps to Unlock:** Visit a GitHub profile with a Sponsor button, select the minimum tier, and complete payment. The badge appears automatically.
+
+#### 🦈 Pull Shark
+- **Requirement:** Merge 2 Pull Requests.
+- **Steps to Unlock:** Create a new branch, commit a change, push the branch, open a Pull Request, and merge it. Repeat once more. Only merged PRs count.
+
+#### 🤪 YOLO
+- **Requirement:** Merge a Pull Request without a code review.
+- **Steps to Unlock:** Create a Pull Request in a repository where branch rules do not enforce review, and merge directly.
+
+#### 🧠 Galaxy Brain
+- **Requirement:** Receive 2 accepted answers in public GitHub Discussions.
+- **Steps to Unlock:** Find repositories with Discussions enabled, answer questions, and have your response marked as the accepted solution.
+
+#### 👥 Pair Extraordinaire
+- **Requirement:** Become a co-author on a merged Pull Request.
+- **Steps to Unlock:** Add `Co-authored-by: Name <email@example.com>` to the commit message and merge the PR. Both authors receive the achievement.
+
+#### ⭐ Starstruck
+- **Requirement:** Receive 16 stars on a repository you own.
+- **Steps to Unlock:** Build useful open-source software, write high-quality documentation with visuals, add relevant repository topics, and share your project with the developer community.
+
+<br/>
+
+### ❌ Retired Badges
+- ❄️ **Arctic Code Vault Contributor** — Awarded to contributors who had code archived in the 2020 Arctic Vault.
+- 🚀 **Mars 2020 Contributor** — Awarded to contributors of open-source projects used in the NASA Mars 2020 mission.
+
+---
+
+### 💡 Tips to Collect Achievements
+- Keep your projects open-source and active.
+- Participate in GitHub Community discussions.
+- Collaborate with fellow developers through co-authored commits.
+- Write detailed, well-structured README guides.
+
+</details>
 
 <br/>
 
