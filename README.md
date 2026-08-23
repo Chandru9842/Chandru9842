@@ -1,5 +1,13 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg" />
+  <img alt="Chandru9842's GitHub profile" src="dark_mode.svg" />
+</picture>
+
+<br><br>
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" />
 
 <a href="https://git.io/typing-svg">
