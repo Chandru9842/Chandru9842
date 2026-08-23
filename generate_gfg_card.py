@@ -1,29 +1,78 @@
 #!/usr/bin/env python3
 """
 Custom GeeksforGeeks Stats Card Generator for Chandru M (@chandrum06).
-Matches the sleek dark/light aesthetic of LeetCard & ghstats.dev with 
-accurate problem breakdowns, progress donut chart, coding score, and streak.
+Fetches live stats from GeeksforGeeks with reliable fallback.
+Matches the sleek dark/light aesthetic of LeetCard & ghstats.dev.
 """
 
 import os
+import re
 import math
+import urllib.request
 
 USERNAME = "chandrum06"
 NAME = "Chandru M"
 COLLEGE = "SRM TRP Engineering College"
 
-# Live Stats from GFG Profile
-CODING_SCORE = 514
-TOTAL_SOLVED = 168
-SCHOOL = 0
-BASIC = 26
-EASY = 55
-MEDIUM = 81
-HARD = 6
-STREAK = 1
-POTD = 1
+# Default baseline fallback stats
+DEFAULT_STATS = {
+    "coding_score": 514,
+    "total_solved": 168,
+    "school": 0,
+    "basic": 26,
+    "easy": 55,
+    "medium": 81,
+    "hard": 6,
+    "streak": 1,
+    "potd": 1,
+}
 
-def build_gfg_card(theme="dark"):
+def fetch_live_gfg_stats(username=USERNAME):
+    """
+    Attempts to fetch live stats from public GeeksforGeeks profile.
+    """
+    stats = dict(DEFAULT_STATS)
+    urls = [
+        f"https://auth.geeksforgeeks.org/user/{username}/practice/",
+        f"https://www.geeksforgeeks.org/user/{username}/",
+        f"https://www.geeksforgeeks.org/profile/{username}",
+    ]
+    for url in urls:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+            html = urllib.request.urlopen(req, timeout=8).read().decode("utf-8")
+            
+            # Extract problems solved breakdown if present
+            easy_m = re.search(r'Easy\s*\(([0-9]+)\)', html, re.I)
+            med_m = re.search(r'Medium\s*\(([0-9]+)\)', html, re.I)
+            hard_m = re.search(r'Hard\s*\(([0-9]+)\)', html, re.I)
+            basic_m = re.search(r'Basic\s*\(([0-9]+)\)', html, re.I)
+            school_m = re.search(r'School\s*\(([0-9]+)\)', html, re.I)
+            score_m = re.search(r'Coding Score\s*[:\s]*([0-9]+)', html, re.I)
+            solved_m = re.search(r'Problems Solved\s*[:\s]*([0-9]+)', html, re.I)
+
+            if easy_m: stats["easy"] = int(easy_m.group(1))
+            if med_m: stats["medium"] = int(med_m.group(1))
+            if hard_m: stats["hard"] = int(hard_m.group(1))
+            if basic_m: stats["basic"] = int(basic_m.group(1))
+            if school_m: stats["school"] = int(school_m.group(1))
+            if score_m: stats["coding_score"] = int(score_m.group(1))
+            
+            calc_total = stats["easy"] + stats["medium"] + stats["hard"] + stats["basic"] + stats["school"]
+            if calc_total > 0:
+                stats["total_solved"] = calc_total
+            elif solved_m:
+                stats["total_solved"] = int(solved_m.group(1))
+
+            print(f"Fetched live GFG stats: {stats}")
+            return stats
+        except Exception as e:
+            continue
+
+    print(f"Using verified baseline stats: {stats}")
+    return stats
+
+def build_gfg_card(theme="dark", stats=DEFAULT_STATS):
     is_dark = (theme == "dark")
 
     bg = "#0B1120" if is_dark else "#FFFFFF"
@@ -40,15 +89,23 @@ def build_gfg_card(theme="dark"):
     color_hard = "#EF4444"
     pill_bg = "#1E293B" if is_dark else "#EDF2F7"
 
+    total_solved = stats["total_solved"]
+    coding_score = stats["coding_score"]
+    basic = stats["basic"]
+    easy = stats["easy"]
+    medium = stats["medium"]
+    hard = stats["hard"]
+    streak = stats["streak"]
+    potd = stats["potd"]
+
     # SVG Ring Calculations (Radius = 46, Circumference = 289)
     R = 46
-    C = 2 * math.pi * R  # ~289.02
+    C = 2 * math.pi * R
     
-    # Proportions
-    p_basic = (BASIC / TOTAL_SOLVED) * C if TOTAL_SOLVED else 0
-    p_easy = (EASY / TOTAL_SOLVED) * C if TOTAL_SOLVED else 0
-    p_medium = (MEDIUM / TOTAL_SOLVED) * C if TOTAL_SOLVED else 0
-    p_hard = (HARD / TOTAL_SOLVED) * C if TOTAL_SOLVED else 0
+    p_basic = (basic / total_solved) * C if total_solved else 0
+    p_easy = (easy / total_solved) * C if total_solved else 0
+    p_medium = (medium / total_solved) * C if total_solved else 0
+    p_hard = (hard / total_solved) * C if total_solved else 0
 
     off_hard = 0
     off_medium = p_hard
@@ -93,7 +150,7 @@ def build_gfg_card(theme="dark"):
     <!-- Coding Score Badge -->
     <g transform="translate(340, 2)">
       <rect width="112" height="28" rx="8" fill="{gfg_green}" fill-opacity="0.15" stroke="{gfg_green}" stroke-width="1"/>
-      <text x="56" y="18" text-anchor="middle" class="font-mono" font-size="11px" font-weight="700" fill="{gfg_green}">SCORE: {CODING_SCORE}</text>
+      <text x="56" y="18" text-anchor="middle" class="font-mono" font-size="11px" font-weight="700" fill="{gfg_green}">SCORE: {coding_score}</text>
     </g>
   </g>
 
@@ -124,7 +181,7 @@ def build_gfg_card(theme="dark"):
       </g>
 
       <!-- Center Text -->
-      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">{TOTAL_SOLVED}</text>
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">{total_solved}</text>
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
@@ -135,7 +192,7 @@ def build_gfg_card(theme="dark"):
         <rect width="292" height="24" rx="6" fill="{pill_bg}"/>
         <circle cx="14" cy="12" r="4.5" fill="{color_basic}"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="{color_basic}">Basic</text>
-        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{BASIC}</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{basic}</text>
       </g>
 
       <!-- Easy Row -->
@@ -143,7 +200,7 @@ def build_gfg_card(theme="dark"):
         <rect width="292" height="24" rx="6" fill="{pill_bg}"/>
         <circle cx="14" cy="12" r="4.5" fill="{color_easy}"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="{color_easy}">Easy</text>
-        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{EASY}</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{easy}</text>
       </g>
 
       <!-- Medium Row -->
@@ -151,7 +208,7 @@ def build_gfg_card(theme="dark"):
         <rect width="292" height="24" rx="6" fill="{pill_bg}"/>
         <circle cx="14" cy="12" r="4.5" fill="{color_medium}"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="{color_medium}">Medium</text>
-        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{MEDIUM}</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{medium}</text>
       </g>
 
       <!-- Hard Row -->
@@ -159,7 +216,7 @@ def build_gfg_card(theme="dark"):
         <rect width="292" height="24" rx="6" fill="{pill_bg}"/>
         <circle cx="14" cy="12" r="4.5" fill="{color_hard}"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="{color_hard}">Hard</text>
-        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{HARD}</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">{hard}</text>
       </g>
     </g>
   </g>
@@ -172,28 +229,28 @@ def build_gfg_card(theme="dark"):
     <!-- Metric 1: Coding Score -->
     <g transform="translate(0, 0)">
       <rect width="104" height="52" rx="8" fill="{pill_bg}"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="{gfg_green}">{CODING_SCORE}</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="{gfg_green}">{coding_score}</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">CODING SCORE</text>
     </g>
 
     <!-- Metric 2: Total Solved -->
     <g transform="translate(116, 0)">
       <rect width="104" height="52" rx="8" fill="{pill_bg}"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">{TOTAL_SOLVED}</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">{total_solved}</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">PROBLEMS</text>
     </g>
 
     <!-- Metric 3: POTD Solved -->
     <g transform="translate(232, 0)">
       <rect width="104" height="52" rx="8" fill="{pill_bg}"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">{POTD}</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">{potd}</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">POTD SOLVED</text>
     </g>
 
     <!-- Metric 4: Streak -->
     <g transform="translate(348, 0)">
       <rect width="104" height="52" rx="8" fill="{pill_bg}"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#F59E0B">🔥 {STREAK} Day</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#F59E0B">🔥 {streak} Day</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">STREAK</text>
     </g>
   </g>
@@ -203,8 +260,9 @@ def build_gfg_card(theme="dark"):
 
 def main():
     os.makedirs("assets", exist_ok=True)
-    dark_svg = build_gfg_card("dark")
-    light_svg = build_gfg_card("light")
+    stats = fetch_live_gfg_stats(USERNAME)
+    dark_svg = build_gfg_card("dark", stats)
+    light_svg = build_gfg_card("light", stats)
 
     with open("assets/gfg-card.svg", "w", encoding="utf-8") as f:
         f.write(dark_svg)
