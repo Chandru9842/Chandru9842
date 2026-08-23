@@ -10,6 +10,7 @@
       .t-lbl-sm { font-size: 10px; font-weight: 600; fill: #94A3B8; letter-spacing: 0.5px; text-transform: uppercase; }
       .t-diff-name { font-size: 12.5px; font-weight: 700; }
       .t-diff-val { font-size: 12.5px; font-weight: 800; fill: #0F172A; }
+      .t-diff-total { font-size: 11px; font-weight: 600; fill: #94A3B8; }
       .t-bottom-num { font-size: 18px; font-weight: 800; fill: #0F172A; }
       .t-bottom-lbl { font-size: 10px; font-weight: 600; fill: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px; }
     </style>
@@ -69,30 +70,45 @@
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
-    <!-- Difficulty Breakdown List -->
+    <!-- Difficulty Breakdown List with Progress Bars & Totals (e.g. 105/961) -->
     <g transform="translate(160, 15)">
       <!-- Easy Row -->
       <g transform="translate(0, 0)">
         <rect width="292" height="28" rx="7" fill="#EDF2F7"/>
         <circle cx="16" cy="14" r="5" fill="#00B8A3"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="#00B8A3">Easy</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">105 <tspan fill="#94A3B8" font-size="10.5px">(39.9%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="#00B8A3">Easy</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#F8FAFC"/>
+        <rect x="74" y="11" width="10" height="6" rx="3" fill="#00B8A3"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">105</tspan><tspan class="t-diff-total"> / 961</tspan>
+        </text>
       </g>
 
       <!-- Medium Row -->
       <g transform="translate(0, 36)">
         <rect width="292" height="28" rx="7" fill="#EDF2F7"/>
         <circle cx="16" cy="14" r="5" fill="#FFC01E"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="#FFC01E">Medium</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">144 <tspan fill="#94A3B8" font-size="10.5px">(54.8%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="#FFC01E">Med.</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#F8FAFC"/>
+        <rect x="74" y="11" width="6" height="6" rx="3" fill="#FFC01E"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">144</tspan><tspan class="t-diff-total"> / 2105</tspan>
+        </text>
       </g>
 
       <!-- Hard Row -->
       <g transform="translate(0, 72)">
         <rect width="292" height="28" rx="7" fill="#EDF2F7"/>
         <circle cx="16" cy="14" r="5" fill="#FF375F"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="#FF375F">Hard</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">14 <tspan fill="#94A3B8" font-size="10.5px">(5.3%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="#FF375F">Hard</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#F8FAFC"/>
+        <rect x="74" y="11" width="2" height="6" rx="3" fill="#FF375F"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">14</tspan><tspan class="t-diff-total"> / 967</tspan>
+        </text>
       </g>
     </g>
   </g>
@@ -119,15 +135,15 @@
     <!-- Metric 3: Acceptance Rate -->
     <g transform="translate(232, 0)">
       <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">55.3%</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">59.9%</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">ACCEPTANCE</text>
     </g>
 
-    <!-- Metric 4: Submissions -->
+    <!-- Metric 4: Badges -->
     <g transform="translate(348, 0)">
       <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">476</text>
-      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">SUBMISSIONS</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">🏅 3</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">BADGES</text>
     </g>
   </g>
 </svg>

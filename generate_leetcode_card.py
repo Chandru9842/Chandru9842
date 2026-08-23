@@ -12,15 +12,21 @@ import urllib.request
 
 USERNAME = "Chandrum06"
 
-# Default baseline fallback stats
+# Verified live stats
 DEFAULT_STATS = {
     "total_solved": 263,
+    "total_questions": 4033,
     "easy": 105,
+    "easy_total": 961,
     "medium": 144,
+    "medium_total": 2105,
     "hard": 14,
+    "hard_total": 967,
     "ranking": 594489,
-    "total_submissions": 476,
-    "acceptance_rate": 55.3,
+    "total_submissions": 794,
+    "ac_submissions": 476,
+    "acceptance_rate": 60.0,
+    "badges_count": 3,
 }
 
 def fetch_live_leetcode_stats(username=USERNAME):
@@ -30,6 +36,10 @@ def fetch_live_leetcode_stats(username=USERNAME):
     stats = dict(DEFAULT_STATS)
     query = """
     query getUserProfile($username: String!) {
+      allQuestionsCount {
+        difficulty
+        count
+      }
       matchedUser(username: $username) {
         username
         submitStats: submitStatsGlobal {
@@ -38,10 +48,18 @@ def fetch_live_leetcode_stats(username=USERNAME):
             count
             submissions
           }
+          totalSubmissionNum {
+            difficulty
+            count
+            submissions
+          }
         }
         profile {
           ranking
           reputation
+        }
+        badges {
+          displayName
         }
       }
     }
@@ -54,29 +72,53 @@ def fetch_live_leetcode_stats(username=USERNAME):
         )
         res = urllib.request.urlopen(req, timeout=10)
         data = json.loads(res.read().decode("utf-8"))
+        
+        # All questions available in LeetCode
+        all_q = data.get("data", {}).get("allQuestionsCount", [])
+        for q in all_q:
+            diff = q.get("difficulty")
+            cnt = q.get("count", 0)
+            if diff == "All": stats["total_questions"] = cnt
+            elif diff == "Easy": stats["easy_total"] = cnt
+            elif diff == "Medium": stats["medium_total"] = cnt
+            elif diff == "Hard": stats["hard_total"] = cnt
+
         matched = data.get("data", {}).get("matchedUser")
         if matched:
-            sub_nums = matched.get("submitStats", {}).get("acSubmissionNum", [])
-            for item in sub_nums:
+            # AC Submissions (Solved)
+            ac_nums = matched.get("submitStats", {}).get("acSubmissionNum", [])
+            for item in ac_nums:
                 diff = item.get("difficulty")
                 count = item.get("count", 0)
-                if diff == "All": stats["total_solved"] = count
+                if diff == "All": 
+                    stats["total_solved"] = count
+                    stats["ac_submissions"] = item.get("submissions", 476)
                 elif diff == "Easy": stats["easy"] = count
                 elif diff == "Medium": stats["medium"] = count
                 elif diff == "Hard": stats["hard"] = count
             
+            # Total Submissions (All attempts)
+            tot_nums = matched.get("submitStats", {}).get("totalSubmissionNum", [])
+            for item in tot_nums:
+                if item.get("difficulty") == "All":
+                    stats["total_submissions"] = item.get("submissions", 794)
+
+            # Global Ranking
             rank = matched.get("profile", {}).get("ranking")
             if rank: stats["ranking"] = int(rank)
 
-            total_subs = sum(x.get("submissions", 0) for x in sub_nums if x.get("difficulty") != "All")
-            stats["total_submissions"] = total_subs if total_subs else 476
-            if stats["total_submissions"] > 0:
-                stats["acceptance_rate"] = round((stats["total_solved"] / stats["total_submissions"]) * 100, 1)
+            # Badges
+            badges = matched.get("badges", [])
+            if badges: stats["badges_count"] = len(badges)
+
+            # Accurate Acceptance Rate
+            if stats["total_submissions"] > 0 and stats["ac_submissions"] > 0:
+                stats["acceptance_rate"] = round((stats["ac_submissions"] / stats["total_submissions"]) * 100, 1)
 
             print(f"Fetched live LeetCode stats: {stats}")
             return stats
     except Exception as e:
-        print(f"Warning: LeetCode GraphQL fetch failed ({e}). Using verified fallback.")
+        print(f"Warning: LeetCode GraphQL fetch fallback ({e})")
 
     return stats
 
@@ -97,12 +139,17 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
     pill_bg = "#1E293B" if is_dark else "#EDF2F7"
 
     total_solved = stats["total_solved"]
+    total_questions = stats["total_questions"]
     easy = stats["easy"]
+    easy_total = stats["easy_total"]
     medium = stats["medium"]
+    medium_total = stats["medium_total"]
     hard = stats["hard"]
+    hard_total = stats["hard_total"]
     ranking = stats["ranking"]
     acceptance_rate = stats["acceptance_rate"]
     total_submissions = stats["total_submissions"]
+    badges_count = stats.get("badges_count", 3)
 
     rank_str = f"#{ranking:,}" if ranking else "#594K"
     rank_short = f"#{ranking/1000:.1f}K" if ranking >= 1000 else f"#{ranking}"
@@ -119,6 +166,11 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
     off_medium = p_hard
     off_easy = p_hard + p_medium
 
+    # Progress bar widths (max width = 140px)
+    w_easy_bar = max(4, int((easy / easy_total) * 140))
+    w_med_bar = max(4, int((medium / medium_total) * 140))
+    w_hard_bar = max(4, int((hard / hard_total) * 140))
+
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" role="img" aria-label="Chandru M - LeetCode Stats">
   <defs>
     <style>
@@ -131,6 +183,7 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
       .t-lbl-sm {{ font-size: 10px; font-weight: 600; fill: {text_muted}; letter-spacing: 0.5px; text-transform: uppercase; }}
       .t-diff-name {{ font-size: 12.5px; font-weight: 700; }}
       .t-diff-val {{ font-size: 12.5px; font-weight: 800; fill: {text_primary}; }}
+      .t-diff-total {{ font-size: 11px; font-weight: 600; fill: {text_muted}; }}
       .t-bottom-num {{ font-size: 18px; font-weight: 800; fill: {text_primary}; }}
       .t-bottom-lbl {{ font-size: 10px; font-weight: 600; fill: {text_muted}; text-transform: uppercase; letter-spacing: 0.5px; }}
     </style>
@@ -190,30 +243,45 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
-    <!-- Difficulty Breakdown List -->
+    <!-- Difficulty Breakdown List with Progress Bars & Totals (e.g. 105/961) -->
     <g transform="translate(160, 15)">
       <!-- Easy Row -->
       <g transform="translate(0, 0)">
         <rect width="292" height="28" rx="7" fill="{pill_bg}"/>
         <circle cx="16" cy="14" r="5" fill="{color_easy}"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="{color_easy}">Easy</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">{easy} <tspan fill="{text_muted}" font-size="10.5px">({(easy/total_solved*100):.1f}%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="{color_easy}">Easy</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="{card_bg}"/>
+        <rect x="74" y="11" width="{int(w_easy_bar*100/140)}" height="6" rx="3" fill="{color_easy}"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">{easy}</tspan><tspan class="t-diff-total"> / {easy_total}</tspan>
+        </text>
       </g>
 
       <!-- Medium Row -->
       <g transform="translate(0, 36)">
         <rect width="292" height="28" rx="7" fill="{pill_bg}"/>
         <circle cx="16" cy="14" r="5" fill="{color_medium}"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="{color_medium}">Medium</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">{medium} <tspan fill="{text_muted}" font-size="10.5px">({(medium/total_solved*100):.1f}%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="{color_medium}">Med.</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="{card_bg}"/>
+        <rect x="74" y="11" width="{int(w_med_bar*100/140)}" height="6" rx="3" fill="{color_medium}"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">{medium}</tspan><tspan class="t-diff-total"> / {medium_total}</tspan>
+        </text>
       </g>
 
       <!-- Hard Row -->
       <g transform="translate(0, 72)">
         <rect width="292" height="28" rx="7" fill="{pill_bg}"/>
         <circle cx="16" cy="14" r="5" fill="{color_hard}"/>
-        <text x="30" y="19" class="font-sans t-diff-name" fill="{color_hard}">Hard</text>
-        <text x="276" y="19" text-anchor="end" class="font-mono t-diff-val">{hard} <tspan fill="{text_muted}" font-size="10.5px">({(hard/total_solved*100):.1f}%)</tspan></text>
+        <text x="28" y="18" class="font-sans t-diff-name" fill="{color_hard}">Hard</text>
+        <!-- Mini Progress Bar -->
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="{card_bg}"/>
+        <rect x="74" y="11" width="{int(w_hard_bar*100/140)}" height="6" rx="3" fill="{color_hard}"/>
+        <text x="280" y="18" text-anchor="end" class="font-mono">
+          <tspan class="t-diff-val">{hard}</tspan><tspan class="t-diff-total"> / {hard_total}</tspan>
+        </text>
       </g>
     </g>
   </g>
@@ -244,11 +312,11 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">ACCEPTANCE</text>
     </g>
 
-    <!-- Metric 4: Submissions -->
+    <!-- Metric 4: Badges -->
     <g transform="translate(348, 0)">
       <rect width="104" height="52" rx="8" fill="{pill_bg}"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">{total_submissions}</text>
-      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">SUBMISSIONS</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="{lc_amber}">🏅 {badges_count}</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">BADGES</text>
     </g>
   </g>
 </svg>
