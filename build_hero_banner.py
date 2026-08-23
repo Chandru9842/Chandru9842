@@ -11,14 +11,14 @@ import os
 import io
 import urllib.request
 import numpy as np
-from PIL import Image, ImageEnhance, ImageOps, ImageFilter
+from PIL import Image, ImageFilter
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
+def fetch_avatar_ascii(username=USERNAME, cols=48, rows=34):
     """
-    Fetches avatar from GitHub and converts it to a centered,
-    passport-proportioned ASCII portrait matching the user's real photo.
+    Fetches avatar from GitHub and converts it to an ultra-clean,
+    centered passport portrait with natural human proportions.
     """
     try:
         url = f"https://github.com/{username}.png"
@@ -26,7 +26,7 @@ def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
         data = urllib.request.urlopen(req, timeout=10).read()
         img = Image.open(io.BytesIO(data)).convert("RGB")
 
-        # Monospace resize
+        # Resize with Lanczos
         img_resized = img.resize((cols, rows), Image.Resampling.LANCZOS)
         arr = np.array(img_resized, dtype=np.float32)
 
@@ -35,35 +35,8 @@ def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
         B = arr[:, :, 2]
         Lum = 0.299 * R + 0.587 * G + 0.114 * B
 
-        # Edge detection on grayscale
         img_gray = img_resized.convert("L")
         edges = np.array(img_gray.filter(ImageFilter.FIND_EDGES), dtype=np.float32)
-
-        # Background segmentation:
-        # Background is light (>205) with low saturation and no strong edges
-        is_bg = np.zeros((rows, cols), dtype=bool)
-        for y in range(rows):
-            for x in range(cols):
-                lum = Lum[y, x]
-                r, g, b = R[y, x], G[y, x], B[y, x]
-                edge = edges[y, x]
-                
-                # Head top / hair boundary background
-                if y < int(rows * 0.15):
-                    if lum > 200 and edge < 25:
-                        is_bg[y, x] = True
-                # Middle sides background (cheeks, ears, neck)
-                elif y < int(rows * 0.70):
-                    dist_center = abs(x - (cols / 2.0))
-                    if dist_center > 14 and lum > 205 and (b <= r + 8) and edge < 20:
-                        is_bg[y, x] = True
-                    elif dist_center > 18 and lum > 195:
-                        is_bg[y, x] = True
-                # Bottom shoulder area (shirt spreads out across sides)
-                else:
-                    dist_center = abs(x - (cols / 2.0))
-                    if dist_center > 24 and lum > 215 and edge < 15:
-                        is_bg[y, x] = True
 
         RAMP = " .:-=+*#%@"
 
@@ -71,17 +44,35 @@ def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
         for y in range(rows):
             line = ""
             for x in range(cols):
-                if is_bg[y, x]:
-                    line += " "
-                    continue
-                
                 lum = Lum[y, x]
+                r, g, b = R[y, x], G[y, x], B[y, x]
                 edge = edges[y, x]
                 
-                # Darker subject = denser character + edge boost for facial features & collar
+                # 1. Clear top lines
+                if y < 2:
+                    line += " "
+                    continue
+                    
+                # 2. Clear outer left & right margins
+                if y < 24 and (x < 6 or x > cols - 7):
+                    line += " "
+                    continue
+                    
+                # 3. Clean white background (high brightness & neutral white)
+                if lum > 185 and abs(r - b) < 16 and edge < 22:
+                    line += " "
+                    continue
+                if lum > 205:
+                    line += " "
+                    continue
+                if (x < 3 or x > cols - 4) and lum > 175:
+                    line += " "
+                    continue
+
+                # 4. Foreground: Darker = denser character + edge boost
                 val = (255.0 - lum) / 255.0
-                val = val + (edge / 255.0) * 0.35
-                val = max(0.05, min(1.0, val))
+                val = val + (edge / 255.0) * 0.25
+                val = max(0.1, min(1.0, val))
                 
                 idx = int(val * (len(RAMP) - 1))
                 line += RAMP[idx]
@@ -143,16 +134,16 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=54, rows=34)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=48, rows=34)
 
-    # Format centered ASCII tspans with text-anchor="middle" at x="238"
+    # Format perfectly centered ASCII tspans with text-anchor="middle" at x="220" (exact center of 440px panel)
     ascii_tspans = []
-    y_start = 112
-    line_h = 13.2
+    y_start = 76
+    line_h = 11.2
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
-        ascii_tspans.append(f'<tspan x="238" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
+        ascii_tspans.append(f'<tspan x="220" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
 
     ascii_text_content = "\n".join(ascii_tspans)
 
@@ -241,7 +232,7 @@ def build_banner(theme_mode="dark"):
         0% {{ transform: translateY(0px); opacity: 0.0; }}
         15% {{ opacity: 0.85; }}
         85% {{ opacity: 0.85; }}
-        100% {{ transform: translateY(460px); opacity: 0.0; }}
+        100% {{ transform: translateY(420px); opacity: 0.0; }}
       }}
 
       .badge-hover {{
@@ -296,22 +287,22 @@ def build_banner(theme_mode="dark"):
 
     <!-- Center HUD Corner Bracket Reticles -->
     <!-- Top-Left -->
-    <path d="M 12 44 L 24 44 M 12 44 L 12 56" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 16 44 L 32 44 M 16 44 L 16 60" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Top-Right -->
-    <path d="M 428 44 L 416 44 M 428 44 L 428 56" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 424 44 L 408 44 M 424 44 L 424 60" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Bottom-Left -->
-    <path d="M 12 485 L 24 485 M 12 485 L 12 473" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 16 462 L 32 462 M 16 462 L 16 446" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Bottom-Right -->
-    <path d="M 428 485 L 416 485 M 428 485 L 428 473" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M 424 462 L 408 462 M 424 462 L 424 446" stroke="{accent_2}" stroke-width="1.5" fill="none" opacity="0.6"/>
 
     <!-- Animated Cyber Scanline -->
     <g class="scanline">
-      <line x1="14" y1="44" x2="426" y2="44" stroke="{laser_color}" stroke-width="1.8" filter="url(#neonGlow)"/>
-      <rect x="14" y="20" width="412" height="24" fill="url(#heroGradient)" opacity="0.08"/>
+      <line x1="16" y1="44" x2="424" y2="44" stroke="{laser_color}" stroke-width="1.8" filter="url(#neonGlow)"/>
+      <rect x="16" y="20" width="408" height="24" fill="url(#heroGradient)" opacity="0.08"/>
     </g>
 
-    <!-- High-Definition Centered ASCII Art Output (54 cols x 34 rows, 8.6px font) -->
-    <text class="font-mono" font-size="8.6px" font-weight="700" fill="url(#asciiGrad)" text-anchor="middle" letter-spacing="0.2px">
+    <!-- Centered Clean Passport ASCII Portrait Output (48 cols x 34 rows, 8.8px font) -->
+    <text class="font-mono" font-size="8.8px" font-weight="700" fill="url(#asciiGrad)" text-anchor="middle" letter-spacing="0.4px">
 {ascii_text_content}
     </text>
 
@@ -596,17 +587,14 @@ def build_banner(theme_mode="dark"):
     return svg_content
 
 def main():
-    print("Building Pixel-Perfect Hero Banner SVGs with Passport Proportions...")
+    print("Building Ultra-Clean Centered Passport Hero Banner SVGs...")
     dark_banner = build_banner("dark")
     light_banner = build_banner("light")
 
-    # Write root SVGs
     with open("dark.svg", "w", encoding="utf-8") as f:
         f.write(dark_banner)
     with open("light.svg", "w", encoding="utf-8") as f:
         f.write(light_banner)
-
-    # Write aliases
     with open("dark_mode.svg", "w", encoding="utf-8") as f:
         f.write(dark_banner)
     with open("light_mode.svg", "w", encoding="utf-8") as f:
