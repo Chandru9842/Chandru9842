@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg" />
-  <img alt="Chandru9842's GitHub profile" src="dark_mode.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="light.svg" />
+  <img alt="Chandru M - GitHub Profile Banner" src="dark.svg" width="100%" />
 </picture>
 
 <br><br>
@@ -456,13 +456,13 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg" />
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/dark.svg" />
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/light.svg" />
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/light.svg" />
     <img
       alt="GitHub Jet Heatmap"
-      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg"
+      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/dark.svg"
       width="100%"
       loading="lazy" />
   </picture>
