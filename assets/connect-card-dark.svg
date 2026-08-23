@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="186" viewBox="0 0 790 186" role="img" aria-label="Connect and Developer Collaboration Hub">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap');
+      .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+    <linearGradient id="connectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0B1120"/>
+    </linearGradient>
+    <linearGradient id="glowBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A66C2"/>
+      <stop offset="25%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#FFA116"/>
+      <stop offset="75%" stop-color="#2F8D46"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect width="790" height="186" rx="16" fill="url(#connectGrad)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="790" height="3" fill="url(#glowBar)" rx="1.5"/>
+
+  <!-- Header Header Telemetry -->
+  <g transform="translate(32, 24)">
+    <circle cx="8" cy="14" r="5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="22" y="19" class="font-sans" font-size="15px" font-weight="800" fill="#F8FAFC">📫 LET&apos;S CONNECT &amp; COLLABORATE</text>
+    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Open for Full Stack &amp; Backend Engineering roles • Networking // Research</text>
+
+    <!-- Available Status Badge -->
+    <g transform="translate(605, 2)">
+      <rect width="122" height="26" rx="7" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+      <text x="61" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#10B981" text-anchor="middle">OPEN TO WORK</text>
+    </g>
+  </g>
+
+  <!-- Social Link Badges -->
+  
+        <g transform="translate(24, 78)">
+          <rect width="142" height="48" rx="10" fill="#1E293B" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.2"/>
+          <rect x="0" y="0" width="4" height="48" rx="2" fill="#0A66C2"/>
+          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="#0A66C2">LINKEDIN</text>
+          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="#F8FAFC">in/chandru9842</text>
+        </g>
+        
+        <g transform="translate(174, 78)">
+          <rect width="142" height="48" rx="10" fill="#1E293B" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.2"/>
+          <rect x="0" y="0" width="4" height="48" rx="2" fill="#EA4335"/>
+          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="#EA4335">GMAIL</text>
+          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="#F8FAFC">chandrumohan550</text>
+        </g>
+        
+        <g transform="translate(324, 78)">
+          <rect width="142" height="48" rx="10" fill="#1E293B" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.2"/>
+          <rect x="0" y="0" width="4" height="48" rx="2" fill="#7C3AED"/>
+          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="#7C3AED">GITHUB</text>
+          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="#F8FAFC">@Chandru9842</text>
+        </g>
+        
+        <g transform="translate(474, 78)">
+          <rect width="142" height="48" rx="10" fill="#1E293B" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.2"/>
+          <rect x="0" y="0" width="4" height="48" rx="2" fill="#FFA116"/>
+          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="#FFA116">LEETCODE</text>
+          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="#F8FAFC">@Chandrum06</text>
+        </g>
+        
+        <g transform="translate(624, 78)">
+          <rect width="142" height="48" rx="10" fill="#1E293B" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.2"/>
+          <rect x="0" y="0" width="4" height="48" rx="2" fill="#2F8D46"/>
+          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="#2F8D46">GFG</text>
+          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="#F8FAFC">@chandrum06</text>
+        </g>
+        
+
+  <!-- Footer Philosophy -->
+  <g transform="translate(395, 156)">
+    <text x="0" y="0" class="font-sans" font-size="11px" font-style="italic" font-weight="600" fill="#64748B" text-anchor="middle">&ldquo;Great software is not just about writing code &mdash; it&apos;s about solving real problems with simplicity and scalability.&rdquo;</text>
+  </g>
+</svg>

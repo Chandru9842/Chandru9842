@@ -700,43 +700,37 @@ LinkedIn discontinued public RSS/API access for personal article feeds, so there
 
 ## 🎯 &nbsp;Current Focus & Objectives
 
-<table align="center" width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h4>📚 Currently Mastering</h4>
-      <ul>
-        <li><b>System Design</b> — Scalable architecture, caching, load balancers</li>
-        <li><b>Docker &amp; Containers</b> — Multi-stage builds &amp; container orchestration</li>
-        <li><b>Spring Boot &amp; Security</b> — Microservices, JWT, OAuth2 auth flows</li>
-        <li><b>Distributed Systems</b> — Message queues, event-driven backends</li>
-      </ul>
-    </td>
-    <td width="50%" valign="top">
-      <h4>🚀 Active Engineering</h4>
-      <ul>
-        <li><b>AI Resume Analyzer</b> — Intelligent LLM parsing &amp; scoring</li>
-        <li><b>Portfolio CMS</b> — High-throughput modern developer platform</li>
-        <li><b>Cloud Deployments</b> — Automated CI/CD with Docker &amp; Cloudflare</li>
-        <li><b>Open to Opportunities</b> — Full Stack &amp; Backend Engineering roles</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/focus-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/focus-card-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/focus-card.svg" alt="Current Focus and Objectives Dashboard" width="100%" loading="lazy" />
+  </picture>
+</p>
 
 <br/>
 
 <div align="center">
 
-
 </div>
 
-## 📫 &nbsp;Connect
+## 📫 &nbsp;Connect & Collaborate
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/connect-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/connect-card-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/connect-card.svg" alt="Connect and Collaboration Hub" width="100%" loading="lazy" />
+  </picture>
+</p>
 
 <div align="center">
 
-<a href="mailto:chandrumohan550@gmail.com"><img src="https://img.shields.io/badge/Gmail-0D1117?style=for-the-badge&logo=gmail&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="Gmail"/></a>
-<a href="https://www.linkedin.com/in/chandru9842" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="LinkedIn"/></a>
-<a href="https://github.com/Chandru9842" target="_blank"><img src="https://img.shields.io/badge/GitHub-0D1117?style=for-the-badge&logo=github&logoColor=F8FAFC&labelColor=0D1117&color=8B5CF6" alt="GitHub"/></a>
+<a href="https://www.linkedin.com/in/chandru9842" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="mailto:chandrumohan550@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/></a>
+<a href="https://github.com/Chandru9842" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+<a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
+<a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank"><img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/></a>
 
 </div>
 
