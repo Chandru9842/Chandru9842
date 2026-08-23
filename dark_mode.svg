@@ -32,9 +32,9 @@
     </linearGradient>
 
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#10B981" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#22D3EE" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.85"/>
     </linearGradient>
 
     <linearGradient id="laserSweep" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -69,7 +69,7 @@
     <!-- Reveal Mask for ASCII Line-by-Line Unfold -->
     <mask id="asciiRevealMask">
       <rect x="20" y="55" width="440" height="0" fill="#FFFFFF">
-        <animate attributeName="height" from="0" to="525" dur="2.2s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+        <animate attributeName="height" from="0" to="530" dur="2.2s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
       </rect>
     </mask>
 
@@ -92,7 +92,7 @@
       .font-mono { font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }
       .font-sans { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
       
-      .ascii-art { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 7.2px; fill: url(#asciiGrad); letter-spacing: -0.2px; }
+      .ascii-art { font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.9px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 500; }
       .t-title { font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }
       .t-greeting { font-size: 14px; font-weight: 600; fill: #94A3B8; letter-spacing: 0.5px; }
       .t-role { font-size: 15px; font-weight: 700; fill: #38BDF8; }
@@ -102,9 +102,6 @@
       .t-dim { font-size: 11px; fill: #64748B; }
       .pill-txt { font-size: 11.5px; font-weight: 600; fill: #E2E8F0; }
       .badge-lbl { font-size: 10px; font-weight: 700; fill: #22D3EE; letter-spacing: 1.5px; }
-      
-      .card-hover { transition: transform 0.3s ease, filter 0.3s ease; }
-      .card-hover:hover { filter: drop-shadow(0 0 10px #22D3EE); }
     </style>
   </defs>
 
@@ -148,9 +145,9 @@
     </g>
   </g>
 
-  <!-- ==================== LEFT PANEL: BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
+  <!-- ==================== LEFT PANEL: FULL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
   <g id="leftSection" transform="translate(0, 0)">
-    <!-- Glass Backplate with subtle floating movement -->
+    <!-- Floating ASCII Module -->
     <g>
       <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3.5; 0 0" dur="7s" repeatCount="indefinite" easeMode="spline"/>
       
@@ -160,58 +157,59 @@
 
       <!-- HUD Top Bar -->
       <rect x="26" y="68" width="424" height="22" rx="6" fill="#0B1120" fill-opacity="0.6"/>
-      <text x="36" y="83" class="font-mono badge-lbl">01 // BIOMETRIC.ASCII.RENDER</text>
+      <text x="36" y="83" class="font-mono badge-lbl">01 // FULL.BIOMETRIC.ASCII</text>
       <text x="438" y="83" text-anchor="end" class="font-mono t-dim">FPS: 60 • LIVE</text>
 
-      <!-- ASCII Face Render with Line-by-Line Reveal -->
+      <!-- Full Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
-        <text x="36" y="0" class="ascii-art">
-<tspan x="36" y="72.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-<tspan x="36" y="81.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@A---~!^+':</tspan>
-<tspan x="36" y="91.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\\::::</tspan>
-<tspan x="36" y="101.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\!::</tspan>
-<tspan x="36" y="111.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\\::::::::::  :  ::</tspan>
-<tspan x="36" y="121.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\\::::::      : ::    :</tspan>
-<tspan x="36" y="130.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|(::::::         : ::</tspan>
-<tspan x="36" y="140.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\::::</tspan>
-<tspan x="36" y="150.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|:::::      :: ::::</tspan>
-<tspan x="36" y="160.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|: ::             :::::</tspan>
-<tspan x="36" y="170.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@| ::      :::_juuuu_;:::::::::j</tspan>
-<tspan x="36" y="179.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|:: :   :_jxxxooooooooxxxxxjxxx</tspan>
-<tspan x="36" y="189.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|:::     !xxooooooooooooxjjjjjj</tspan>
-<tspan x="36" y="199.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|::::   |xooooooooo@@@ooooxxxx</tspan>
-<tspan x="36" y="209.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|::   _goooxon====*---XU$ooooo</tspan>
-<tspan x="36" y="219.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|::   |oo=:::_j::::       :!=x</tspan>
-<tspan x="36" y="228.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|: :|ooxxo=!:'`_::  __.::uoxx</tspan>
-<tspan x="36" y="238.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\*u.::ooxxxxx;__ugg__.::::|xxxx</tspan>
-<tspan x="36" y="248.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|:ooooqoxxooooooxxxxxjxxxooxoooo</tspan>
-<tspan x="36" y="258.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@p:|o@msooooooo@oooooxxxxooooxxxoo</tspan>
-<tspan x="36" y="268.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|iy::|xioooooo@@@@@ooxxxxoooe-YV$</tspan>
-<tspan x="36" y="277.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@||g/_&gt;*joooooooo@@ooxjjuooou.:1ug</tspan>
-<tspan x="36" y="287.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oujj:jjjxxxxxxxxxoooxov=jj:::___</tspan>
-<tspan x="36" y="297.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ggggpxxxxxxxxxxj::::'!xxxxxxx</tspan>
-<tspan x="36" y="307.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@xxxxxxxxooujjx;-_xoooooo</tspan>
-<tspan x="36" y="317.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@xxxxxxxxxxxoooooooooxI=</tspan>
-<tspan x="36" y="326.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@gxxxxxxxxxxoooooooooxu;</tspan>
-<tspan x="36" y="336.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oujjjxxxxxooooooooooo</tspan>
-<tspan x="36" y="346.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oxj:!vxxxxxooooooooo</tspan>
-<tspan x="36" y="356.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@moxxxxxxj;:::!jjjjjjj</tspan>
-<tspan x="36" y="366.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|oxxxooxxxxj;.:::::::</tspan>
-<tspan x="36" y="375.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ |xxxxxxoooooxxxxxjj:</tspan>
-<tspan x="36" y="385.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@| /xxxooxoxxxxoxxxxjj</tspan>
-<tspan x="36" y="395.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|  /xxxxxxooooooxxxx</tspan>
-<tspan x="36" y="405.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@o/  !jxxxxxxooooooox</tspan>
-<tspan x="36" y="415.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oo/  ::jxxxxxxxxxxj</tspan>
-<tspan x="36" y="424.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oo|   :jjxxxxxxxxj</tspan>
-<tspan x="36" y="434.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@UQ@@oo/    ::jjjjjjj</tspan>
-<tspan x="36" y="444.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@wj;:/o@@o//    :::jjjjj</tspan>
-<tspan x="36" y="454.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oxxxoo@@@@gxg@@@@@o/::::::jj</tspan>
-<tspan x="36" y="464.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@oo@@@@@@@@@@@@@oo@@@@@@o/:::::j</tspan>
-<tspan x="36" y="473.8" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@//::</tspan>
-<tspan x="36" y="483.6" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/:</tspan>
-<tspan x="36" y="493.4" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-<tspan x="36" y="503.2" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
-<tspan x="36" y="513.0" xml:space="preserve">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</tspan>
+        <text x="28" y="0" class="ascii-art">
+<tspan x="28" y="104.0" xml:space="preserve">                          .::=+*++-.                          </tspan>
+<tspan x="28" y="113.8" xml:space="preserve">                      .=#%@@@@@@@@@@%+.                       </tspan>
+<tspan x="28" y="123.6" xml:space="preserve">                     +@@@@@@@@@@@@@@@@@*:                     </tspan>
+<tspan x="28" y="133.4" xml:space="preserve">                   .#@@@@@@@@@@@@@@@@@@@@*.                   </tspan>
+<tspan x="28" y="143.2" xml:space="preserve">                  .%@%@@@@@@@@@@@@@@@@@@@@%                   </tspan>
+<tspan x="28" y="153.0" xml:space="preserve">                  *@%@@@@@@@@@@@@@@@@@@@@@@-                  </tspan>
+<tspan x="28" y="162.8" xml:space="preserve">                 -@%@@@@@@@@@@@@@@@@@@@@@@@@+                 </tspan>
+<tspan x="28" y="172.6" xml:space="preserve">                 %@@@@@@@@@@@@@@@@@@@@@@@@@@@*                </tspan>
+<tspan x="28" y="182.4" xml:space="preserve">                -@%@@@@@@@@@@@@@@@@@@@@@@@@@@%.               </tspan>
+<tspan x="28" y="192.2" xml:space="preserve">                =@%@@@@@@@@@@@@@@@@@@@@@@@@@@#                </tspan>
+<tspan x="28" y="202.0" xml:space="preserve">                +@@@@#*++*######%#%@@@@@@@@@@-                </tspan>
+<tspan x="28" y="211.8" xml:space="preserve">                =@@@#=--::=++++*#*%@@@@@@@@@%                 </tspan>
+<tspan x="28" y="221.6" xml:space="preserve">                -@@@%=---:-+******%@@@@@@@@@+                 </tspan>
+<tspan x="28" y="231.4" xml:space="preserve">                .%@@*-=-:  .:====-=*#%%##%@@:                 </tspan>
+<tspan x="28" y="241.2" xml:space="preserve">                 #@%-=****+==-===**%%@@%##@%                  </tspan>
+<tspan x="28" y="251.0" xml:space="preserve">                 *@+-*++#%@@@#+#%@@@@%%@@*@#                  </tspan>
+<tspan x="28" y="260.8" xml:space="preserve">                 +@--+##*%#%+==#@@%*%%%@@#%%.                 </tspan>
+<tspan x="28" y="270.6" xml:space="preserve">                =**-=++==##*+==*@@@%%%%%%#*@+                 </tspan>
+<tspan x="28" y="280.4" xml:space="preserve">                #:--=:-=++=-=-:+*%@%%#*+*#*#*                 </tspan>
+<tspan x="28" y="290.2" xml:space="preserve">               :+-+--:.:-=----.:+###*+++*##@#                 </tspan>
+<tspan x="28" y="300.0" xml:space="preserve">               .*#+--: .-+=-==:=#%#%%######@#                 </tspan>
+<tspan x="28" y="309.8" xml:space="preserve">               .++*==-:-++:=#*+#@@@%%%%%%#%@#                 </tspan>
+<tspan x="28" y="319.6" xml:space="preserve">                =*#+=++==+****##%@@@%%%@%%%@+                 </tspan>
+<tspan x="28" y="329.4" xml:space="preserve">                .-++=++=#@%+===*#%@@@@@%%%+-.                 </tspan>
+<tspan x="28" y="339.2" xml:space="preserve">                   :+===***=-:--=*#@@@@%%%:                   </tspan>
+<tspan x="28" y="349.0" xml:space="preserve">                   .++++=::-:-=++#%%%%@%%%                    </tspan>
+<tspan x="28" y="358.8" xml:space="preserve">                    =+++=-:-=+%@%@%@%%@%@-                    </tspan>
+<tspan x="28" y="368.6" xml:space="preserve">                     **++--::-=+*#%%@%%%-                     </tspan>
+<tspan x="28" y="378.4" xml:space="preserve">                     -#*+=--::=*#%@%@@@#                      </tspan>
+<tspan x="28" y="388.2" xml:space="preserve">                     -=*##*+++*##@@@@@@%.                    .</tspan>
+<tspan x="28" y="398.0" xml:space="preserve">                    :+===*%%%%@@@@@@@@@@*                    .</tspan>
+<tspan x="28" y="407.8" xml:space="preserve">                    -#==-==+#%@@@@@@@@@@*                    .</tspan>
+<tspan x="28" y="417.6" xml:space="preserve">                    .%+=====+*#%@@@@@@@@- ..                ..</tspan>
+<tspan x="28" y="427.4" xml:space="preserve">                     ##======+*%%@@@@@@% ..::               ..</tspan>
+<tspan x="28" y="437.2" xml:space="preserve">                     :@*===--=+##%%%%%@= ...-...           ...</tspan>
+<tspan x="28" y="447.0" xml:space="preserve">.               .    .*@*====+*##%%%%@%     -:.:..       .....</tspan>
+<tspan x="28" y="456.8" xml:space="preserve">..              .     :%@#++++*####%%@=     .:..:. .     .....</tspan>
+<tspan x="28" y="466.6" xml:space="preserve">..                    .=@@#*******#%@%  :.   .....       .....</tspan>
+<tspan x="28" y="476.4" xml:space="preserve">.                  .=#-.#@@##***+*%%%- *##=.  ....        ....</tspan>
+<tspan x="28" y="486.2" xml:space="preserve">                  =+--+ .=%%##*+=*#*. =*+*+=: . .           ..</tspan>
+<tspan x="28" y="496.0" xml:space="preserve">                .::.  .:  :#%#*+=+=  =+-=---. .             ..</tspan>
+<tspan x="28" y="505.8" xml:space="preserve">                        .  .*%#*+=  -=:::...                 .</tspan>
+<tspan x="28" y="515.6" xml:space="preserve">                         .   +%#+  .-:..                     .</tspan>
+<tspan x="28" y="525.4" xml:space="preserve">                              *%..--..                       .</tspan>
+<tspan x="28" y="535.2" xml:space="preserve">                              .::=:                          .</tspan>
+<tspan x="28" y="545.0" xml:space="preserve">                               .:.                     .     .</tspan>
+<tspan x="28" y="554.8" xml:space="preserve">                              ..                       .     .</tspan>
         </text>
       </g>
 

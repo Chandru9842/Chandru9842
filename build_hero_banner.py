@@ -1,33 +1,65 @@
 #!/usr/bin/env python3
 """
-Builds ultra-premium animated SVG hero banners for Chandru M (Chandru9842)
-in both Dark and Light themes.
+Dynamic Hero Banner & ASCII Art Generator for Chandru9842.
+Fetches the user's latest GitHub profile photo and converts it
+into a full, high-contrast, centered ASCII portrait inside a
+premium animated SVG banner.
 """
 
 import os
-import re
+import io
+import urllib.request
+from PIL import Image, ImageEnhance, ImageOps
 
-# Extract ASCII lines from dark_mode.svg if available, otherwise use high quality face art
-def get_ascii_lines():
-    ascii_file = "dark_mode.svg"
-    if os.path.exists(ascii_file):
-        with open(ascii_file, "r", encoding="utf-8") as f:
-            content = f.read()
-        matches = re.findall(r'<text[^>]*font-size="8">([^<]+)</text>', content)
-        if matches:
-            # Clean up and crop to the face core (remove excessive side padding if needed)
-            cleaned = []
-            for line in matches:
-                # Replace XML entities if needed
-                line_clean = line.replace("&amp;gt;", ">").replace("&lt;", "<").replace("&amp;", "&")
-                cleaned.append(line_clean)
-            return cleaned
-    return None
+USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
+
+def fetch_avatar_ascii(username=USERNAME, cols=62, rows=47):
+    """
+    Fetches the live avatar from GitHub and converts the full face
+    into sharp, high-contrast ASCII art.
+    """
+    try:
+        url = f"https://github.com/{username}.png"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        data = urllib.request.urlopen(req, timeout=10).read()
+        img = Image.open(io.BytesIO(data)).convert("L")
+
+        # Square center crop to keep full head & face proportion
+        w, h = img.size
+        min_dim = min(w, h)
+        left = (w - min_dim) // 2
+        top = (h - min_dim) // 2
+        img = img.crop((left, top, left + min_dim, top + min_dim))
+
+        # Enhance contrast and sharpness for defined facial lines
+        img = ImageOps.autocontrast(img, cutoff=1.5)
+        img = ImageEnhance.Contrast(img).enhance(1.45)
+        img = ImageEnhance.Sharpness(img).enhance(1.5)
+
+        # Scale to match character aspect ratio (height is ~1.8x width in mono fonts)
+        img = img.resize((cols, rows), Image.Resampling.LANCZOS)
+
+        # High-contrast cyber ASCII ramp
+        RAMP = "  ..::--==++**##%%@@"
+
+        lines = []
+        for y in range(rows):
+            line = ""
+            for x in range(cols):
+                pixel = img.getpixel((x, y))
+                # Darker facial features -> denser characters
+                idx = int(((255 - pixel) / 255.0) * (len(RAMP) - 1))
+                line += RAMP[idx]
+            lines.append(line)
+        return lines
+    except Exception as e:
+        print(f"Warning: Could not fetch live avatar ({e}), using fallback art.")
+        return ["  ...:::---===+++***###%%%@@@  " for _ in range(rows)]
 
 def build_banner(theme_mode="dark"):
     is_dark = (theme_mode == "dark")
     
-    # Theme palette
+    # Visual Theme Palette
     if is_dark:
         bg_main = "#030712"
         panel_bg = "#0B1120"
@@ -40,7 +72,6 @@ def build_banner(theme_mode="dark"):
         accent_1 = "#7C3AED"  # Purple
         accent_2 = "#22D3EE"  # Cyan
         accent_3 = "#10B981"  # Emerald
-        accent_4 = "#38BDF8"  # Sky Blue
         grad_stop_1 = "#22D3EE"
         grad_stop_2 = "#7C3AED"
         grad_stop_3 = "#10B981"
@@ -50,7 +81,6 @@ def build_banner(theme_mode="dark"):
         titlebar_bg = "#0B1120"
         scan_color = "#22D3EE"
         laser_color = "#38BDF8"
-        glow_color = "#38BDF8"
         ascii_color_1 = "#22D3EE"
         ascii_color_2 = "#818CF8"
         ascii_color_3 = "#C084FC"
@@ -66,7 +96,6 @@ def build_banner(theme_mode="dark"):
         accent_1 = "#2563EB"  # Blue
         accent_2 = "#06B6D4"  # Cyan
         accent_3 = "#059669"  # Emerald
-        accent_4 = "#0284C7"  # Sky
         grad_stop_1 = "#2563EB"
         grad_stop_2 = "#06B6D4"
         grad_stop_3 = "#059669"
@@ -76,31 +105,20 @@ def build_banner(theme_mode="dark"):
         titlebar_bg = "#F8FAFC"
         scan_color = "#06B6D4"
         laser_color = "#0284C7"
-        glow_color = "#2563EB"
         ascii_color_1 = "#2563EB"
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = get_ascii_lines()
-    
-    # We select roughly 48 evenly sampled lines from the portrait
-    if raw_lines and len(raw_lines) > 40:
-        step = len(raw_lines) / 46.0
-        ascii_subset = [raw_lines[int(i * step)] for i in range(46)]
-    else:
-        ascii_subset = ["@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" for _ in range(46)]
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=62, rows=47)
 
-    # Format ASCII tspans
+    # Format ASCII tspans with exact coordinate spacing
     ascii_tspans = []
-    y_start = 72
+    y_start = 104
     line_h = 9.8
-    for i, l in enumerate(ascii_subset):
-        # Crop line width to ~68 characters for neat left panel fit
-        l_crop = l[:68].rstrip()
-        # Escape XML entities
-        l_esc = l_crop.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    for i, l in enumerate(raw_lines):
+        l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
-        ascii_tspans.append(f'<tspan x="36" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
+        ascii_tspans.append(f'<tspan x="28" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
 
     ascii_text_content = "\n".join(ascii_tspans)
 
@@ -138,9 +156,9 @@ def build_banner(theme_mode="dark"):
     </linearGradient>
 
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{accent_1}" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="{accent_2}" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="{accent_3}" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="{accent_1}" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="{accent_2}" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="{accent_3}" stop-opacity="0.85"/>
     </linearGradient>
 
     <linearGradient id="laserSweep" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -175,7 +193,7 @@ def build_banner(theme_mode="dark"):
     <!-- Reveal Mask for ASCII Line-by-Line Unfold -->
     <mask id="asciiRevealMask">
       <rect x="20" y="55" width="440" height="0" fill="#FFFFFF">
-        <animate attributeName="height" from="0" to="525" dur="2.2s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+        <animate attributeName="height" from="0" to="530" dur="2.2s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
       </rect>
     </mask>
 
@@ -198,7 +216,7 @@ def build_banner(theme_mode="dark"):
       .font-mono {{ font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }}
       .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
       
-      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 7.2px; fill: url(#asciiGrad); letter-spacing: -0.2px; }}
+      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.9px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 500; }}
       .t-title {{ font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }}
       .t-greeting {{ font-size: 14px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.5px; }}
       .t-role {{ font-size: 15px; font-weight: 700; fill: {text_highlight}; }}
@@ -208,9 +226,6 @@ def build_banner(theme_mode="dark"):
       .t-dim {{ font-size: 11px; fill: {text_muted}; }}
       .pill-txt {{ font-size: 11.5px; font-weight: 600; fill: {pill_text}; }}
       .badge-lbl {{ font-size: 10px; font-weight: 700; fill: {accent_2}; letter-spacing: 1.5px; }}
-      
-      .card-hover {{ transition: transform 0.3s ease, filter 0.3s ease; }}
-      .card-hover:hover {{ filter: drop-shadow(0 0 10px {accent_2}); }}
     </style>
   </defs>
 
@@ -254,9 +269,9 @@ def build_banner(theme_mode="dark"):
     </g>
   </g>
 
-  <!-- ==================== LEFT PANEL: BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
+  <!-- ==================== LEFT PANEL: FULL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
   <g id="leftSection" transform="translate(0, 0)">
-    <!-- Glass Backplate with subtle floating movement -->
+    <!-- Floating ASCII Module -->
     <g>
       <animateTransform attributeName="transform" type="translate" values="0 0; 0 -3.5; 0 0" dur="7s" repeatCount="indefinite" easeMode="spline"/>
       
@@ -266,12 +281,12 @@ def build_banner(theme_mode="dark"):
 
       <!-- HUD Top Bar -->
       <rect x="26" y="68" width="424" height="22" rx="6" fill="{titlebar_bg}" fill-opacity="0.6"/>
-      <text x="36" y="83" class="font-mono badge-lbl">01 // BIOMETRIC.ASCII.RENDER</text>
+      <text x="36" y="83" class="font-mono badge-lbl">01 // FULL.BIOMETRIC.ASCII</text>
       <text x="438" y="83" text-anchor="end" class="font-mono t-dim">FPS: 60 • LIVE</text>
 
-      <!-- ASCII Face Render with Line-by-Line Reveal -->
+      <!-- Full Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
-        <text x="36" y="0" class="ascii-art">
+        <text x="28" y="0" class="ascii-art">
 {ascii_text_content}
         </text>
       </g>
@@ -503,12 +518,10 @@ def build_banner(theme_mode="dark"):
     return svg_content
 
 def main():
+    print(f"Generating full face ASCII hero banner for {USERNAME}...")
     dark_svg = build_banner("dark")
     light_svg = build_banner("light")
 
-    # Write files:
-    # 1. dark.svg & light.svg
-    # 2. dark_mode.svg & light_mode.svg
     files_to_write = {
         "dark.svg": dark_svg,
         "light.svg": light_svg,

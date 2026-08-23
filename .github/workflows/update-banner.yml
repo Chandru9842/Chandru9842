@@ -1,0 +1,42 @@
+name: Update Profile Banner & ASCII Art
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC to sync profile picture changes
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-banner
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install Pillow
+
+      - name: Generate Banner SVGs
+        env:
+          GH_USERNAME: ${{ github.repository_owner }}
+        run: python build_hero_banner.py
+
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update profile banner ASCII from avatar [skip ci]"
+          file_pattern: "dark.svg light.svg dark_mode.svg light_mode.svg"
