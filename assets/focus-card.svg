@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Current Focus and Objectives">
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="236" viewBox="0 0 880 236" role="img" aria-label="Current Focus and Objectives">
   <defs>
     <style>
       .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }
@@ -11,91 +11,91 @@
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="236" rx="12" fill="url(#focusCardBg)" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.2"/>
+  <rect width="880" height="236" rx="12" fill="url(#focusCardBg)" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.2"/>
 
   <!-- Header Section (Matching Pic 2 Header) -->
-  <g transform="translate(32, 22)">
+  <g transform="translate(28, 22)">
     <circle cx="6" cy="11" r="4.5" fill="#00E8FF"/>
     <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#00E8FF">Current Focus &amp; Objectives</text>
     <text x="210" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Technical Vectors &amp; Active Roadmaps</text>
 
     <!-- Status Badge -->
-    <g transform="translate(628, 0)">
+    <g transform="translate(720, 0)">
       <rect width="94" height="24" rx="6" fill="rgba(0, 232, 255, 0.1)" stroke="#00E8FF" stroke-width="0.8"/>
       <text x="47" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#00E8FF" text-anchor="middle">ACTIVE</text>
     </g>
   </g>
 
   <!-- Divider -->
-  <line x1="32" y1="56" x2="758" y2="56" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1"/>
+  <line x1="28" y1="56" x2="852" y2="56" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1"/>
 
   <!-- Column Headers -->
-  <g transform="translate(36, 72)">
+  <g transform="translate(28, 72)">
     <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="#00E8FF" letter-spacing="0.5px">📚 CURRENTLY MASTERING</text>
   </g>
-  <g transform="translate(400, 72)">
+  <g transform="translate(450, 72)">
     <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="#10B981" letter-spacing="0.5px">🚀 ACTIVE ENGINEERING</text>
   </g>
 
   <!-- Left Column Items -->
   
-        <g transform="translate(36, 96)">
+        <g transform="translate(28, 96)">
           <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">System Design</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Distributed Systems, Caching, Queues</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">System Design</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Distributed Systems, Caching, Event Queues</text>
         </g>
         
-        <g transform="translate(36, 128)">
+        <g transform="translate(28, 128)">
           <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Containerization</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Docker, Multi-Stage Builds, Orchestration</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Containerization</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Docker, Multi-Stage Builds, CI/CD Pipelines</text>
         </g>
         
-        <g transform="translate(36, 160)">
+        <g transform="translate(28, 160)">
           <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Enterprise Java</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Spring Boot 3, Spring Security, OAuth2/JWT</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Enterprise Java</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Spring Boot 3, Spring Security, OAuth2/JWT</text>
         </g>
         
-        <g transform="translate(36, 192)">
+        <g transform="translate(28, 192)">
           <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Algorithmic Mastery</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Advanced DSA, Dynamic Programming, Graphs</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Algorithmic Mastery</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Advanced DSA, Dynamic Programming, Graphs</text>
         </g>
         
 
   <!-- Right Column Items -->
   
-        <g transform="translate(400, 96)">
+        <g transform="translate(450, 96)">
           <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">AI Resume Parser</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">LLM Semantic Analysis &amp; Scoring Pipeline</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">AI Resume Parser</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">LLM Semantic Analysis &amp; Scoring Pipeline</text>
         </g>
         
-        <g transform="translate(400, 128)">
+        <g transform="translate(450, 128)">
           <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Developer Platform</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Portfolio CMS &amp; High-Throughput Engine</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Developer Platform</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Portfolio CMS &amp; Modern Backend Engine</text>
         </g>
         
-        <g transform="translate(400, 160)">
+        <g transform="translate(450, 160)">
           <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Cloud Infrastructure</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Dockerized Services, CI/CD, Cloudflare</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Cloud Infrastructure</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Dockerized Services, Resilient Deployments</text>
         </g>
         
-        <g transform="translate(400, 192)">
+        <g transform="translate(450, 192)">
           <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Career Objective</text>
-          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
-          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Full Stack &amp; Backend Engineering Roles</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#8BB9FE">Career Objective</text>
+          <text x="135" y="9" class="font-mono" font-size="11px" fill="#3B597E">: . .</text>
+          <text x="165" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="#FFFFFF">Full Stack &amp; Backend Engineering Roles</text>
         </g>
         
 

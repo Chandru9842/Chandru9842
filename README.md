@@ -732,12 +732,7 @@ LinkedIn discontinued public RSS/API access for personal article feeds, so there
 <a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
 <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank"><img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/></a>
 
-</div>
-
-<br/>
-<div align="center">
-
-*"Great software is not just about writing code — it's about solving real problems with simplicity, scalability, and purpose."*
+<br/><br/>
 
 <sub>🕒 Last Updated: <!--LAST_UPDATED-->2026-08-23 12:18 UTC<!--END_LAST_UPDATED--></sub>
 

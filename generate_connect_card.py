@@ -3,7 +3,7 @@
 Professional Connect & Developer Collaboration Card Generator for Chandru M (@Chandru9842).
 - Designed in the exact typography, color palette, and layout of GitHub Developer Stats (Ocean Theme) and Terminal Telemetry (Pic 2 & Pic 3).
 - Uses 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, Roboto, sans-serif.
-- Clean dotted leader alignment, crisp stat keys and values.
+- Clean dotted leader alignment, wide non-overlapping column bounds.
 - Supports both dark and light modes.
 """
 
@@ -40,16 +40,15 @@ def build_connect_svg(theme="dark"):
     accent_emerald = "#10B981" if is_dark else "#059669"
     badge_bg = "rgba(0, 232, 255, 0.1)" if is_dark else "rgba(2, 132, 199, 0.1)"
 
-    # Build Left and Right Column Rows
     left_rows = []
     y_pos = 78
     for name, handle, url, dot_col in CONNECT_LINKS[:3]:
         left_rows.append(f"""
-        <g transform="translate(36, {y_pos})">
+        <g transform="translate(28, {y_pos})">
           <circle cx="4" cy="5" r="3.5" fill="{dot_col}"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
-          <text x="100" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
-          <text x="145" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
+          <text x="100" y="9" class="font-mono" font-size="11px" fill="{text_dots}">: . . .</text>
+          <text x="140" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
         </g>
         """)
         y_pos += 30
@@ -58,16 +57,16 @@ def build_connect_svg(theme="dark"):
     y_pos = 78
     for name, handle, url, dot_col in CONNECT_LINKS[3:]:
         right_rows.append(f"""
-        <g transform="translate(400, {y_pos})">
+        <g transform="translate(450, {y_pos})">
           <circle cx="4" cy="5" r="3.5" fill="{dot_col}"/>
-          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
-          <text x="100" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
-          <text x="145" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
+          <text x="14" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
+          <text x="100" y="9" class="font-mono" font-size="11px" fill="{text_dots}">: . . .</text>
+          <text x="140" y="9" class="font-sans" font-size="11.5px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
         </g>
         """)
         y_pos += 30
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="200" viewBox="0 0 790 200" role="img" aria-label="Connect and Developer Collaboration">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200" role="img" aria-label="Connect and Developer Collaboration">
   <defs>
     <style>
       .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }}
@@ -80,23 +79,23 @@ def build_connect_svg(theme="dark"):
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="200" rx="12" fill="url(#connectCardBg)" stroke="{border}" stroke-width="1.2"/>
+  <rect width="880" height="200" rx="12" fill="url(#connectCardBg)" stroke="{border}" stroke-width="1.2"/>
 
   <!-- Header Section (Matching Pic 2 Header) -->
-  <g transform="translate(32, 22)">
+  <g transform="translate(28, 22)">
     <circle cx="6" cy="11" r="4.5" fill="{accent_cyan}"/>
     <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="{accent_cyan}">Connect &amp; Collaborate</text>
     <text x="180" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">// Open for Full Stack &amp; Backend Roles</text>
 
     <!-- Status Badge -->
-    <g transform="translate(610, 0)">
+    <g transform="translate(710, 0)">
       <rect width="112" height="24" rx="6" fill="{badge_bg}" stroke="{accent_cyan}" stroke-width="0.8"/>
       <text x="56" y="16" class="font-mono" font-size="10px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">OPEN TO WORK</text>
     </g>
   </g>
 
   <!-- Divider -->
-  <line x1="32" y1="56" x2="758" y2="56" stroke="{border}" stroke-width="1"/>
+  <line x1="28" y1="56" x2="852" y2="56" stroke="{border}" stroke-width="1"/>
 
   <!-- Left Column Items -->
   {''.join(left_rows)}
@@ -105,7 +104,7 @@ def build_connect_svg(theme="dark"):
   {''.join(right_rows)}
 
   <!-- Footer Philosophy -->
-  <g transform="translate(395, 178)">
+  <g transform="translate(440, 178)">
     <text x="0" y="0" class="font-sans" font-size="11.5px" font-weight="500" fill="{text_muted}" text-anchor="middle">&quot;Great software is not just about writing code &#8212; it&apos;s about solving real problems with simplicity and scalability.&quot;</text>
   </g>
 
