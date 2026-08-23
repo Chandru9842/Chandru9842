@@ -490,13 +490,13 @@
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-dark.svg" />
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/output/pacman-contribution-graph-dark.svg" />
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-light.svg" />
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/output/pacman-contribution-graph.svg" />
     <img
-      alt="Pac-Man Contribution Heatmap"
-      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-dark.svg"
+      alt="Pac-Man Contribution Graph"
+      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/output/pacman-contribution-graph.svg"
       width="100%"
       loading="lazy" />
   </picture>

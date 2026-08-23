@@ -1,4 +1,4 @@
-name: Generate Contribution Snake
+name: Generate Contribution Snake & Pacman
 
 on:
   schedule:
@@ -12,16 +12,14 @@ permissions:
   contents: write
 
 concurrency:
-  group: snake-output
+  group: snake-pacman-output
   cancel-in-progress: true
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
-      # svg-only variant: faster than the full Platane/snk action since no GIF
-      # rendering is needed (we only embed the two SVG variants in the README)
       - name: Generate snake SVG (light + dark)
         uses: Platane/snk/svg-only@v3
         with:
@@ -32,9 +30,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # publishes dist/* to the "output" branch, matching the raw.githubusercontent.com
-      # URLs already referenced in README.md
-      - name: Push snake output to "output" branch
+      - name: Generate pacman-contribution-graph.svg
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+
+      - name: Push output to "output" branch
         uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output

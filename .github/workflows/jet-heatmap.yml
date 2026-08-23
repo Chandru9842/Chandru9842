@@ -1,4 +1,4 @@
-name: Update Interactive Heatmaps (Jet, Pac-Man, Game of Life)
+name: Update Interactive Heatmaps (Jet, Game of Life)
 
 on:
   schedule:
@@ -32,7 +32,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node generate.mjs
-          node generate_pacman.mjs
           node generate_game_of_life.mjs
 
       - name: Commit and push if changed
