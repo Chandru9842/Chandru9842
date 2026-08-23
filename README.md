@@ -347,8 +347,8 @@
 
 <td width="50%" align="center">
 
-<a href="https://leetcode.com/u/Chandrum06/">
-<img src="https://leetcard.jacoblin.cool/Chandrum06?theme=dark&font=Nunito&ext=contest" width="100%" alt="LeetCode Stats"/>
+<a href="https://leetcode.com/u/Chandrum06/" target="_blank">
+<img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/leetcode-card.svg" width="100%" alt="LeetCode Stats"/>
 </a>
 
 </td>
