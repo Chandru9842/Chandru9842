@@ -358,7 +358,7 @@
 <td width="50%" align="center">
 
 <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank">
-<img src="https://gfgstatscard.vercel.app/chandrum06" width="100%" alt="GeeksforGeeks Stats"/>
+<img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/gfg-card.svg" width="100%" alt="GeeksforGeeks Stats"/>
 </a>
 
 </td>

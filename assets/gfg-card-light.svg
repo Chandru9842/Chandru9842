@@ -4,14 +4,14 @@
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@600;700;800&amp;display=swap');
       .font-sans { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
       .font-mono { font-family: 'JetBrains Mono', monospace; }
-      .t-title { font-size: 16px; font-weight: 800; fill: #F8FAFC; letter-spacing: -0.3px; }
-      .t-sub { font-size: 11px; font-weight: 600; fill: #94A3B8; }
-      .t-num-big { font-size: 26px; font-weight: 800; fill: #F8FAFC; }
-      .t-lbl-sm { font-size: 10px; font-weight: 600; fill: #64748B; letter-spacing: 0.5px; text-transform: uppercase; }
+      .t-title { font-size: 16px; font-weight: 800; fill: #0F172A; letter-spacing: -0.3px; }
+      .t-sub { font-size: 11px; font-weight: 600; fill: #475569; }
+      .t-num-big { font-size: 26px; font-weight: 800; fill: #0F172A; }
+      .t-lbl-sm { font-size: 10px; font-weight: 600; fill: #94A3B8; letter-spacing: 0.5px; text-transform: uppercase; }
       .t-diff-name { font-size: 12px; font-weight: 700; }
-      .t-diff-val { font-size: 12px; font-weight: 800; fill: #F8FAFC; }
-      .t-bottom-num { font-size: 18px; font-weight: 800; fill: #F8FAFC; }
-      .t-bottom-lbl { font-size: 10px; font-weight: 600; fill: #64748B; text-transform: uppercase; letter-spacing: 0.5px; }
+      .t-diff-val { font-size: 12px; font-weight: 800; fill: #0F172A; }
+      .t-bottom-num { font-size: 18px; font-weight: 800; fill: #0F172A; }
+      .t-bottom-lbl { font-size: 10px; font-weight: 600; fill: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px; }
     </style>
     <linearGradient id="gfgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#2F8D46"/>
@@ -20,8 +20,8 @@
   </defs>
 
   <!-- Container -->
-  <rect width="500" height="300" rx="16" fill="#0B1120" stroke="rgba(47, 141, 70, 0.35)" stroke-width="1.5"/>
-  <rect x="8" y="8" width="484" height="284" rx="12" fill="#0F172A" fill-opacity="0.7"/>
+  <rect width="500" height="300" rx="16" fill="#FFFFFF" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="484" height="284" rx="12" fill="#F8FAFC" fill-opacity="0.9"/>
 
   <!-- Header -->
   <g transform="translate(24, 20)">
@@ -41,14 +41,14 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(47, 141, 70, 0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Center Section: Ring & Breakdown -->
   <g transform="translate(24, 76)">
     <!-- Circular Progress Donut Chart -->
     <g transform="translate(68, 62)">
       <!-- Background track -->
-      <circle cx="0" cy="0" r="46" fill="none" stroke="#1E293B" stroke-width="9"/>
+      <circle cx="0" cy="0" r="46" fill="none" stroke="#EDF2F7" stroke-width="9"/>
       
       <!-- Colored Segments (rotate -90 so starts at top) -->
       <g transform="rotate(-90)">
@@ -75,7 +75,7 @@
     <g transform="translate(160, 10)">
       <!-- Basic Row -->
       <g transform="translate(0, 0)">
-        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <rect width="292" height="24" rx="6" fill="#EDF2F7"/>
         <circle cx="14" cy="12" r="4.5" fill="#94A3B8"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="#94A3B8">Basic</text>
         <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">26</text>
@@ -83,7 +83,7 @@
 
       <!-- Easy Row -->
       <g transform="translate(0, 29)">
-        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <rect width="292" height="24" rx="6" fill="#EDF2F7"/>
         <circle cx="14" cy="12" r="4.5" fill="#10B981"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="#10B981">Easy</text>
         <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">55</text>
@@ -91,7 +91,7 @@
 
       <!-- Medium Row -->
       <g transform="translate(0, 58)">
-        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <rect width="292" height="24" rx="6" fill="#EDF2F7"/>
         <circle cx="14" cy="12" r="4.5" fill="#F59E0B"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="#F59E0B">Medium</text>
         <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">81</text>
@@ -99,7 +99,7 @@
 
       <!-- Hard Row -->
       <g transform="translate(0, 87)">
-        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <rect width="292" height="24" rx="6" fill="#EDF2F7"/>
         <circle cx="14" cy="12" r="4.5" fill="#EF4444"/>
         <text x="26" y="16" class="font-sans t-diff-name" fill="#EF4444">Hard</text>
         <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">6</text>
@@ -108,34 +108,34 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(47, 141, 70, 0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Bottom Stats Metric Cards -->
   <g transform="translate(24, 226)">
     <!-- Metric 1: Coding Score -->
     <g transform="translate(0, 0)">
-      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
       <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#2F8D46">514</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">CODING SCORE</text>
     </g>
 
     <!-- Metric 2: Total Solved -->
     <g transform="translate(116, 0)">
-      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
       <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">168</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">PROBLEMS</text>
     </g>
 
     <!-- Metric 3: POTD Solved -->
     <g transform="translate(232, 0)">
-      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
       <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">1</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">POTD SOLVED</text>
     </g>
 
     <!-- Metric 4: Streak -->
     <g transform="translate(348, 0)">
-      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
       <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#F59E0B">🔥 1 Day</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">STREAK</text>
     </g>
