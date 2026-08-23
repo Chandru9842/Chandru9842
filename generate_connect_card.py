@@ -3,6 +3,7 @@
 Ultra-Sleek Connect & Developer Collaboration Hub Generator for Chandru M (@Chandru9842).
 - Renders high-end glowing glassmorphism SVG card with direct action buttons.
 - Connects LinkedIn, GitHub, Gmail, LeetCode, and GeeksforGeeks with glowing pill designs.
+- Strictly valid XML.
 - Supports both dark and light modes.
 """
 
@@ -77,13 +78,13 @@ def build_connect_svg(theme="dark"):
   <rect width="790" height="186" rx="16" fill="url(#connectGrad)" stroke="{border}" stroke-width="1.5"/>
   <rect x="0" y="0" width="790" height="3" fill="url(#glowBar)" rx="1.5"/>
 
-  <!-- Header Header Telemetry -->
+  <!-- Header Telemetry -->
   <g transform="translate(32, 24)">
     <circle cx="8" cy="14" r="5" fill="{accent_emerald}">
       <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
     </circle>
     <text x="22" y="19" class="font-sans" font-size="15px" font-weight="800" fill="{text_primary}">📫 LET&apos;S CONNECT &amp; COLLABORATE</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">Open for Full Stack &amp; Backend Engineering roles • Networking // Research</text>
+    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">Open for Full Stack &amp; Backend Engineering roles // Networking &amp; Research</text>
 
     <!-- Available Status Badge -->
     <g transform="translate(605, 2)">
@@ -97,7 +98,7 @@ def build_connect_svg(theme="dark"):
 
   <!-- Footer Philosophy -->
   <g transform="translate(395, 156)">
-    <text x="0" y="0" class="font-sans" font-size="11px" font-style="italic" font-weight="600" fill="{text_muted}" text-anchor="middle">&ldquo;Great software is not just about writing code &mdash; it&apos;s about solving real problems with simplicity and scalability.&rdquo;</text>
+    <text x="0" y="0" class="font-sans" font-size="11px" font-style="italic" font-weight="600" fill="{text_muted}" text-anchor="middle">&quot;Great software is not just about writing code &#8212; it&apos;s about solving real problems with simplicity and scalability.&quot;</text>
   </g>
 </svg>
 '''
