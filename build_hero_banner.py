@@ -14,10 +14,10 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
+def fetch_avatar_ascii(username=USERNAME, cols=68, rows=30):
     """
     Fetches avatar from GitHub and converts it to the exact
-    user-approved centered ASCII portrait.
+    user-approved full, bumped, centered ASCII portrait.
     """
     try:
         url = f"https://github.com/{username}.png"
@@ -27,15 +27,15 @@ def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
 
         w, h = img.size
         # Precise crop to head and shoulders with balanced padding
-        crop_box = (int(w * 0.08), int(h * 0.02), int(w * 0.92), int(h * 0.96))
+        crop_box = (int(w * 0.04), int(h * 0.02), int(w * 0.96), int(h * 0.98))
         img_cropped = img.crop(crop_box)
 
         # High contrast and sharpness for defined facial lines
         img_cropped = ImageOps.autocontrast(img_cropped, cutoff=2)
-        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.65)
-        img_cropped = ImageEnhance.Sharpness(img_cropped).enhance(2.2)
+        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.6)
+        img_cropped = ImageEnhance.Sharpness(img_cropped).enhance(2.0)
 
-        # Resize to grid
+        # Resize to grid (68 cols x 30 rows for full, bumped human proportions)
         img_scaled = img_cropped.resize((cols, rows), Image.Resampling.LANCZOS)
 
         # Clean cyber ramp
@@ -106,12 +106,12 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=54, rows=34)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=68, rows=30)
 
     # Format centered ASCII tspans with text-anchor="middle" at x="238"
     ascii_tspans = []
-    y_start = 112
-    line_h = 13.2
+    y_start = 125
+    line_h = 13.8
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)

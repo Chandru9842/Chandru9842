@@ -169,40 +169,36 @@
       <!-- Center-Aligned Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
         <text x="238" y="0" class="ascii-art">
-<tspan x="238" y="112.0" xml:space="preserve">                  -*%@@@@@@@@@@@@#=                   </tspan>
-<tspan x="238" y="125.2" xml:space="preserve">                =%@@@@@@@@@@@@@@@@@@#-                </tspan>
-<tspan x="238" y="138.4" xml:space="preserve">              .%@@@@@@@@@@@@@@@@@@@@@@%:              </tspan>
-<tspan x="238" y="151.6" xml:space="preserve">             .@@@@@@@@@@@@@@@@@@@@@@@@@#              </tspan>
-<tspan x="238" y="164.8" xml:space="preserve">             %@@@@@@@@@@@@@@@@@@@@@@@@@@@+            </tspan>
-<tspan x="238" y="178.0" xml:space="preserve">            *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+           </tspan>
-<tspan x="238" y="191.2" xml:space="preserve">            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=           </tspan>
-<tspan x="238" y="204.4" xml:space="preserve">            @@@@@#*==*#%%##%@%@@@@@@@@@@@%            </tspan>
-<tspan x="238" y="217.6" xml:space="preserve">            %@@@#--:::-*##*#%#@@@@@@@@@@@:            </tspan>
-<tspan x="238" y="230.8" xml:space="preserve">            +@@@+-=-.  .-+*+==+#@@@@%@@@%             </tspan>
-<tspan x="238" y="244.0" xml:space="preserve">            -@@#-**#**+++===+*#@@@@@@#@@+             </tspan>
-<tspan x="238" y="257.2" xml:space="preserve">             @@:=***%@@@@#+%@@@@@@@@@@#@-             </tspan>
-<tspan x="238" y="270.4" xml:space="preserve">            =%#:+*#++%%%+==#@@@#@@@@@@#@%             </tspan>
-<tspan x="238" y="283.6" xml:space="preserve">           =*:-==:-=+*+=+-:+#@@@@%###%%#@:            </tspan>
-<tspan x="238" y="296.8" xml:space="preserve">           +=*=--. .-==:-: :*%%%@#**#%%%@=            </tspan>
-<tspan x="238" y="310.0" xml:space="preserve">           =##+--: .+*:-#+=*@@@@@@@@@%%@@=            </tspan>
-<tspan x="238" y="323.2" xml:space="preserve">           :*#%+=+==++*###%@@@@@@@@@@@@@@:            </tspan>
-<tspan x="238" y="336.4" xml:space="preserve">            .-+++++=%@@+=-=*#@@@@@@@@@@::             </tspan>
-<tspan x="238" y="349.6" xml:space="preserve">               -+++=+==-:.-==*%@@@@@@@*               </tspan>
-<tspan x="238" y="362.8" xml:space="preserve">               .*+++=:.:-+%@@@@@@@@@@%                </tspan>
-<tspan x="238" y="376.0" xml:space="preserve">                .##++-::.-+*#@@@@@@@*                 </tspan>
-<tspan x="238" y="389.2" xml:space="preserve">                 =###*=-::+##@@@@@@@.                 </tspan>
-<tspan x="238" y="402.4" xml:space="preserve">                :==+*%@%%%@@@@@@@@@@%                 </tspan>
-<tspan x="238" y="415.6" xml:space="preserve">                **==-=+*%@@@@@@@@@@@@.                </tspan>
-<tspan x="238" y="428.8" xml:space="preserve">                -@+=====+#%@@@@@@@@@*                 </tspan>
-<tspan x="238" y="442.0" xml:space="preserve">                 #@+===-=+*%@@@@@@@@    ::            </tspan>
-<tspan x="238" y="455.2" xml:space="preserve">                 :@@*====+*#%@@@@@@=    .-  .         </tspan>
-<tspan x="238" y="468.4" xml:space="preserve">                  :@@#*++*##%%%@@@#      .. ..        </tspan>
-<tspan x="238" y="481.6" xml:space="preserve">                :- =@@@####**#%@@@  *=-    .          </tspan>
-<tspan x="238" y="494.8" xml:space="preserve">              ===#= -#@@%%#++*@@= .####=-             </tspan>
-<tspan x="238" y="508.0" xml:space="preserve">            ..:   :.  :%@%#++++. -*=-=-::             </tspan>
-<tspan x="238" y="521.2" xml:space="preserve">                        =@@##-  :=:..                 </tspan>
-<tspan x="238" y="534.4" xml:space="preserve">                         .%@- .::                     </tspan>
-<tspan x="238" y="547.6" xml:space="preserve">                           = -:                       </tspan>
+<tspan x="238" y="125.0" xml:space="preserve">                       :+#@@@@@@@@@@@@@@@%+:                        </tspan>
+<tspan x="238" y="138.8" xml:space="preserve">                    .+%@@@@@@@@@@@@@@@@@@@@@@#=.                    </tspan>
+<tspan x="238" y="152.6" xml:space="preserve">                   =@@@@@@@@@@@@@@@@@@@@@@@@@@@@-                   </tspan>
+<tspan x="238" y="166.4" xml:space="preserve">                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*:                 </tspan>
+<tspan x="238" y="180.2" xml:space="preserve">                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#                </tspan>
+<tspan x="238" y="194.0" xml:space="preserve">                .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%                </tspan>
+<tspan x="238" y="207.8" xml:space="preserve">                :@@@@@%#*+=*#%%%##%@@%@@@@@@@@@@@@@.                </tspan>
+<tspan x="238" y="221.6" xml:space="preserve">                .@@@@@=--:..:=*##*####@@@@@@@@@@@@-                 </tspan>
+<tspan x="238" y="235.4" xml:space="preserve">                 *@@@*-=+=-...:-=+====*%@@@@@%@@@%                  </tspan>
+<tspan x="238" y="249.2" xml:space="preserve">                 :@@*:***#%@@@%%*+*#%@@@@@@@@@#@@-                  </tspan>
+<tspan x="238" y="263.0" xml:space="preserve">                 -@@:=*##+*@@@@+++%@@@@#@@@@@@%#@*                  </tspan>
+<tspan x="238" y="276.8" xml:space="preserve">                *+-=-+--=++**+==--+%@@@@@@%###%#%@=                 </tspan>
+<tspan x="238" y="290.6" xml:space="preserve">                #=*=--: .:=+=:--: :+#%%@%#**##%%@@*                 </tspan>
+<tspan x="238" y="304.4" xml:space="preserve">                *##*==-:.:+*--*#*+#@@@@@@@@@@@%%@@*                 </tspan>
+<tspan x="238" y="318.2" xml:space="preserve">                -+*%*++++=*#####*%@@@@@@@@@@@@@@%%-                 </tspan>
+<tspan x="238" y="332.0" xml:space="preserve">                   .=+++==%%%*-::-=+#%@@@@@@@@@*                    </tspan>
+<tspan x="238" y="345.8" xml:space="preserve">                    .+++++=:::--=*###@@@@@@@@@%                     </tspan>
+<tspan x="238" y="359.6" xml:space="preserve">                     .*#**+-:::-=*%%@@@@@@@@@+                      </tspan>
+<tspan x="238" y="373.4" xml:space="preserve">                      :*###*=--::+##%@@@@@@@*                       </tspan>
+<tspan x="238" y="387.2" xml:space="preserve">                     .+==+*#%%%%%@@@@@@@@@@@@=                      </tspan>
+<tspan x="238" y="401.0" xml:space="preserve">                     .@+==-=++*%@@@@@@@@@@@@@+                      </tspan>
+<tspan x="238" y="414.8" xml:space="preserve">                      *@+======+*#@@@@@@@@@@%   .:                  </tspan>
+<tspan x="238" y="428.6" xml:space="preserve">                       #@#+===-=+*#%@@@@@@@@.    :=                 </tspan>
+<tspan x="238" y="442.4" xml:space="preserve">                       .*@@#++++*##%%%%@@@@:      :. ...            </tspan>
+<tspan x="238" y="456.2" xml:space="preserve">                     .-: *@@@#########@@@@: -=:.    .. .            </tspan>
+<tspan x="238" y="470.0" xml:space="preserve">                   -=-+*: -*@@@%##*++#@%=  +%#%*=-                  </tspan>
+<tspan x="238" y="483.8" xml:space="preserve">                 ..:.   :.  .+%@@#*+++-  -+=---:::                  </tspan>
+<tspan x="238" y="497.6" xml:space="preserve">                               -%@%#-   --. .                       </tspan>
+<tspan x="238" y="511.4" xml:space="preserve">                                 +%:.:::                            </tspan>
+<tspan x="238" y="525.2" xml:space="preserve">                                  ..:.                              </tspan>
         </text>
       </g>
 
