@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Pixel-Perfect Hero Banner & ASCII Art Generator for Chandru9842.
-- 1:1 Natural proportions for facial ASCII matrix (76 cols x 38 rows).
-- Clean Education text: B.E. CSE • SRM TRP Engineering College (no 2027).
-- Full Toolchain & AI Tools.
-- Native clickable links in SVG dock.
+- Perfectly centered, high-contrast 1:1 facial ASCII portrait with text-anchor="middle".
+- Clean Education: B.E. CSE • SRM TRP Engineering College.
+- Complete Toolchain & AI Tools.
+- Clickable links in SVG dock.
 """
 
 import os
@@ -14,10 +14,10 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=76, rows=38):
+def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
     """
-    Fetches avatar from GitHub and converts it to a natural,
-    high-contrast ASCII portrait with true 1:1 face proportions.
+    Fetches avatar from GitHub and converts it to a centered,
+    high-contrast, sharp ASCII portrait with natural facial proportions.
     """
     try:
         url = f"https://github.com/{username}.png"
@@ -26,25 +26,26 @@ def fetch_avatar_ascii(username=USERNAME, cols=76, rows=38):
         img = Image.open(io.BytesIO(data)).convert("L")
 
         w, h = img.size
-        # Full width square crop from top
-        crop_square = img.crop((0, 0, w, w))
+        # Crop to head and shoulders with balanced padding
+        crop_box = (int(w * 0.08), int(h * 0.02), int(w * 0.92), int(h * 0.96))
+        img_cropped = img.crop(crop_box)
 
-        # Auto-contrast & sharpness enhancement for facial features
-        enhanced = ImageOps.autocontrast(crop_square, cutoff=1.5)
-        enhanced = ImageEnhance.Contrast(enhanced).enhance(1.45)
-        enhanced = ImageEnhance.Sharpness(enhanced).enhance(1.8)
+        # High contrast and sharpness for defined facial lines
+        img_cropped = ImageOps.autocontrast(img_cropped, cutoff=2)
+        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.65)
+        img_cropped = ImageEnhance.Sharpness(img_cropped).enhance(2.2)
 
-        # Scale with character aspect ratio compensation (monospace font height:width ≈ 2:1)
-        scaled = enhanced.resize((cols, rows), Image.Resampling.LANCZOS)
+        # Resize to grid
+        img_scaled = img_cropped.resize((cols, rows), Image.Resampling.LANCZOS)
 
-        # High-contrast cyber ramp
+        # Clean cyber ramp
         RAMP = "   ..::--==++**##%%@@@@"
 
         lines = []
         for y in range(rows):
             line = ""
             for x in range(cols):
-                p = scaled.getpixel((x, y))
+                p = img_scaled.getpixel((x, y))
                 idx = int(((255 - p) / 255.0) * (len(RAMP) - 1))
                 line += RAMP[idx]
             lines.append(line)
@@ -105,16 +106,16 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=76, rows=38)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=54, rows=34)
 
-    # Format ASCII tspans (centered and properly spaced)
+    # Format centered ASCII tspans with text-anchor="middle" at x="238"
     ascii_tspans = []
-    y_start = 110
-    line_h = 11.6
+    y_start = 112
+    line_h = 13.2
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
-        ascii_tspans.append(f'<tspan x="28" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
+        ascii_tspans.append(f'<tspan x="238" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
 
     ascii_text_content = "\n".join(ascii_tspans)
 
@@ -213,7 +214,7 @@ def build_banner(theme_mode="dark"):
       .font-mono {{ font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }}
       .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
       
-      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.0px; fill: url(#asciiGrad); letter-spacing: -0.1px; font-weight: 500; }}
+      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 8.6px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 600; text-anchor: middle; }}
       .t-title {{ font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }}
       .t-greeting {{ font-size: 13.5px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.3px; }}
       .t-prompt-usr {{ font-size: 12.5px; font-weight: 700; fill: {accent_2}; }}
@@ -271,7 +272,7 @@ def build_banner(theme_mode="dark"):
     </g>
   </g>
 
-  <!-- ==================== LEFT PANEL: NATURAL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
+  <!-- ==================== LEFT PANEL: CENTERED NATURAL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
   <g id="leftSection" transform="translate(0, 0)">
     <!-- Floating ASCII Module -->
     <g>
@@ -286,9 +287,9 @@ def build_banner(theme_mode="dark"):
       <text x="36" y="83" class="font-mono badge-lbl">01 // FULL.BIOMETRIC.ASCII</text>
       <text x="438" y="83" text-anchor="end" class="font-mono t-dim">FPS: 60 • LIVE</text>
 
-      <!-- Natural Face ASCII Render with Line-by-Line Reveal -->
+      <!-- Center-Aligned Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
-        <text x="28" y="0" class="ascii-art">
+        <text x="238" y="0" class="ascii-art">
 {ascii_text_content}
         </text>
       </g>
