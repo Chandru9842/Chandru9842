@@ -1,0 +1,81 @@
+name: Community Interactive Chess
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: chess-game
+  cancel-in-progress: false
+
+jobs:
+  play-chess:
+    runs-on: ubuntu-latest
+    if: startsWith(github.event.issue.title, 'Chess:') || startsWith(github.event.issue.title, 'chess:')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install chess
+
+      - name: Process Move / New Game
+        id: chess_step
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+        run: |
+          python -c "
+          import os, sys, subprocess
+
+          title = os.environ.get('ISSUE_TITLE', '').strip()
+          author = '@' + os.environ.get('ISSUE_AUTHOR', 'user')
+
+          if 'new game' in title.lower() or 'reset' in title.lower():
+              subprocess.run(['python', 'chess_manager.py', 'new_game'], check=True)
+              msg = f'🔄 Chess board has been reset by {author}! New game started. ♟️'
+          else:
+              parts = title.split()
+              move = parts[-1]
+              res = subprocess.run(['python', 'chess_manager.py', 'move', move, author], capture_output=True, text=True)
+              if res.returncode != 0:
+                  msg = f'❌ Move \`{move}\` is invalid or illegal in current board position! Please pick a legal move from the moves table. ♟️'
+                  with open('comment.txt', 'w', encoding='utf-8') as f:
+                      f.write(msg)
+                  sys.exit(1)
+              else:
+                  msg = f'✅ Move **{move}** played by {author}! Board updated. Thanks for playing! ♟️'
+
+          with open('comment.txt', 'w', encoding='utf-8') as f:
+              f.write(msg)
+          "
+
+      - name: Add Comment to Issue
+        if: always()
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body-path: "comment.txt"
+
+      - name: Close Issue
+        if: always()
+        uses: peter-evans/close-issue@v3
+        with:
+          issue-number: ${{ github.event.issue.number }}
+
+      - name: Commit and Push Game State
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(chess): update board after community move [skip ci]"
+          file_pattern: "data/chess_game.json assets/chess-board* README.md"

@@ -1,4 +1,4 @@
-name: Update Interactive Heatmaps (Jet, Game of Life)
+name: Update Interactive Jet Heatmap
 
 on:
   schedule:
@@ -32,10 +32,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node generate.mjs
-          node generate_game_of_life.mjs
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update interactive heatmap animations [skip ci]"
-          file_pattern: "dark.svg light.svg dist/*"
+          file_pattern: "dist/*"

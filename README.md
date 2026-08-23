@@ -508,29 +508,46 @@
 
 </div>
 
-## 🧬 &nbsp;Conway's Game of Life Heatmap
+## ♟️ &nbsp;Community Interactive Chess Game
+
+<!-- CHESS:START -->
+<div align="center">
+
+### ⚔️ ⚪ **White to move**
 
 <p align="center">
   <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-dark.svg" />
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-light.svg" />
-    <img
-      alt="Conway's Game of Life Contribution Automaton"
-      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-dark.svg"
-      width="100%"
-      loading="lazy" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-board-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-board-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-board.svg" alt="Community Interactive Chessboard" width="440px" />
   </picture>
 </p>
 
+**Move #0** • Last move: **`Game Start`** by @Chandru9842 • [🔄 **Start New Game**](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+New+Game&body=Click+%27Submit+new+issue%27+to+reset+the+board+and+start+a+new+game+of+Chess%21+%E2%99%9F%EF%B8%8F)
+
 <br/>
 
-<div align="center">
+<details>
+<summary><b>🎯 Click here to choose your move (20 legal moves available)</b></summary>
+
+<br/>
+
+| Move | Move | Move | Move | Move | Move |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| [`Na3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+Na3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2ANa3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`Nc3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+Nc3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2ANc3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`Nf3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+Nf3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2ANf3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`Nh3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+Nh3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2ANh3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`a3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+a3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Aa3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`a4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+a4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Aa4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) |
+| [`b3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+b3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ab3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`b4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+b4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ab4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`c3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+c3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ac3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`c4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+c4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ac4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`d3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+d3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ad3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`d4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+d4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ad4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) |
+| [`e3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+e3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ae3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`e4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+e4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ae4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`f3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+f3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Af3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`f4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+f4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Af4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`g3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+g3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ag3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`g4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+g4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ag4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) |
+| [`h3`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+h3&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ah3%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) | [`h4`](https://github.com/Chandru9842/Chandru9842/issues/new?title=Chess%3A+Move+h4&body=Click+%27Submit+new+issue%27+to+play+the+move+%2A%2Ah4%2A%2A+against+the+community%21+%E2%99%9F%EF%B8%8F) |
+
+
+> **How to Play**: Click any move above to open a pre-filled GitHub Issue and click **Submit new issue**. GitHub Actions will validate your move, update the board live, and close the issue automatically!
+
+</details>
 
 </div>
+<!-- CHESS:END -->
+
+<br/>
 
 ## 🏆 &nbsp;GitHub Achievement Badges
 
