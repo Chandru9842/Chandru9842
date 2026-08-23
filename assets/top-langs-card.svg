@@ -14,8 +14,8 @@
     width="493"
     height="218"
     rx="14"
-    fill="#0D1117"
-    stroke="#8B5CF6"
+    fill="#040F1D"
+    stroke="#00E8FF"
     stroke-width="1.4"/>
 
   <text
@@ -24,7 +24,7 @@
     font-family="'Segoe UI', Ubuntu, Sans-Serif"
     font-size="16"
     font-weight="700"
-    fill="#A78BFA">
+    fill="#8BB9FE">
     Most Used Languages
   </text>
 
@@ -62,7 +62,7 @@
         width="447"
         height="7"
         rx="3.5"
-        fill="#161B22"/>
+        fill="#0B1E3B"/>
 
       <rect
         x="0"
@@ -107,7 +107,7 @@
         width="447"
         height="7"
         rx="3.5"
-        fill="#161B22"/>
+        fill="#0B1E3B"/>
 
       <rect
         x="0"
@@ -152,7 +152,7 @@
         width="447"
         height="7"
         rx="3.5"
-        fill="#161B22"/>
+        fill="#0B1E3B"/>
 
       <rect
         x="0"
@@ -197,7 +197,7 @@
         width="447"
         height="7"
         rx="3.5"
-        fill="#161B22"/>
+        fill="#0B1E3B"/>
 
       <rect
         x="0"
@@ -242,7 +242,7 @@
         width="447"
         height="7"
         rx="3.5"
-        fill="#161B22"/>
+        fill="#0B1E3B"/>
 
       <rect
         x="0"

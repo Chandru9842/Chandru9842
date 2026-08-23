@@ -18,48 +18,48 @@
 
 <br>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:040F1D,50:0B1E3B,100:040F1D&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=8BB9FE" width="100%" />
 
 <a href="https://git.io/typing-svg">
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1200&color=A78BFA&center=true&vCenter=true&width=900&height=35&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" />
+<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=22&pause=1200&color=8BB9FE&center=true&vCenter=true&width=900&height=35&lines=Backend+Engineer+%7C+Java+%2B+Spring+Boot;Full+Stack+Developer+%7C+React+%2B+Node.js;Building+Scalable%2C+Production-Ready+Systems;Open+to+Software+Engineer+Opportunities" />
 </a>
 
 <br><br>
 
-<img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-8B5CF6?style=flat-square&labelColor=0D1117"/>
+<img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-00E8FF?style=flat-square&labelColor=040F1D"/>
 
-<img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-8B5CF6?style=flat-square&labelColor=0D1117"/>
+<img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-00E8FF?style=flat-square&labelColor=040F1D"/>
 
-<img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=0D1117"/>
+<img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=040F1D"/>
 
 <br><br>
 
 <a href="https://www.linkedin.com/in/chandru9842">
-<img src="https://img.shields.io/badge/LinkedIn-8B5CF6?style=for-the-badge&logo=linkedin&logoColor=white"/>
+<img src="https://img.shields.io/badge/LinkedIn-00E8FF?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
 <a href="mailto:chandrumohan550@gmail.com">
-<img src="https://img.shields.io/badge/Email-8B5CF6?style=for-the-badge&logo=gmail&logoColor=white"/>
+<img src="https://img.shields.io/badge/Email-00E8FF?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
 
 <a href="https://github.com/Chandru9842">
-<img src="https://img.shields.io/badge/GitHub-8B5CF6?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-00E8FF?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 
 <br><br>
 
-<img src="https://komarev.com/ghpvc/?username=Chandru9842&label=Profile%20Views&style=flat-square&color=8B5CF6"/>
+<img src="https://komarev.com/ghpvc/?username=Chandru9842&label=Profile%20Views&style=flat-square&color=00E8FF"/>
 
-<img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=8B5CF6"/>
+<img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=00E8FF"/>
 
-<img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=8B5CF6"/>
+<img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=00E8FF"/>
 
 <!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-39-8B5CF6?style=flat-square&labelColor=161B22" alt="Public Repositories"/>
+<img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
 <!--END_SECTION:public_repos-->
 <!--END_SECTION:public_repos-->
 
-<img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=8B5CF6"/>
+<img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=00E8FF"/>
 
 </div>
 
@@ -281,7 +281,7 @@
 
 <br/>
 
-![React](https://img.shields.io/badge/React-161B22?style=flat-square&labelColor=0D1117&color=94A3B8) ![JavaScript](https://img.shields.io/badge/JavaScript-161B22?style=flat-square&labelColor=0D1117&color=94A3B8) ![Node.js](https://img.shields.io/badge/Node.js-161B22?style=flat-square&labelColor=0D1117&color=94A3B8) ![Express.js](https://img.shields.io/badge/Express.js-161B22?style=flat-square&labelColor=0D1117&color=94A3B8) ![REST APIs](https://img.shields.io/badge/REST%20APIs-161B22?style=flat-square&labelColor=0D1117&color=94A3B8) ![Git](https://img.shields.io/badge/Git-161B22?style=flat-square&labelColor=0D1117&color=94A3B8)
+![React](https://img.shields.io/badge/React-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![JavaScript](https://img.shields.io/badge/JavaScript-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Node.js](https://img.shields.io/badge/Node.js-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Express.js](https://img.shields.io/badge/Express.js-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![REST APIs](https://img.shields.io/badge/REST%20APIs-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Git](https://img.shields.io/badge/Git-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8)
 
 </td>
 </tr>
@@ -323,8 +323,8 @@
 
 <br/><br/>
 
-![AWS](https://img.shields.io/badge/AWS-Cloud%20Fundamentals-161B22?style=flat-square&labelColor=0D1117&color=8B5CF6&logo=amazonaws&logoColor=F8FAFC)
-![NPTEL](https://img.shields.io/badge/NPTEL-Certified%20Course-161B22?style=flat-square&labelColor=0D1117&color=8B5CF6&logo=googlescholar&logoColor=F8FAFC)
+![AWS](https://img.shields.io/badge/AWS-Cloud%20Fundamentals-0B1E3B?style=flat-square&labelColor=040F1D&color=00E8FF&logo=amazonaws&logoColor=F8FAFC)
+![NPTEL](https://img.shields.io/badge/NPTEL-Certified%20Course-0B1E3B?style=flat-square&labelColor=040F1D&color=00E8FF&logo=googlescholar&logoColor=F8FAFC)
 
 <br/>
 
@@ -381,7 +381,7 @@
 
 <td width="50%" align="center">
 <img
-  src="https://streak-stats.demolab.com?user=Chandru9842&theme=radical"
+  src="https://streak-stats.demolab.com?user=Chandru9842&amp;theme=dark&amp;background=040F1D&amp;border=00E8FF&amp;stroke=00E8FF&amp;ring=00E8FF&amp;fire=FFA116&amp;currStreakNum=FFFFFF&amp;sideNums=FFFFFF&amp;currStreakLabel=00E8FF&amp;sideLabels=8BB9FE&amp;dates=8BB9FE&amp;border_radius=6"
   style="width:100%;height:230px;"
   alt="GitHub Streak"
 />
@@ -421,7 +421,7 @@
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Chandru9842&custom_title=Contribution%20Activity&bg_color=0D1117&color=F8FAFC&line=8B5CF6&point=A78BFA&area=true&area_color=8B5CF6&title_color=F8FAFC&hide_border=true" alt="Chandru's contribution activity graph" loading="lazy"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Chandru9842&custom_title=Contribution%20Activity&bg_color=040F1D&color=F8FAFC&line=00E8FF&point=8BB9FE&area=true&area_color=00E8FF&title_color=F8FAFC&hide_border=true" alt="Chandru's contribution activity graph" loading="lazy"/>
 
 </div>
 
@@ -736,6 +736,6 @@ LinkedIn discontinued public RSS/API access for personal article feeds, so there
 
 <sub>🕒 Last Updated: <!--LAST_UPDATED-->2026-08-23 12:18 UTC<!--END_LAST_UPDATED--></sub>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=120&section=footer" width="100%" alt=""/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:040F1D,50:0B1E3B,100:040F1D&height=120&section=footer" width="100%" alt=""/>
 
 </div>

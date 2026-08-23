@@ -32,8 +32,8 @@ function tierFor(value) {
 
 const TIER_COLOR = {
   C: "#94A3B8",
-  B: "#A78BFA",
-  A: "#8B5CF6",
+  B: "#8BB9FE",
+  A: "#00E8FF",
   S: "#F8FAFC",
   SS: "#F8FAFC",
 };

@@ -14,8 +14,8 @@
     width="493"
     height="218"
     rx="14"
-    fill="#0D1117"
-    stroke="#8B5CF6"
+    fill="#040F1D"
+    stroke="#00E8FF"
     stroke-width="1.4"/>
 
   <!-- LinkedIn Icon -->
@@ -25,8 +25,8 @@
     width="56"
     height="56"
     rx="12"
-    fill="#161B22"
-    stroke="#8B5CF6"
+    fill="#0B1E3B"
+    stroke="#00E8FF"
     stroke-opacity="0.35"/>
 
   <g transform="translate(38,34) scale(1.75)">
@@ -50,7 +50,7 @@
     y="66"
     font-family="'Segoe UI', Ubuntu, Sans-Serif"
     font-size="13"
-    fill="#A78BFA">
+    fill="#8BB9FE">
     Backend Engineer  •  Java / Spring Boot Developer
   </text>
 
@@ -60,7 +60,7 @@
     y1="92"
     x2="471"
     y2="92"
-    stroke="#8B5CF6"
+    stroke="#00E8FF"
     stroke-opacity="0.25"/>
 
   <!-- Description -->
@@ -80,7 +80,7 @@
     width="185"
     height="36"
     rx="18"
-    fill="#8B5CF6"/>
+    fill="#00E8FF"/>
 
   <text
     x="116"
@@ -88,7 +88,7 @@
     font-family="'Segoe UI', Ubuntu, Sans-Serif"
     font-size="14"
     font-weight="700"
-    fill="#0D1117"
+    fill="#040F1D"
     text-anchor="middle">
     Connect with me →
   </text>
