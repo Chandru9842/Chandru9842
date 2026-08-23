@@ -6,7 +6,17 @@
   <img alt="Chandru M - GitHub Profile Banner" src="dark.svg" width="100%" />
 </picture>
 
-<br><br>
+<p align="center">
+  <a href="https://github.com/Chandru9842" target="_blank"><img src="https://img.shields.io/badge/GitHub-Chandru9842-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/chandru9842/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-in%2Fchandru9842-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  &nbsp;
+  <a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-Chandrum06-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode"/></a>
+  &nbsp;
+  <a href="mailto:chandrumohan550@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-chandrumohan550%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
+
+<br>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,50:161B22,100:0D1117&height=230&section=header&text=Chandru%20M&fontSize=46&fontColor=F8FAFC&animation=fadeIn&fontAlignY=36&desc=Backend%20Engineer%20•%20Java%20/%20Spring%20Boot%20•%20Full%20Stack%20Systems&descAlignY=54&descSize=17&descColor=A78BFA" width="100%" />
 

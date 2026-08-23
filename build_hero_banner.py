@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Pixel-Perfect Hero Banner & ASCII Art Generator for Chandru9842.
-- Full-frame facial ASCII matrix with adaptive zoom and framing.
-- Updated Education (SRM TRP Engineering College (2027)).
-- Expanded Toolchain (Node.js, Git, GitHub, Postman, VS Code, AI Tools & Copilot).
-- Interactive, Clickable SVG Links for GitHub, LinkedIn, LeetCode, and Email.
+- 1:1 Natural proportions for facial ASCII matrix (76 cols x 38 rows).
+- Clean Education text: B.E. CSE • SRM TRP Engineering College (no 2027).
+- Full Toolchain & AI Tools.
+- Native clickable links in SVG dock.
 """
 
 import os
@@ -14,10 +14,10 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=68, rows=44):
+def fetch_avatar_ascii(username=USERNAME, cols=76, rows=38):
     """
-    Fetches avatar from GitHub and converts it to a rich, full-frame
-    cyber ASCII portrait with natural face proportions and collar/shirt lines.
+    Fetches avatar from GitHub and converts it to a natural,
+    high-contrast ASCII portrait with true 1:1 face proportions.
     """
     try:
         url = f"https://github.com/{username}.png"
@@ -26,28 +26,25 @@ def fetch_avatar_ascii(username=USERNAME, cols=68, rows=44):
         img = Image.open(io.BytesIO(data)).convert("L")
 
         w, h = img.size
-        # Zoom in slightly (86% box) with upper vertical framing to frame head, eyes, smile, and shoulders
-        box_size = int(min(w, h) * 0.86)
-        left = (w - box_size) // 2
-        top = int((h - box_size) * 0.26)
-        img_cropped = img.crop((left, top, left + box_size, top + box_size))
+        # Full width square crop from top
+        crop_square = img.crop((0, 0, w, w))
 
-        # Enhance contrast and sharpness for defined facial lines
-        img_cropped = ImageOps.autocontrast(img_cropped, cutoff=2)
-        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.6)
-        img_cropped = ImageEnhance.Sharpness(img_cropped).enhance(2.0)
+        # Auto-contrast & sharpness enhancement for facial features
+        enhanced = ImageOps.autocontrast(crop_square, cutoff=1.5)
+        enhanced = ImageEnhance.Contrast(enhanced).enhance(1.45)
+        enhanced = ImageEnhance.Sharpness(enhanced).enhance(1.8)
 
-        # Scale with character aspect ratio compensation
-        img_scaled = img_cropped.resize((cols, rows), Image.Resampling.LANCZOS)
+        # Scale with character aspect ratio compensation (monospace font height:width ≈ 2:1)
+        scaled = enhanced.resize((cols, rows), Image.Resampling.LANCZOS)
 
-        # Cyber matrix ramp
-        RAMP = " .:-=+*#%@@"
+        # High-contrast cyber ramp
+        RAMP = "   ..::--==++**##%%@@@@"
 
         lines = []
         for y in range(rows):
             line = ""
             for x in range(cols):
-                p = img_scaled.getpixel((x, y))
+                p = scaled.getpixel((x, y))
                 idx = int(((255 - p) / 255.0) * (len(RAMP) - 1))
                 line += RAMP[idx]
             lines.append(line)
@@ -108,16 +105,16 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=68, rows=44)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=76, rows=38)
 
-    # Format ASCII tspans
+    # Format ASCII tspans (centered and properly spaced)
     ascii_tspans = []
-    y_start = 104
-    line_h = 10.4
+    y_start = 110
+    line_h = 11.6
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
-        ascii_tspans.append(f'<tspan x="26" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
+        ascii_tspans.append(f'<tspan x="28" y="{y_pos:.1f}" xml:space="preserve">{l_esc}</tspan>')
 
     ascii_text_content = "\n".join(ascii_tspans)
 
@@ -216,7 +213,7 @@ def build_banner(theme_mode="dark"):
       .font-mono {{ font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }}
       .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
       
-      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.8px; fill: url(#asciiGrad); letter-spacing: -0.12px; font-weight: 600; }}
+      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 6.0px; fill: url(#asciiGrad); letter-spacing: -0.1px; font-weight: 500; }}
       .t-title {{ font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }}
       .t-greeting {{ font-size: 13.5px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.3px; }}
       .t-prompt-usr {{ font-size: 12.5px; font-weight: 700; fill: {accent_2}; }}
@@ -274,7 +271,7 @@ def build_banner(theme_mode="dark"):
     </g>
   </g>
 
-  <!-- ==================== LEFT PANEL: FULL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
+  <!-- ==================== LEFT PANEL: NATURAL BIOMETRIC ASCII PORTRAIT (~38%) ==================== -->
   <g id="leftSection" transform="translate(0, 0)">
     <!-- Floating ASCII Module -->
     <g>
@@ -289,9 +286,9 @@ def build_banner(theme_mode="dark"):
       <text x="36" y="83" class="font-mono badge-lbl">01 // FULL.BIOMETRIC.ASCII</text>
       <text x="438" y="83" text-anchor="end" class="font-mono t-dim">FPS: 60 • LIVE</text>
 
-      <!-- Full Face ASCII Render with Line-by-Line Reveal -->
+      <!-- Natural Face ASCII Render with Line-by-Line Reveal -->
       <g mask="url(#asciiRevealMask)">
-        <text x="26" y="0" class="ascii-art">
+        <text x="28" y="0" class="ascii-art">
 {ascii_text_content}
         </text>
       </g>
@@ -348,7 +345,7 @@ def build_banner(theme_mode="dark"):
     <!-- Divider 1 -->
     <line x1="490" y1="188" x2="1146" y2="188" stroke="{panel_border}" stroke-width="1" stroke-dasharray="4 4"/>
 
-    <!-- Block 3: Sequential Spec Details (Exact non-overlapping rows, 22px step) -->
+    <!-- Block 3: Sequential Spec Details (Clean non-overlapping rows, 22px step) -->
     <g clip-path="url(#cpRow1)">
       <text x="492" y="209" class="font-mono">
         <tspan class="t-key">📍 Location</tspan><tspan class="t-sep"> : .......... </tspan><tspan class="t-val">Tamil Nadu, India</tspan>
@@ -357,7 +354,7 @@ def build_banner(theme_mode="dark"):
 
     <g clip-path="url(#cpRow2)">
       <text x="492" y="231" class="font-mono">
-        <tspan class="t-key">🎓 Education</tspan><tspan class="t-sep"> : ......... </tspan><tspan class="t-val">B.E. CSE • SRM TRP Engineering College (2027)</tspan>
+        <tspan class="t-key">🎓 Education</tspan><tspan class="t-sep"> : ......... </tspan><tspan class="t-val">B.E. CSE • SRM TRP Engineering College</tspan>
       </text>
     </g>
 
