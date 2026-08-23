@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Pixel-Perfect Hero Banner & ASCII Art Generator for Chandru9842.
-- Perfectly centered, high-contrast 1:1 facial ASCII portrait with text-anchor="middle".
+- Precision centered, professionally scaled 1:1 facial ASCII portrait.
 - Clean Education: B.E. CSE • SRM TRP Engineering College.
-- Complete Toolchain & AI Tools.
-- Clickable links in SVG dock.
+- Expanded Core Stack, Developer Tools & Leading AI Engineering Skills.
+- Interactive, Clickable SVG Links for GitHub, LinkedIn, LeetCode, and Email.
 """
 
 import os
@@ -14,9 +14,9 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
-def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
+def fetch_avatar_ascii(username=USERNAME, cols=58, rows=36):
     """
-    Fetches avatar from GitHub and converts it to a centered,
+    Fetches avatar from GitHub and converts it to a perfectly centered,
     high-contrast, sharp ASCII portrait with natural facial proportions.
     """
     try:
@@ -26,19 +26,19 @@ def fetch_avatar_ascii(username=USERNAME, cols=54, rows=34):
         img = Image.open(io.BytesIO(data)).convert("L")
 
         w, h = img.size
-        # Crop to head and shoulders with balanced padding
-        crop_box = (int(w * 0.08), int(h * 0.02), int(w * 0.92), int(h * 0.96))
+        # Crop head & shoulders with balanced framing
+        crop_box = (int(w * 0.07), int(h * 0.01), int(w * 0.93), int(h * 0.96))
         img_cropped = img.crop(crop_box)
 
         # High contrast and sharpness for defined facial lines
         img_cropped = ImageOps.autocontrast(img_cropped, cutoff=2)
-        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.65)
+        img_cropped = ImageEnhance.Contrast(img_cropped).enhance(1.7)
         img_cropped = ImageEnhance.Sharpness(img_cropped).enhance(2.2)
 
         # Resize to grid
         img_scaled = img_cropped.resize((cols, rows), Image.Resampling.LANCZOS)
 
-        # Clean cyber ramp
+        # High-contrast cyber ramp
         RAMP = "   ..::--==++**##%%@@@@"
 
         lines = []
@@ -106,12 +106,12 @@ def build_banner(theme_mode="dark"):
         ascii_color_2 = "#0284C7"
         ascii_color_3 = "#0D9488"
 
-    raw_lines = fetch_avatar_ascii(USERNAME, cols=54, rows=34)
+    raw_lines = fetch_avatar_ascii(USERNAME, cols=58, rows=36)
 
     # Format centered ASCII tspans with text-anchor="middle" at x="238"
     ascii_tspans = []
-    y_start = 112
-    line_h = 13.2
+    y_start = 108
+    line_h = 12.6
     for i, l in enumerate(raw_lines):
         l_esc = l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
         y_pos = y_start + (i * line_h)
@@ -214,7 +214,7 @@ def build_banner(theme_mode="dark"):
       .font-mono {{ font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }}
       .font-sans {{ font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }}
       
-      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 8.6px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 600; text-anchor: middle; }}
+      .ascii-art {{ font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 9.0px; fill: url(#asciiGrad); letter-spacing: -0.15px; font-weight: 600; text-anchor: middle; }}
       .t-title {{ font-size: 26px; font-weight: 800; fill: url(#nameGrad); letter-spacing: -0.5px; }}
       .t-greeting {{ font-size: 13.5px; font-weight: 600; fill: {text_secondary}; letter-spacing: 0.3px; }}
       .t-prompt-usr {{ font-size: 12.5px; font-weight: 700; fill: {accent_2}; }}
@@ -388,9 +388,9 @@ def build_banner(theme_mode="dark"):
 
     <!-- ==================== SKILLS & COMPLETE TOOLCHAIN ==================== -->
     <g clip-path="url(#cpSkills)">
-      <text x="492" y="349" class="font-mono badge-lbl">CORE TECHNOLOGIES, AI TOOLS &amp; SKILLS</text>
+      <text x="492" y="349" class="font-mono badge-lbl">CORE TECHNOLOGIES, DEVELOPER TOOLS &amp; AI SKILLS</text>
       
-      <!-- Row 1: Languages & Core Frameworks -->
+      <!-- Row 1: Languages & Core Backend/Frontend Frameworks -->
       <g transform="translate(492, 358)">
         <g transform="translate(0, 0)"><rect width="66" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="33" y="16" text-anchor="middle" class="font-mono pill-txt">☕ Java</text></g>
         <g transform="translate(72, 0)"><rect width="104" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="52" y="16" text-anchor="middle" class="font-mono pill-txt">🍃 Spring Boot</text></g>
@@ -401,24 +401,24 @@ def build_banner(theme_mode="dark"):
         <g transform="translate(522, 0)"><rect width="102" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="51" y="16" text-anchor="middle" class="font-mono pill-txt">⚡ JavaScript</text></g>
       </g>
 
-      <!-- Row 2: DevOps, APIs & Problem Solving -->
+      <!-- Row 2: DevOps, APIs & Architecture Tools -->
       <g transform="translate(492, 388)">
-        <g transform="translate(0, 0)"><rect width="80" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="40" y="16" text-anchor="middle" class="font-mono pill-txt">🐳 Docker</text></g>
-        <g transform="translate(86, 0)"><rect width="98" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="49" y="16" text-anchor="middle" class="font-mono pill-txt">🔌 REST APIs</text></g>
-        <g transform="translate(190, 0)"><rect width="94" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="47" y="16" text-anchor="middle" class="font-mono pill-txt">🍃 MongoDB</text></g>
-        <g transform="translate(290, 0)"><rect width="90" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="45" y="16" text-anchor="middle" class="font-mono pill-txt">☁️ AWS Cloud</text></g>
-        <g transform="translate(386, 0)"><rect width="144" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="72" y="16" text-anchor="middle" class="font-mono pill-txt">🧠 DSA (250+ Solved)</text></g>
-        <g transform="translate(536, 0)"><rect width="90" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="45" y="16" text-anchor="middle" class="font-mono pill-txt">🚀 Postman</text></g>
+        <g transform="translate(0, 0)"><rect width="64" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="32" y="16" text-anchor="middle" class="font-mono pill-txt">🐙 Git</text></g>
+        <g transform="translate(70, 0)"><rect width="82" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="41" y="16" text-anchor="middle" class="font-mono pill-txt">🐱 GitHub</text></g>
+        <g transform="translate(158, 0)"><rect width="80" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="40" y="16" text-anchor="middle" class="font-mono pill-txt">🐳 Docker</text></g>
+        <g transform="translate(244, 0)"><rect width="98" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="49" y="16" text-anchor="middle" class="font-mono pill-txt">🔌 REST APIs</text></g>
+        <g transform="translate(348, 0)"><rect width="92" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="46" y="16" text-anchor="middle" class="font-mono pill-txt">🍃 MongoDB</text></g>
+        <g transform="translate(446, 0)"><rect width="88" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="44" y="16" text-anchor="middle" class="font-mono pill-txt">☁️ AWS Cloud</text></g>
+        <g transform="translate(540, 0)"><rect width="84" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="42" y="16" text-anchor="middle" class="font-mono pill-txt">🚀 Postman</text></g>
       </g>
 
-      <!-- Row 3: Git, GitHub, VS Code & AI Toolchain -->
+      <!-- Row 3: Modern AI Toolchain, DSA & IDEs -->
       <g transform="translate(492, 418)">
-        <g transform="translate(0, 0)"><rect width="64" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="32" y="16" text-anchor="middle" class="font-mono pill-txt">🐙 Git</text></g>
-        <g transform="translate(70, 0)"><rect width="80" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="40" y="16" text-anchor="middle" class="font-mono pill-txt">🐱 GitHub</text></g>
-        <g transform="translate(156, 0)"><rect width="88" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="44" y="16" text-anchor="middle" class="font-mono pill-txt">💻 VS Code</text></g>
-        <g transform="translate(250, 0)"><rect width="140" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="70" y="16" text-anchor="middle" class="font-mono pill-txt">🤖 AI &amp; ChatGPT</text></g>
-        <g transform="translate(396, 0)"><rect width="128" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="64" y="16" text-anchor="middle" class="font-mono pill-txt">✨ GitHub Copilot</text></g>
-        <g transform="translate(530, 0)"><rect width="96" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="48" y="16" text-anchor="middle" class="font-mono pill-txt">🛠️ Linux/CLI</text></g>
+        <g transform="translate(0, 0)"><rect width="138" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="69" y="16" text-anchor="middle" class="font-mono pill-txt">🤖 ChatGPT / OpenAI</text></g>
+        <g transform="translate(144, 0)"><rect width="128" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="64" y="16" text-anchor="middle" class="font-mono pill-txt">✨ GitHub Copilot</text></g>
+        <g transform="translate(278, 0)"><rect width="108" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="54" y="16" text-anchor="middle" class="font-mono pill-txt">⚡ Claude / Gemini</text></g>
+        <g transform="translate(392, 0)"><rect width="86" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="43" y="16" text-anchor="middle" class="font-mono pill-txt">💻 VS Code</text></g>
+        <g transform="translate(484, 0)"><rect width="140" height="24" rx="12" fill="{pill_bg}" stroke="{pill_border}" stroke-width="1"/><text x="70" y="16" text-anchor="middle" class="font-mono pill-txt">🧠 DSA (250+ Solved)</text></g>
       </g>
     </g>
 
