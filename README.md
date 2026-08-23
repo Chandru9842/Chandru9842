@@ -55,7 +55,7 @@
 <img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=00E8FF"/>
 
 <!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
+<img src="https://img.shields.io/badge/Public%20Repos-39-8B5CF6?style=flat-square&labelColor=161B22" alt="Public Repositories"/>
 <!--END_SECTION:public_repos-->
 <!--END_SECTION:public_repos-->
 
