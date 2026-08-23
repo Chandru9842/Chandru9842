@@ -450,6 +450,34 @@
 
 </div>
 
+## ✈️ &nbsp;GitHub Jet Heatmap
+
+<p align="center">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg" />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/light.svg" />
+    <img
+      alt="GitHub Jet Heatmap"
+      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dark.svg"
+      width="100%"
+      loading="lazy" />
+  </picture>
+</p>
+
+
+
+<br/>
+
+<div align="center">
+
+
+
+</div>
+
 ## ⏱️ &nbsp;WakaTime Coding Activity
 
 <!--START_SECTION:waka-->
