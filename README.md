@@ -484,6 +484,54 @@
 
 </div>
 
+## 🟡 &nbsp;Pac-Man Contribution Heatmap
+
+<p align="center">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-dark.svg" />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-light.svg" />
+    <img
+      alt="Pac-Man Contribution Heatmap"
+      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/pacman-dark.svg"
+      width="100%"
+      loading="lazy" />
+  </picture>
+</p>
+
+<br/>
+
+<div align="center">
+
+</div>
+
+## 🧬 &nbsp;Conway's Game of Life Heatmap
+
+<p align="center">
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-dark.svg" />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-light.svg" />
+    <img
+      alt="Conway's Game of Life Contribution Automaton"
+      src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/dist/game-of-life-dark.svg"
+      width="100%"
+      loading="lazy" />
+  </picture>
+</p>
+
+<br/>
+
+<div align="center">
+
+</div>
+
 ## 🏆 &nbsp;GitHub Achievement Badges
 
 <div align="center">

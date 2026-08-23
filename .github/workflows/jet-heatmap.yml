@@ -1,4 +1,4 @@
-name: Update Jet Heatmap SVG
+name: Update Interactive Heatmaps (Jet, Pac-Man, Game of Life)
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: jet-heatmap
+  group: interactive-heatmaps
   cancel-in-progress: true
 
 jobs:
@@ -26,14 +26,17 @@ jobs:
         with:
           node-version: 20
 
-      - name: Generate SVGs
+      - name: Generate Heatmap Animations
         env:
           GH_USERNAME: ${{ github.repository_owner }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node generate.mjs
+        run: |
+          node generate.mjs
+          node generate_pacman.mjs
+          node generate_game_of_life.mjs
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update jet heatmap SVGs [skip ci]"
+          commit_message: "chore: update interactive heatmap animations [skip ci]"
           file_pattern: "dark.svg light.svg dist/*"
