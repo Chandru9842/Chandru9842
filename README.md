@@ -682,47 +682,46 @@ LinkedIn discontinued public RSS/API access for personal article feeds, so there
 
 </div>
 
-## 💬 &nbsp;Daily Developer Quote
+## 💬 &nbsp;Daily Developer Wisdom
 
-<div align="center">
-
-<!--START_SECTION:quote-->
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Daily developer quote" loading="lazy"/>
-<!--END_SECTION:quote-->
-
-</div>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/quote-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/quote-card-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/quote-card.svg" alt="Daily Developer Wisdom &amp; Quote Card" width="100%" loading="lazy" />
+  </picture>
+</p>
 
 <br/>
 
 <div align="center">
 
-
-
 </div>
 
-## 🎯 &nbsp;Current Focus
+## 🎯 &nbsp;Current Focus & Objectives
 
-```yaml
-learning:
-  - System Design fundamentals
-  - Docker & containerization
-  - Spring Security
-  - Microservices architecture
-
-building:
-  - Portfolio CMS
-  - AI Resume Analyzer
-  - Task Manager
-
-exploring:
-  - Cloud deployment patterns (Vercel, Railway)
-  - Scalable backend architecture
-
-open_to:
-  - Backend Engineer roles
-  - Full Stack Developer roles
-  - Software Engineer opportunities at product-based companies
-```
+<table align="center" width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h4>📚 Currently Mastering</h4>
+      <ul>
+        <li><b>System Design</b> — Scalable architecture, caching, load balancers</li>
+        <li><b>Docker &amp; Containers</b> — Multi-stage builds &amp; container orchestration</li>
+        <li><b>Spring Boot &amp; Security</b> — Microservices, JWT, OAuth2 auth flows</li>
+        <li><b>Distributed Systems</b> — Message queues, event-driven backends</li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h4>🚀 Active Engineering</h4>
+      <ul>
+        <li><b>AI Resume Analyzer</b> — Intelligent LLM parsing &amp; scoring</li>
+        <li><b>Portfolio CMS</b> — High-throughput modern developer platform</li>
+        <li><b>Cloud Deployments</b> — Automated CI/CD with Docker &amp; Cloudflare</li>
+        <li><b>Open to Opportunities</b> — Full Stack &amp; Backend Engineering roles</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 <br/>
 

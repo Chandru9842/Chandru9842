@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Daily Developer Wisdom &amp; Quote Card">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;700;800&amp;family=Plus+Jakarta+Sans:ital,wght@0,600;0,700;0,800;1,600;1,700&amp;display=swap');
+      .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
+    <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container -->
+  <rect width="790" height="236" rx="16" fill="url(#quoteGrad)" stroke="rgba(2, 132, 199, 0.25)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="790" height="3" fill="url(#glowLine)" rx="1.5"/>
+
+  <!-- Giant Background Quote Glyph -->
+  <text x="32" y="140" font-family="'Georgia', serif" font-size="160px" font-weight="900" fill="rgba(2, 132, 199, 0.12)" select="none">“</text>
+
+  <!-- Header Header Telemetry -->
+  <g transform="translate(32, 24)">
+    <circle cx="8" cy="14" r="5" fill="#059669">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="22" y="19" class="font-sans" font-size="14.5px" font-weight="800" fill="#0F172A">💬 DAILY DEVELOPER INSPIRATION</text>
+    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="#64748B">Engineering Philosophy // Wisdom Matrix</text>
+
+    <!-- Daily Sync Badge -->
+    <g transform="translate(615, 2)">
+      <rect width="112" height="26" rx="7" fill="#059669" fill-opacity="0.15" stroke="#059669" stroke-width="1"/>
+      <text x="56" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#059669" text-anchor="middle">DAILY SYNC</text>
+    </g>
+  </g>
+
+  <!-- Quote Text -->
+  <text class="font-sans" font-size="17px" font-style="italic" font-weight="700" fill="#0F172A">
+    <tspan x="42" y="92" xml:space="preserve">Any fool can write code that a computer can</tspan><tspan x="42" y="120" xml:space="preserve">understand. Good programmers write code that humans</tspan><tspan x="42" y="148" xml:space="preserve">can understand.</tspan>
+  </text>
+
+  <!-- Author Info -->
+  <g transform="translate(520, 172)">
+    <text x="238" y="0" class="font-sans" font-size="14px" font-weight="800" fill="#0284C7" text-anchor="end">— Martin Fowler</text>
+    <text x="238" y="16" class="font-mono" font-size="10.5px" font-weight="600" fill="#64748B" text-anchor="end">Software Architecture & Refactoring Author</text>
+  </g>
+
+  <!-- Tag Pills -->
+  
+        <g transform="translate(42, 190)">
+          <rect width="106.0" height="24" rx="6" fill="#E2E8F0" stroke="rgba(2, 132, 199, 0.25)" stroke-width="0.8"/>
+          <text x="53.0" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#334155" text-anchor="middle">#Refactoring</text>
+        </g>
+        
+        <g transform="translate(158.0, 190)">
+          <rect width="151.0" height="24" rx="6" fill="#E2E8F0" stroke="rgba(2, 132, 199, 0.25)" stroke-width="0.8"/>
+          <text x="75.5" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#334155" text-anchor="middle">#CleanArchitecture</text>
+        </g>
+        
+        <g transform="translate(319.0, 190)">
+          <rect width="136.0" height="24" rx="6" fill="#E2E8F0" stroke="rgba(2, 132, 199, 0.25)" stroke-width="0.8"/>
+          <text x="68.0" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#334155" text-anchor="middle">#Maintainability</text>
+        </g>
+        
+
+</svg>
