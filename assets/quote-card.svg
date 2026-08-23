@@ -1,69 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Daily Developer Wisdom and Quote Card">
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="195" viewBox="0 0 790 195" role="img" aria-label="Daily Developer Wisdom">
   <defs>
     <style>
-      .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
-      .font-mono { font-family: 'Segoe UI', Ubuntu, monospace; }
+      .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }
+      .font-mono { font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }
     </style>
-    <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#0B1120"/>
-    </linearGradient>
-    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="50%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#10B981"/>
+    <linearGradient id="quoteCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040F1D"/>
+      <stop offset="100%" stop-color="#0B1E3B"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="236" rx="16" fill="url(#quoteGrad)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="790" height="3" fill="url(#glowLine)" rx="1.5"/>
+  <rect width="790" height="195" rx="12" fill="url(#quoteCardBg)" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.2"/>
 
-  <!-- Giant Background Quote Glyph -->
-  <text x="32" y="140" font-family="'Georgia', serif" font-size="160px" font-weight="900" fill="rgba(56, 189, 248, 0.12)">“</text>
-
-  <!-- Header Telemetry -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="#10B981">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="19" class="font-sans" font-size="14.5px" font-weight="800" fill="#F8FAFC">💬 DAILY DEVELOPER INSPIRATION</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Engineering Philosophy // Wisdom Matrix</text>
+  <!-- Header Section (Matching Pic 2 Header) -->
+  <g transform="translate(32, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="#00E8FF"/>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#00E8FF">Daily Developer Wisdom</text>
+    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Innovation &amp; Systems</text>
 
     <!-- Daily Sync Badge -->
-    <g transform="translate(615, 2)">
-      <rect width="112" height="26" rx="7" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
-      <text x="56" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#10B981" text-anchor="middle">DAILY SYNC</text>
+    <g transform="translate(618, 0)">
+      <rect width="104" height="24" rx="6" fill="rgba(0, 232, 255, 0.1)" stroke="#00E8FF" stroke-width="0.8"/>
+      <text x="52" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#00E8FF" text-anchor="middle">DAILY SYNC</text>
     </g>
   </g>
 
-  <!-- Quote Text -->
-  <text class="font-sans" font-size="16.5px" font-style="italic" font-weight="700" fill="#F8FAFC">
-    <tspan x="42" y="100" xml:space="preserve">The best way to predict the future is to invent it.</tspan>
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="758" y2="56" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1"/>
+
+  <!-- Quote Body -->
+  <text class="font-sans" font-size="14.5px" font-weight="600" fill="#FFFFFF">
+    <tspan x="36" y="86" xml:space="preserve">The best way to predict the future is to invent it.</tspan>
   </text>
 
-  <!-- Author Info -->
-  <g transform="translate(520, 126)">
-    <text x="238" y="0" class="font-sans" font-size="14px" font-weight="800" fill="#38BDF8" text-anchor="end">— Alan Kay</text>
-    <text x="238" y="16" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8" text-anchor="end">Pioneer of OOP &amp; Graphical UI</text>
+  <!-- Author Attribution -->
+  <g transform="translate(36, 126)">
+    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="#00E8FF">— Alan Kay</text>
+    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="#8BB9FE">Pioneer of Object-Oriented Programming &amp; GUI</text>
   </g>
-
-  <!-- Tag Pills -->
-  
-        <g transform="translate(42, 190)">
-          <rect width="98.5" height="24" rx="6" fill="#1E293B" stroke="rgba(56, 189, 248, 0.35)" stroke-width="0.8"/>
-          <text x="49.2" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#E2E8F0" text-anchor="middle">#Innovation</text>
-        </g>
-        
-        <g transform="translate(150.5, 190)">
-          <rect width="76.0" height="24" rx="6" fill="#1E293B" stroke="rgba(56, 189, 248, 0.35)" stroke-width="0.8"/>
-          <text x="38.0" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#E2E8F0" text-anchor="middle">#Systems</text>
-        </g>
-        
-        <g transform="translate(236.5, 190)">
-          <rect width="68.5" height="24" rx="6" fill="#1E293B" stroke="rgba(56, 189, 248, 0.35)" stroke-width="0.8"/>
-          <text x="34.2" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="#E2E8F0" text-anchor="middle">#Vision</text>
-        </g>
-        
 
 </svg>

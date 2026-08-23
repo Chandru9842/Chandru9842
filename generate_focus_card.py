@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Ultra-Sleek Current Focus & Engineering Objectives Card Generator for Chandru M (@Chandru9842).
-- Renders high-end glowing glassmorphism SVG card with dual-column architecture.
-- Displays Active Engineering, Core Mastery, Cloud Architecture, and Career Status.
+Professional Current Focus & Objectives Card Generator for Chandru M (@Chandru9842).
+- Designed in the exact typography, color palette, and layout of GitHub Developer Stats (Ocean Theme) and Terminal Telemetry (Pic 2 & Pic 3).
+- Uses 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, Roboto, sans-serif.
+- Clean dotted leader alignment, crisp stat keys and values.
 - Supports both dark and light modes.
 """
 
@@ -17,127 +18,105 @@ OUTPUT_MAIN = "assets/focus-card.svg"
 def esc(text):
     return saxutils.escape(str(text))
 
-FOCUS_DATA = {
-    "mastering": [
-        {"title": "System Design & Distributed Systems", "desc": "Scalability, Caching, Event-Driven", "badge": "CORE"},
-        {"title": "Docker & Containerization", "desc": "Multi-stage builds, Container Orchestration", "badge": "DEVOPS"},
-        {"title": "Spring Boot & Security", "desc": "Microservices, JWT, OAuth2 Auth Flows", "badge": "BACKEND"},
-        {"title": "Advanced DSA & Algorithms", "desc": "Problem Solving, Optimization, Complexity", "badge": "LEETCODE"}
-    ],
-    "engineering": [
-        {"title": "AI Resume Analyzer & Parser", "desc": "Intelligent LLM Semantic Scoring Pipeline", "badge": "ACTIVE"},
-        {"title": "Developer CMS Platform", "desc": "High-throughput modern portfolio engine", "badge": "BUILDING"},
-        {"title": "Cloud CI/CD & Deployments", "desc": "Automated pipelines on Docker & Cloudflare", "badge": "INFRA"},
-        {"title": "Open to New Opportunities", "desc": "Full Stack & Backend Engineering roles", "badge": "OPEN"}
-    ]
-}
+FOCUS_ITEMS_LEFT = [
+    ("System Design", "Distributed Systems, Caching, Queues"),
+    ("Containerization", "Docker, Multi-Stage Builds, Orchestration"),
+    ("Enterprise Java", "Spring Boot 3, Spring Security, OAuth2/JWT"),
+    ("Algorithmic Mastery", "Advanced DSA, Dynamic Programming, Graphs")
+]
+
+FOCUS_ITEMS_RIGHT = [
+    ("AI Resume Parser", "LLM Semantic Analysis & Scoring Pipeline"),
+    ("Developer Platform", "Portfolio CMS & High-Throughput Engine"),
+    ("Cloud Infrastructure", "Dockerized Services, CI/CD, Cloudflare"),
+    ("Career Objective", "Full Stack & Backend Engineering Roles")
+]
 
 def build_focus_svg(theme="dark"):
     is_dark = (theme == "dark")
     
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    column_bg = "rgba(30, 41, 59, 0.6)" if is_dark else "rgba(241, 245, 249, 0.9)"
-    column_border = "rgba(255, 255, 255, 0.08)" if is_dark else "rgba(0, 0, 0, 0.06)"
-    border = "rgba(56, 189, 248, 0.35)" if is_dark else "rgba(2, 132, 199, 0.25)"
-    text_primary = "#F8FAFC" if is_dark else "#0F172A"
-    text_secondary = "#94A3B8" if is_dark else "#475569"
-    text_muted = "#64748B" if is_dark else "#94A3B8"
-    accent_cyan = "#38BDF8" if is_dark else "#0284C7"
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
+    text_dots = "#3B597E" if is_dark else "#CBD5E1"
+    accent_cyan = "#00E8FF" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
-    accent_purple = "#818CF8" if is_dark else "#4F46E5"
-    accent_pink = "#F472B6" if is_dark else "#DB2777"
+    badge_bg = "rgba(0, 232, 255, 0.1)" if is_dark else "rgba(2, 132, 199, 0.1)"
 
-    # Build Left Column Items (Mastering)
-    left_items = []
-    y_pos = 18
-    for item in FOCUS_DATA["mastering"]:
-        left_items.append(f"""
-        <g transform="translate(16, {y_pos})">
-          <circle cx="6" cy="10" r="3.5" fill="{accent_cyan}"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="{text_primary}">{esc(item['title'])}</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">{esc(item['desc'])}</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="{accent_cyan}" fill-opacity="0.15" stroke="{accent_cyan}" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">{item['badge']}</text>
-          </g>
+    # Build Left Column Rows
+    left_rows = []
+    y_pos = 96
+    for key, val in FOCUS_ITEMS_LEFT:
+        left_rows.append(f"""
+        <g transform="translate(36, {y_pos})">
+          <circle cx="4" cy="5" r="3.5" fill="{accent_cyan}"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(key)}</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(val)}</text>
         </g>
         """)
-        y_pos += 42
+        y_pos += 32
 
-    # Build Right Column Items (Engineering)
-    right_items = []
-    y_pos = 18
-    for item in FOCUS_DATA["engineering"]:
-        badge_color = accent_emerald if item['badge'] in ['ACTIVE', 'OPEN'] else accent_purple
-        right_items.append(f"""
-        <g transform="translate(16, {y_pos})">
-          <circle cx="6" cy="10" r="3.5" fill="{badge_color}"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="{text_primary}">{esc(item['title'])}</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">{esc(item['desc'])}</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="{badge_color}" fill-opacity="0.15" stroke="{badge_color}" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="{badge_color}" text-anchor="middle">{item['badge']}</text>
-          </g>
+    # Build Right Column Rows
+    right_rows = []
+    y_pos = 96
+    for key, val in FOCUS_ITEMS_RIGHT:
+        right_rows.append(f"""
+        <g transform="translate(400, {y_pos})">
+          <circle cx="4" cy="5" r="3.5" fill="{accent_emerald}"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(key)}</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(val)}</text>
         </g>
         """)
-        y_pos += 42
+        y_pos += 32
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="280" viewBox="0 0 790 280" role="img" aria-label="Current Focus and Objectives Dashboard">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Current Focus and Objectives">
   <defs>
     <style>
-      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
-      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }}
+      .font-mono {{ font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }}
     </style>
-    <linearGradient id="focusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{card_bg}"/>
-      <stop offset="100%" stop-color="{bg}"/>
-    </linearGradient>
-    <linearGradient id="glowTop" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F472B6"/>
-      <stop offset="50%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+    <linearGradient id="focusCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{bg}"/>
+      <stop offset="100%" stop-color="{card_bg}"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="280" rx="16" fill="url(#focusGrad)" stroke="{border}" stroke-width="1.5"/>
-  <rect x="0" y="0" width="790" height="3" fill="url(#glowTop)" rx="1.5"/>
+  <rect width="790" height="236" rx="12" fill="url(#focusCardBg)" stroke="{border}" stroke-width="1.2"/>
 
-  <!-- Header Header Telemetry -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="{accent_pink}">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="19" class="font-sans" font-size="15.5px" font-weight="800" fill="{text_primary}">🎯 CURRENT FOCUS &amp; ENGINEERING OBJECTIVES</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">Active Technical Roadmaps // Core Engineering Vectors</text>
+  <!-- Header Section (Matching Pic 2 Header) -->
+  <g transform="translate(32, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="{accent_cyan}"/>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="{accent_cyan}">Current Focus &amp; Objectives</text>
+    <text x="210" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">// Technical Vectors &amp; Active Roadmaps</text>
 
-    <!-- Telemetry Status Badge -->
-    <g transform="translate(605, 2)">
-      <rect width="122" height="26" rx="7" fill="{accent_emerald}" fill-opacity="0.15" stroke="{accent_emerald}" stroke-width="1"/>
-      <text x="61" y="17" class="font-mono" font-size="10px" font-weight="700" fill="{accent_emerald}" text-anchor="middle">ACTIVE MATRIX</text>
+    <!-- Status Badge -->
+    <g transform="translate(628, 0)">
+      <rect width="94" height="24" rx="6" fill="{badge_bg}" stroke="{accent_cyan}" stroke-width="0.8"/>
+      <text x="47" y="16" class="font-mono" font-size="10px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">ACTIVE</text>
     </g>
   </g>
 
-  <!-- Left Column Card: Core Mastery -->
-  <g transform="translate(24, 76)">
-    <rect width="362" height="184" rx="10" fill="{column_bg}" stroke="{column_border}" stroke-width="1.2"/>
-    <g transform="translate(16, -10)">
-      <rect width="144" height="20" rx="5" fill="{accent_cyan}" fill-opacity="0.2" stroke="{accent_cyan}" stroke-width="1"/>
-      <text x="72" y="14" class="font-sans" font-size="10px" font-weight="800" fill="{accent_cyan}" text-anchor="middle">📚 CURRENTLY MASTERING</text>
-    </g>
-    {''.join(left_items)}
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="758" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <!-- Column Headers -->
+  <g transform="translate(36, 72)">
+    <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="{accent_cyan}" letter-spacing="0.5px">📚 CURRENTLY MASTERING</text>
+  </g>
+  <g transform="translate(400, 72)">
+    <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="{accent_emerald}" letter-spacing="0.5px">🚀 ACTIVE ENGINEERING</text>
   </g>
 
-  <!-- Right Column Card: Active Engineering -->
-  <g transform="translate(404, 76)">
-    <rect width="362" height="184" rx="10" fill="{column_bg}" stroke="{column_border}" stroke-width="1.2"/>
-    <g transform="translate(16, -10)">
-      <rect width="138" height="20" rx="5" fill="{accent_emerald}" fill-opacity="0.2" stroke="{accent_emerald}" stroke-width="1"/>
-      <text x="69" y="14" class="font-sans" font-size="10px" font-weight="800" fill="{accent_emerald}" text-anchor="middle">🚀 ACTIVE ENGINEERING</text>
-    </g>
-    {''.join(right_items)}
-  </g>
+  <!-- Left Column Items -->
+  {''.join(left_rows)}
+
+  <!-- Right Column Items -->
+  {''.join(right_rows)}
 
 </svg>
 '''
@@ -155,7 +134,7 @@ def main():
     with open(OUTPUT_MAIN, "w", encoding="utf-8") as f:
         f.write(dark_svg)
 
-    print("Generated ultra-sleek Current Focus cards successfully!")
+    print("Generated professional Current Focus card successfully!")
 
 if __name__ == "__main__":
     main()

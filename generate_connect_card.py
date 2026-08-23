@@ -1,104 +1,114 @@
 #!/usr/bin/env python3
 """
-Ultra-Sleek Connect & Developer Collaboration Hub Generator for Chandru M (@Chandru9842).
-- Renders high-end glowing glassmorphism SVG card with direct action buttons.
-- Connects LinkedIn, GitHub, Gmail, LeetCode, and GeeksforGeeks with glowing pill designs.
-- Strictly valid XML.
+Professional Connect & Developer Collaboration Card Generator for Chandru M (@Chandru9842).
+- Designed in the exact typography, color palette, and layout of GitHub Developer Stats (Ocean Theme) and Terminal Telemetry (Pic 2 & Pic 3).
+- Uses 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, Roboto, sans-serif.
+- Clean dotted leader alignment, crisp stat keys and values.
 - Supports both dark and light modes.
 """
 
 import os
 import sys
+import xml.sax.saxutils as saxutils
 
 OUTPUT_DARK = "assets/connect-card-dark.svg"
 OUTPUT_LIGHT = "assets/connect-card-light.svg"
 OUTPUT_MAIN = "assets/connect-card.svg"
 
-SOCIAL_BUTTONS = [
-    {"label": "LINKEDIN", "handle": "in/chandru9842", "color": "#0A66C2", "icon_color": "#38BDF8"},
-    {"label": "GMAIL", "handle": "chandrumohan550", "color": "#EA4335", "icon_color": "#F87171"},
-    {"label": "GITHUB", "handle": "@Chandru9842", "color": "#7C3AED", "icon_color": "#A78BFA"},
-    {"label": "LEETCODE", "handle": "@Chandrum06", "color": "#FFA116", "icon_color": "#FCD34D"},
-    {"label": "GFG", "handle": "@chandrum06", "color": "#2F8D46", "icon_color": "#34D399"}
+def esc(text):
+    return saxutils.escape(str(text))
+
+CONNECT_LINKS = [
+    ("LinkedIn", "linkedin.com/in/chandru9842", "https://www.linkedin.com/in/chandru9842", "#00E8FF"),
+    ("Gmail", "chandrumohan550@gmail.com", "mailto:chandrumohan550@gmail.com", "#F87171"),
+    ("GitHub", "github.com/Chandru9842", "https://github.com/Chandru9842", "#A78BFA"),
+    ("LeetCode", "leetcode.com/u/Chandrum06/", "https://leetcode.com/u/Chandrum06/", "#FFA116"),
+    ("GeeksforGeeks", "geeksforgeeks.org/profile/chandrum06", "https://www.geeksforgeeks.org/profile/chandrum06", "#34D399")
 ]
 
 def build_connect_svg(theme="dark"):
     is_dark = (theme == "dark")
     
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    border = "rgba(56, 189, 248, 0.35)" if is_dark else "rgba(2, 132, 199, 0.25)"
-    btn_bg = "#1E293B" if is_dark else "#E2E8F0"
-    btn_border = "rgba(255, 255, 255, 0.1)" if is_dark else "rgba(0, 0, 0, 0.08)"
-    text_primary = "#F8FAFC" if is_dark else "#0F172A"
-    text_secondary = "#94A3B8" if is_dark else "#475569"
-    text_muted = "#64748B" if is_dark else "#94A3B8"
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
+    text_dots = "#3B597E" if is_dark else "#CBD5E1"
+    text_muted = "#5B7CA3" if is_dark else "#94A3B8"
+    accent_cyan = "#00E8FF" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
+    badge_bg = "rgba(0, 232, 255, 0.1)" if is_dark else "rgba(2, 132, 199, 0.1)"
 
-    # Build 5 social connection badges
-    buttons = []
-    x_start = 24
-    btn_w = 142
-    for idx, b in enumerate(SOCIAL_BUTTONS):
-        bx = x_start + (idx * (btn_w + 8))
-        color = b["color"]
-        label = b["label"]
-        handle = b["handle"]
-
-        buttons.append(f"""
-        <g transform="translate({bx}, 78)">
-          <rect width="{btn_w}" height="48" rx="10" fill="{btn_bg}" stroke="{btn_border}" stroke-width="1.2"/>
-          <rect x="0" y="0" width="4" height="48" rx="2" fill="{color}"/>
-          <text x="14" y="20" class="font-mono" font-size="10.5px" font-weight="800" fill="{color}">{label}</text>
-          <text x="14" y="36" class="font-sans" font-size="11.5px" font-weight="700" fill="{text_primary}">{handle}</text>
+    # Build Left and Right Column Rows
+    left_rows = []
+    y_pos = 78
+    for name, handle, url, dot_col in CONNECT_LINKS[:3]:
+        left_rows.append(f"""
+        <g transform="translate(36, {y_pos})">
+          <circle cx="4" cy="5" r="3.5" fill="{dot_col}"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
+          <text x="100" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
+          <text x="145" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
         </g>
         """)
+        y_pos += 30
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="186" viewBox="0 0 790 186" role="img" aria-label="Connect and Developer Collaboration Hub">
+    right_rows = []
+    y_pos = 78
+    for name, handle, url, dot_col in CONNECT_LINKS[3:]:
+        right_rows.append(f"""
+        <g transform="translate(400, {y_pos})">
+          <circle cx="4" cy="5" r="3.5" fill="{dot_col}"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="{text_secondary}">{esc(name)}</text>
+          <text x="100" y="9" class="font-mono" font-size="11.5px" fill="{text_dots}">: . . . . .</text>
+          <text x="145" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{esc(handle)}</text>
+        </g>
+        """)
+        y_pos += 30
+
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="200" viewBox="0 0 790 200" role="img" aria-label="Connect and Developer Collaboration">
   <defs>
     <style>
-      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
-      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }}
+      .font-mono {{ font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }}
     </style>
-    <linearGradient id="connectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{card_bg}"/>
-      <stop offset="100%" stop-color="{bg}"/>
-    </linearGradient>
-    <linearGradient id="glowBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0A66C2"/>
-      <stop offset="25%" stop-color="#7C3AED"/>
-      <stop offset="50%" stop-color="#FFA116"/>
-      <stop offset="75%" stop-color="#2F8D46"/>
-      <stop offset="100%" stop-color="#38BDF8"/>
+    <linearGradient id="connectCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{bg}"/>
+      <stop offset="100%" stop-color="{card_bg}"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="186" rx="16" fill="url(#connectGrad)" stroke="{border}" stroke-width="1.5"/>
-  <rect x="0" y="0" width="790" height="3" fill="url(#glowBar)" rx="1.5"/>
+  <rect width="790" height="200" rx="12" fill="url(#connectCardBg)" stroke="{border}" stroke-width="1.2"/>
 
-  <!-- Header Telemetry -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="{accent_emerald}">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="19" class="font-sans" font-size="15px" font-weight="800" fill="{text_primary}">📫 LET&apos;S CONNECT &amp; COLLABORATE</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="{text_secondary}">Open for Full Stack &amp; Backend Engineering roles // Networking &amp; Research</text>
+  <!-- Header Section (Matching Pic 2 Header) -->
+  <g transform="translate(32, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="{accent_cyan}"/>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="{accent_cyan}">Connect &amp; Collaborate</text>
+    <text x="180" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">// Open for Full Stack &amp; Backend Roles</text>
 
-    <!-- Available Status Badge -->
-    <g transform="translate(605, 2)">
-      <rect width="122" height="26" rx="7" fill="{accent_emerald}" fill-opacity="0.15" stroke="{accent_emerald}" stroke-width="1"/>
-      <text x="61" y="17" class="font-mono" font-size="10px" font-weight="700" fill="{accent_emerald}" text-anchor="middle">OPEN TO WORK</text>
+    <!-- Status Badge -->
+    <g transform="translate(610, 0)">
+      <rect width="112" height="24" rx="6" fill="{badge_bg}" stroke="{accent_cyan}" stroke-width="0.8"/>
+      <text x="56" y="16" class="font-mono" font-size="10px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">OPEN TO WORK</text>
     </g>
   </g>
 
-  <!-- Social Link Badges -->
-  {''.join(buttons)}
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="758" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <!-- Left Column Items -->
+  {''.join(left_rows)}
+
+  <!-- Right Column Items -->
+  {''.join(right_rows)}
 
   <!-- Footer Philosophy -->
-  <g transform="translate(395, 156)">
-    <text x="0" y="0" class="font-sans" font-size="11px" font-style="italic" font-weight="600" fill="{text_muted}" text-anchor="middle">&quot;Great software is not just about writing code &#8212; it&apos;s about solving real problems with simplicity and scalability.&quot;</text>
+  <g transform="translate(395, 178)">
+    <text x="0" y="0" class="font-sans" font-size="11.5px" font-weight="500" fill="{text_muted}" text-anchor="middle">&quot;Great software is not just about writing code &#8212; it&apos;s about solving real problems with simplicity and scalability.&quot;</text>
   </g>
+
 </svg>
 '''
     return svg
@@ -115,7 +125,7 @@ def main():
     with open(OUTPUT_MAIN, "w", encoding="utf-8") as f:
         f.write(dark_svg)
 
-    print("Generated ultra-sleek Connect hub cards successfully!")
+    print("Generated professional Connect card successfully!")
 
 if __name__ == "__main__":
     main()

@@ -135,17 +135,17 @@ def fetch_live_wakatime():
 def build_dashboard_svg(data, theme="dark"):
     is_dark = (theme == "dark")
     
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    border = "rgba(56, 189, 248, 0.28)" if is_dark else "rgba(15, 23, 42, 0.12)"
-    stat_box_bg = "rgba(30, 41, 59, 0.6)" if is_dark else "rgba(241, 245, 249, 0.9)"
-    stat_box_border = "rgba(255, 255, 255, 0.08)" if is_dark else "rgba(0, 0, 0, 0.06)"
-    text_primary = "#F8FAFC" if is_dark else "#0F172A"
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    stat_box_bg = "rgba(11, 30, 59, 0.6)" if is_dark else "rgba(241, 245, 249, 0.9)"
+    stat_box_border = "rgba(56, 189, 248, 0.15)" if is_dark else "rgba(0, 0, 0, 0.06)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
     text_secondary = "#8BB9FE" if is_dark else "#475569"
-    text_muted = "#8BB9FE" if is_dark else "#94A3B8"
-    accent = "#38BDF8" if is_dark else "#0284C7"
+    text_muted = "#5B7CA3" if is_dark else "#94A3B8"
+    accent = "#00E8FF" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
-    bar_bg = "#1E293B" if is_dark else "#E2E8F0"
+    bar_bg = "#112240" if is_dark else "#E2E8F0"
 
     range_label = data.get("range_label", "All-Time Verified")
     total_time = data.get("total_time", "12 hrs 3 mins")

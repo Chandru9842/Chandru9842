@@ -19,7 +19,7 @@
   </defs>
 
   <!-- Container -->
-  <rect width="500" height="300" rx="16" fill="#FFFFFF" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1.5"/>
+  <rect width="500" height="300" rx="16" fill="#FFFFFF" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1.5"/>
   <rect x="8" y="8" width="484" height="284" rx="12" fill="#F8FAFC" fill-opacity="0.9"/>
 
   <!-- Header -->
@@ -40,7 +40,7 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Center Section: Ring & Breakdown -->
   <g transform="translate(24, 76)">
@@ -107,7 +107,7 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(47, 141, 70, 0.25)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(15, 23, 42, 0.12)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Bottom Stats Metric Cards -->
   <g transform="translate(24, 226)">

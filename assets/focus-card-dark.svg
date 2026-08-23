@@ -1,137 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="790" height="280" viewBox="0 0 790 280" role="img" aria-label="Current Focus and Objectives Dashboard">
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Current Focus and Objectives">
   <defs>
     <style>
-      .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
-      .font-mono { font-family: 'Segoe UI', Ubuntu, monospace; }
+      .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }
+      .font-mono { font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }
     </style>
-    <linearGradient id="focusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#0B1120"/>
-    </linearGradient>
-    <linearGradient id="glowTop" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F472B6"/>
-      <stop offset="50%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+    <linearGradient id="focusCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040F1D"/>
+      <stop offset="100%" stop-color="#0B1E3B"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="280" rx="16" fill="url(#focusGrad)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="790" height="3" fill="url(#glowTop)" rx="1.5"/>
+  <rect width="790" height="236" rx="12" fill="url(#focusCardBg)" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.2"/>
 
-  <!-- Header Header Telemetry -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="#F472B6">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="19" class="font-sans" font-size="15.5px" font-weight="800" fill="#F8FAFC">🎯 CURRENT FOCUS &amp; ENGINEERING OBJECTIVES</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Active Technical Roadmaps // Core Engineering Vectors</text>
+  <!-- Header Section (Matching Pic 2 Header) -->
+  <g transform="translate(32, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="#00E8FF"/>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#00E8FF">Current Focus &amp; Objectives</text>
+    <text x="210" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Technical Vectors &amp; Active Roadmaps</text>
 
-    <!-- Telemetry Status Badge -->
-    <g transform="translate(605, 2)">
-      <rect width="122" height="26" rx="7" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
-      <text x="61" y="17" class="font-mono" font-size="10px" font-weight="700" fill="#10B981" text-anchor="middle">ACTIVE MATRIX</text>
+    <!-- Status Badge -->
+    <g transform="translate(628, 0)">
+      <rect width="94" height="24" rx="6" fill="rgba(0, 232, 255, 0.1)" stroke="#00E8FF" stroke-width="0.8"/>
+      <text x="47" y="16" class="font-mono" font-size="10px" font-weight="700" fill="#00E8FF" text-anchor="middle">ACTIVE</text>
     </g>
   </g>
 
-  <!-- Left Column Card: Core Mastery -->
-  <g transform="translate(24, 76)">
-    <rect width="362" height="184" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-    <g transform="translate(16, -10)">
-      <rect width="144" height="20" rx="5" fill="#38BDF8" fill-opacity="0.2" stroke="#38BDF8" stroke-width="1"/>
-      <text x="72" y="14" class="font-sans" font-size="10px" font-weight="800" fill="#38BDF8" text-anchor="middle">📚 CURRENTLY MASTERING</text>
-    </g>
-    
-        <g transform="translate(16, 18)">
-          <circle cx="6" cy="10" r="3.5" fill="#38BDF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">System Design &amp; Distributed Systems</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Scalability, Caching, Event-Driven</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#38BDF8" text-anchor="middle">CORE</text>
-          </g>
-        </g>
-        
-        <g transform="translate(16, 60)">
-          <circle cx="6" cy="10" r="3.5" fill="#38BDF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Docker &amp; Containerization</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Multi-stage builds, Container Orchestration</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#38BDF8" text-anchor="middle">DEVOPS</text>
-          </g>
-        </g>
-        
-        <g transform="translate(16, 102)">
-          <circle cx="6" cy="10" r="3.5" fill="#38BDF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Spring Boot &amp; Security</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Microservices, JWT, OAuth2 Auth Flows</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#38BDF8" text-anchor="middle">BACKEND</text>
-          </g>
-        </g>
-        
-        <g transform="translate(16, 144)">
-          <circle cx="6" cy="10" r="3.5" fill="#38BDF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Advanced DSA &amp; Algorithms</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Problem Solving, Optimization, Complexity</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#38BDF8" fill-opacity="0.15" stroke="#38BDF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#38BDF8" text-anchor="middle">LEETCODE</text>
-          </g>
-        </g>
-        
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="758" y2="56" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1"/>
+
+  <!-- Column Headers -->
+  <g transform="translate(36, 72)">
+    <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="#00E8FF" letter-spacing="0.5px">📚 CURRENTLY MASTERING</text>
+  </g>
+  <g transform="translate(400, 72)">
+    <text x="0" y="0" class="font-sans" font-size="12px" font-weight="700" fill="#10B981" letter-spacing="0.5px">🚀 ACTIVE ENGINEERING</text>
   </g>
 
-  <!-- Right Column Card: Active Engineering -->
-  <g transform="translate(404, 76)">
-    <rect width="362" height="184" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-    <g transform="translate(16, -10)">
-      <rect width="138" height="20" rx="5" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1"/>
-      <text x="69" y="14" class="font-sans" font-size="10px" font-weight="800" fill="#10B981" text-anchor="middle">🚀 ACTIVE ENGINEERING</text>
-    </g>
-    
-        <g transform="translate(16, 18)">
-          <circle cx="6" cy="10" r="3.5" fill="#10B981"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">AI Resume Analyzer &amp; Parser</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Intelligent LLM Semantic Scoring Pipeline</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#10B981" text-anchor="middle">ACTIVE</text>
-          </g>
+  <!-- Left Column Items -->
+  
+        <g transform="translate(36, 96)">
+          <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">System Design</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Distributed Systems, Caching, Queues</text>
         </g>
         
-        <g transform="translate(16, 60)">
-          <circle cx="6" cy="10" r="3.5" fill="#818CF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Developer CMS Platform</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">High-throughput modern portfolio engine</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#818CF8" fill-opacity="0.15" stroke="#818CF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#818CF8" text-anchor="middle">BUILDING</text>
-          </g>
+        <g transform="translate(36, 128)">
+          <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Containerization</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Docker, Multi-Stage Builds, Orchestration</text>
         </g>
         
-        <g transform="translate(16, 102)">
-          <circle cx="6" cy="10" r="3.5" fill="#818CF8"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Cloud CI/CD &amp; Deployments</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Automated pipelines on Docker &amp; Cloudflare</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#818CF8" fill-opacity="0.15" stroke="#818CF8" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#818CF8" text-anchor="middle">INFRA</text>
-          </g>
+        <g transform="translate(36, 160)">
+          <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Enterprise Java</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Spring Boot 3, Spring Security, OAuth2/JWT</text>
         </g>
         
-        <g transform="translate(16, 144)">
-          <circle cx="6" cy="10" r="3.5" fill="#10B981"/>
-          <text x="16" y="14" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Open to New Opportunities</text>
-          <text x="16" y="28" class="font-mono" font-size="10.5px" font-weight="600" fill="#94A3B8">Full Stack &amp; Backend Engineering roles</text>
-          <g transform="translate(300, 2)">
-            <rect width="48" height="18" rx="4" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="0.8"/>
-            <text x="24" y="12.5" class="font-mono" font-size="8.5px" font-weight="700" fill="#10B981" text-anchor="middle">OPEN</text>
-          </g>
+        <g transform="translate(36, 192)">
+          <circle cx="4" cy="5" r="3.5" fill="#00E8FF"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Algorithmic Mastery</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Advanced DSA, Dynamic Programming, Graphs</text>
         </g>
         
-  </g>
+
+  <!-- Right Column Items -->
+  
+        <g transform="translate(400, 96)">
+          <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">AI Resume Parser</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">LLM Semantic Analysis &amp; Scoring Pipeline</text>
+        </g>
+        
+        <g transform="translate(400, 128)">
+          <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Developer Platform</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Portfolio CMS &amp; High-Throughput Engine</text>
+        </g>
+        
+        <g transform="translate(400, 160)">
+          <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Cloud Infrastructure</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Dockerized Services, CI/CD, Cloudflare</text>
+        </g>
+        
+        <g transform="translate(400, 192)">
+          <circle cx="4" cy="5" r="3.5" fill="#10B981"/>
+          <text x="14" y="9" class="font-sans" font-size="12.5px" font-weight="600" fill="#8BB9FE">Career Objective</text>
+          <text x="135" y="9" class="font-mono" font-size="11.5px" fill="#3B597E">: . . . . .</text>
+          <text x="180" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Full Stack &amp; Backend Engineering Roles</text>
+        </g>
+        
 
 </svg>

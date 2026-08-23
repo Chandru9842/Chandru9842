@@ -5,20 +5,20 @@
       .font-mono { font-family: 'Segoe UI', Ubuntu, monospace; }
     </style>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F172A"/>
-      <stop offset="100%" stop-color="#0B1120"/>
+      <stop offset="0%" stop-color="#0B1E3B"/>
+      <stop offset="100%" stop-color="#040F1D"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="380" rx="16" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.28)" stroke-width="1.5"/>
+  <rect width="790" height="380" rx="16" fill="url(#cardGrad)" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.5"/>
 
   <!-- Header -->
   <g transform="translate(32, 24)">
     <circle cx="8" cy="14" r="5" fill="#10B981">
       <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <text x="22" y="19" class="font-sans" font-size="16.5px" font-weight="800" fill="#F8FAFC">⏱️ WakaTime Dev Activity Dashboard</text>
+    <text x="22" y="19" class="font-sans" font-size="16.5px" font-weight="800" fill="#FFFFFF">⏱️ WakaTime Dev Activity Dashboard</text>
     <text x="22" y="35" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE">All-Time Verified Developer Telemetry • Real API Connected</text>
     
     <g transform="translate(605, 2)">
@@ -31,44 +31,44 @@
   <g transform="translate(32, 72)">
     <!-- Metric 1: Total Time -->
     <g transform="translate(0, 0)">
-      <rect width="170" height="66" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">⏳ TOTAL TRACKED</text>
-      <text x="14" y="44" class="font-sans" font-size="15px" font-weight="800" fill="#F8FAFC">12 hrs 3 mins</text>
+      <rect width="170" height="66" rx="10" fill="rgba(11, 30, 59, 0.6)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.2"/>
+      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#5B7CA3">⏳ TOTAL TRACKED</text>
+      <text x="14" y="44" class="font-sans" font-size="15px" font-weight="800" fill="#FFFFFF">12 hrs 3 mins</text>
       <text x="14" y="58" class="font-mono" font-size="9.5px" fill="#10B981">Avg: 1 hr 30 mins/day</text>
     </g>
     <!-- Metric 2: Environment -->
     <g transform="translate(185, 0)">
-      <rect width="170" height="66" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">🚀 PRIMARY IDE</text>
-      <text x="14" y="44" class="font-sans" font-size="14px" font-weight="800" fill="#F8FAFC">IntelliJ IDEA • 48.2%</text>
+      <rect width="170" height="66" rx="10" fill="rgba(11, 30, 59, 0.6)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.2"/>
+      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#5B7CA3">🚀 PRIMARY IDE</text>
+      <text x="14" y="44" class="font-sans" font-size="14px" font-weight="800" fill="#FFFFFF">IntelliJ IDEA • 48.2%</text>
       <text x="14" y="58" class="font-mono" font-size="9.5px" fill="#8BB9FE">OS: Windows 11 (100%)</text>
     </g>
     <!-- Metric 3: Best Day -->
     <g transform="translate(370, 0)">
-      <rect width="170" height="66" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">🔥 RECORD SESSION</text>
-      <text x="14" y="44" class="font-sans" font-size="14.5px" font-weight="800" fill="#F8FAFC">3 hrs 18 mins</text>
-      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="#38BDF8">July 30, 2026</text>
+      <rect width="170" height="66" rx="10" fill="rgba(11, 30, 59, 0.6)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.2"/>
+      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#5B7CA3">🔥 RECORD SESSION</text>
+      <text x="14" y="44" class="font-sans" font-size="14.5px" font-weight="800" fill="#FFFFFF">3 hrs 18 mins</text>
+      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="#00E8FF">July 30, 2026</text>
     </g>
     <!-- Metric 4: Live Status -->
     <g transform="translate(555, 0)">
-      <rect width="170" height="66" rx="10" fill="rgba(30, 41, 59, 0.6)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">⚡ AUTO SYNC</text>
+      <rect width="170" height="66" rx="10" fill="rgba(11, 30, 59, 0.6)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.2"/>
+      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="#5B7CA3">⚡ AUTO SYNC</text>
       <text x="14" y="44" class="font-sans" font-size="14px" font-weight="800" fill="#10B981">Daily 06:00 UTC</text>
       <text x="14" y="58" class="font-mono" font-size="9.5px" fill="#8BB9FE">100% Automated</text>
     </g>
   </g>
 
   <!-- Left Header: Languages -->
-  <text x="32" y="162" class="font-sans" font-size="13px" font-weight="800" fill="#F8FAFC">📊 Real Language Telemetry</text>
+  <text x="32" y="162" class="font-sans" font-size="13px" font-weight="800" fill="#FFFFFF">📊 Real Language Telemetry</text>
   
         <g transform="translate(32, 175)">
           <circle cx="6" cy="6" r="4.5" fill="#F472B6"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Java</text>
+          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#FFFFFF">Java</text>
           <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE" text-anchor="end">6 hrs 17 mins (50.3%)</text>
           
           <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#1E293B"/>
+          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#112240"/>
           <rect x="0" y="18" width="171" height="7" rx="3.5" fill="#F472B6">
             <animate attributeName="width" from="0" to="171" dur="1.2s" fill="freeze"/>
           </rect>
@@ -76,11 +76,11 @@
         
         <g transform="translate(32, 213)">
           <circle cx="6" cy="6" r="4.5" fill="#A78BFA"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">Markdown</text>
+          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#FFFFFF">Markdown</text>
           <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE" text-anchor="end">2 hrs 27 mins (19.6%)</text>
           
           <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#1E293B"/>
+          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#112240"/>
           <rect x="0" y="18" width="66" height="7" rx="3.5" fill="#A78BFA">
             <animate attributeName="width" from="0" to="66" dur="1.2s" fill="freeze"/>
           </rect>
@@ -88,11 +88,11 @@
         
         <g transform="translate(32, 251)">
           <circle cx="6" cy="6" r="4.5" fill="#FCD34D"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">JavaScript</text>
+          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#FFFFFF">JavaScript</text>
           <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE" text-anchor="end">1 hr 23 mins (11.1%)</text>
           
           <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#1E293B"/>
+          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#112240"/>
           <rect x="0" y="18" width="37" height="7" rx="3.5" fill="#FCD34D">
             <animate attributeName="width" from="0" to="37" dur="1.2s" fill="freeze"/>
           </rect>
@@ -100,11 +100,11 @@
         
         <g transform="translate(32, 289)">
           <circle cx="6" cy="6" r="4.5" fill="#60A5FA"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">TypeScript</text>
+          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#FFFFFF">TypeScript</text>
           <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE" text-anchor="end">1 hr 4 mins (8.6%)</text>
           
           <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#1E293B"/>
+          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#112240"/>
           <rect x="0" y="18" width="29" height="7" rx="3.5" fill="#60A5FA">
             <animate attributeName="width" from="0" to="29" dur="1.2s" fill="freeze"/>
           </rect>
@@ -112,11 +112,11 @@
         
         <g transform="translate(32, 327)">
           <circle cx="6" cy="6" r="4.5" fill="#34D399"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#F8FAFC">XML</text>
+          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="#FFFFFF">XML</text>
           <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE" text-anchor="end">29 mins (3.9%)</text>
           
           <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#1E293B"/>
+          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="#112240"/>
           <rect x="0" y="18" width="13" height="7" rx="3.5" fill="#34D399">
             <animate attributeName="width" from="0" to="13" dur="1.2s" fill="freeze"/>
           </rect>
@@ -124,11 +124,11 @@
         
 
   <!-- Right Header: Weekly Velocity -->
-  <text x="420" y="162" class="font-sans" font-size="13px" font-weight="800" fill="#F8FAFC">📈 Coding Velocity Trend</text>
+  <text x="420" y="162" class="font-sans" font-size="13px" font-weight="800" fill="#FFFFFF">📈 Coding Velocity Trend</text>
   
         <g transform="translate(420, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="244" width="24" height="66" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="66" dur="1.2s" fill="freeze"/>
@@ -137,12 +137,12 @@
           <!-- Value label -->
           <text x="20" y="238" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">2.4h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Mon</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Mon</text>
         </g>
         
         <g transform="translate(468, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="225" width="24" height="85" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="85" dur="1.2s" fill="freeze"/>
@@ -151,12 +151,12 @@
           <!-- Value label -->
           <text x="20" y="219" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">3.1h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Tue</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Tue</text>
         </g>
         
         <g transform="translate(516, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="206" width="24" height="104" rx="6" fill="#10B981">
             <animate attributeName="height" from="0" to="104" dur="1.2s" fill="freeze"/>
@@ -165,12 +165,12 @@
           <!-- Value label -->
           <text x="20" y="200" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">3.8h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#F8FAFC" text-anchor="middle">Wed</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#FFFFFF" text-anchor="middle">Wed</text>
         </g>
         
         <g transform="translate(564, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="255" width="24" height="55" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="55" dur="1.2s" fill="freeze"/>
@@ -179,12 +179,12 @@
           <!-- Value label -->
           <text x="20" y="249" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">2.0h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Thu</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Thu</text>
         </g>
         
         <g transform="translate(612, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="233" width="24" height="77" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="77" dur="1.2s" fill="freeze"/>
@@ -193,12 +193,12 @@
           <!-- Value label -->
           <text x="20" y="227" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">2.8h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Fri</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Fri</text>
         </g>
         
         <g transform="translate(660, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="269" width="24" height="41" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="41" dur="1.2s" fill="freeze"/>
@@ -207,12 +207,12 @@
           <!-- Value label -->
           <text x="20" y="263" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">1.5h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Sat</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Sat</text>
         </g>
         
         <g transform="translate(708, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="#1E293B" opacity="0.6"/>
+          <rect x="8" y="200" width="24" height="110" rx="6" fill="#112240" opacity="0.6"/>
           <!-- Active bar -->
           <rect x="8" y="288" width="24" height="22" rx="6" fill="#38BDF8">
             <animate attributeName="height" from="0" to="22" dur="1.2s" fill="freeze"/>
@@ -221,12 +221,12 @@
           <!-- Value label -->
           <text x="20" y="282" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE" text-anchor="middle">0.8h</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#8BB9FE" text-anchor="middle">Sun</text>
+          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="#5B7CA3" text-anchor="middle">Sun</text>
         </g>
         
 
   <!-- Footer Tag -->
   <g transform="translate(32, 362)">
-    <text x="0" y="0" class="font-mono" font-size="9.5px" font-weight="600" fill="#8BB9FE">OFFICIAL WAKATIME TELEMETRY API • ACCOUNT ID: CHANDRU9842 • LIVE UPDATED</text>
+    <text x="0" y="0" class="font-mono" font-size="9.5px" font-weight="600" fill="#5B7CA3">OFFICIAL WAKATIME TELEMETRY API • ACCOUNT ID: CHANDRU9842 • LIVE UPDATED</text>
   </g>
 </svg>

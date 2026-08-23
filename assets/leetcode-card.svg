@@ -3,14 +3,14 @@
     <style>
       .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
       .font-mono { font-family: 'Segoe UI', Ubuntu, monospace; }
-      .t-title { font-size: 16px; font-weight: 700; fill: #F8FAFC; letter-spacing: -0.2px; }
+      .t-title { font-size: 16px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.2px; }
       .t-sub { font-size: 11.5px; font-weight: 600; fill: #8BB9FE; }
-      .t-num-big { font-size: 26px; font-weight: 700; fill: #F8FAFC; }
+      .t-num-big { font-size: 26px; font-weight: 700; fill: #FFFFFF; }
       .t-lbl-sm { font-size: 10px; font-weight: 600; fill: #8BB9FE; letter-spacing: 0.5px; text-transform: uppercase; }
       .t-diff-name { font-size: 12.5px; font-weight: 600; }
-      .t-diff-val { font-size: 12.5px; font-weight: 700; fill: #F8FAFC; }
+      .t-diff-val { font-size: 12.5px; font-weight: 700; fill: #FFFFFF; }
       .t-diff-total { font-size: 11px; font-weight: 600; fill: #8BB9FE; }
-      .t-bottom-num { font-size: 18px; font-weight: 700; fill: #F8FAFC; }
+      .t-bottom-num { font-size: 18px; font-weight: 700; fill: #FFFFFF; }
       .t-bottom-lbl { font-size: 10px; font-weight: 600; fill: #8BB9FE; text-transform: uppercase; letter-spacing: 0.5px; }
     </style>
     <linearGradient id="lcGlow" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -20,8 +20,8 @@
   </defs>
 
   <!-- Container -->
-  <rect width="500" height="300" rx="16" fill="#0B1120" stroke="rgba(255, 161, 22, 0.35)" stroke-width="1.5"/>
-  <rect x="8" y="8" width="484" height="284" rx="12" fill="#0F172A" fill-opacity="0.7"/>
+  <rect width="500" height="300" rx="16" fill="#040F1D" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="484" height="284" rx="12" fill="#0B1E3B" fill-opacity="0.7"/>
 
   <!-- Header -->
   <g transform="translate(24, 20)">
@@ -42,7 +42,7 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(255, 161, 22, 0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Center Section: Ring & Breakdown -->
   <g transform="translate(24, 76)">
@@ -77,7 +77,7 @@
         <circle cx="16" cy="14" r="5" fill="#00B8A3"/>
         <text x="28" y="18" class="font-sans t-diff-name" fill="#00B8A3">Easy</text>
         <!-- Mini Progress Bar -->
-        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0F172A"/>
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="10" height="6" rx="3" fill="#00B8A3"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
           <tspan class="t-diff-val">105</tspan><tspan class="t-diff-total"> / 961</tspan>
@@ -90,7 +90,7 @@
         <circle cx="16" cy="14" r="5" fill="#FFC01E"/>
         <text x="28" y="18" class="font-sans t-diff-name" fill="#FFC01E">Med.</text>
         <!-- Mini Progress Bar -->
-        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0F172A"/>
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="6" height="6" rx="3" fill="#FFC01E"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
           <tspan class="t-diff-val">144</tspan><tspan class="t-diff-total"> / 2105</tspan>
@@ -103,7 +103,7 @@
         <circle cx="16" cy="14" r="5" fill="#FF375F"/>
         <text x="28" y="18" class="font-sans t-diff-name" fill="#FF375F">Hard</text>
         <!-- Mini Progress Bar -->
-        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0F172A"/>
+        <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="2" height="6" rx="3" fill="#FF375F"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
           <tspan class="t-diff-val">14</tspan><tspan class="t-diff-total"> / 967</tspan>
@@ -113,7 +113,7 @@
   </g>
 
   <!-- Divider -->
-  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(255, 161, 22, 0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Bottom Stats Metric Cards -->
   <g transform="translate(24, 226)">

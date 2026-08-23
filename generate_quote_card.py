@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Ultra-Sleek Dynamic Developer Quote & Wisdom Matrix Generator for Chandru M (@Chandru9842).
-- Automatically selects curated engineering and computer science quotes.
-- Properly escapes all XML characters.
-- Renders high-end glowing glassmorphism SVG quote cards with author badges and tags.
-- Supports both dark and light modes.
+Professional Developer Wisdom & Philosophy Card Generator for Chandru M (@Chandru9842).
+- Designed in the exact typography, color palette, and layout of GitHub Developer Stats (Ocean Theme).
+- Uses 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, Roboto, sans-serif.
+- Rotates daily through curated computer science and software architecture quotes.
+- 100% compliant XML with dark/light mode support.
 """
 
 import os
@@ -23,50 +23,50 @@ CURATED_QUOTES = [
     {
         "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
         "author": "Martin Fowler",
-        "title": "Software Architecture & Refactoring Author",
-        "tags": ["#Refactoring", "#CleanArchitecture", "#Maintainability"]
+        "title": "Author of Refactoring & Enterprise Application Architecture",
+        "topic": "Clean Code & Architecture"
     },
     {
         "quote": "Talk is cheap. Show me the code.",
         "author": "Linus Torvalds",
-        "title": "Creator of Linux & Git",
-        "tags": ["#CleanCode", "#Execution", "#OpenSource"]
+        "title": "Creator of Linux Kernel & Git Version Control",
+        "topic": "Engineering Execution"
     },
     {
         "quote": "Simplicity is prerequisite for reliability.",
         "author": "Edsger W. Dijkstra",
-        "title": "Turing Award Laureate & CS Pioneer",
-        "tags": ["#Architecture", "#Reliability", "#DSA"]
+        "title": "Turing Award Laureate & Computer Science Pioneer",
+        "topic": "System Reliability"
     },
     {
         "quote": "The best way to predict the future is to invent it.",
         "author": "Alan Kay",
-        "title": "Pioneer of OOP & Graphical UI",
-        "tags": ["#Innovation", "#Systems", "#Vision"]
+        "title": "Pioneer of Object-Oriented Programming & GUI",
+        "topic": "Innovation & Systems"
     },
     {
         "quote": "First, solve the problem. Then, write the code.",
         "author": "John Johnson",
         "title": "Software Engineering Philosopher",
-        "tags": ["#ProblemSolving", "#Algorithms", "#Logic"]
+        "topic": "Problem Solving & DSA"
     },
     {
         "quote": "Premature optimization is the root of all evil in software engineering.",
         "author": "Donald Knuth",
         "title": "Author of The Art of Computer Programming",
-        "tags": ["#Optimization", "#Engineering", "#Algorithms"]
+        "topic": "Algorithmic Efficiency"
     },
     {
         "quote": "It is not enough for code to work. It must be clean, readable, and resilient to change.",
         "author": "Robert C. Martin",
-        "title": "Author of Clean Code & SOLID Principles",
-        "tags": ["#SOLID", "#Craftsmanship", "#CleanCode"]
+        "title": "Author of Clean Code & Design Principles",
+        "topic": "Software Craftsmanship"
     },
     {
         "quote": "Make it work, make it right, make it fast — in that exact order.",
         "author": "Kent Beck",
-        "title": "Creator of Extreme Programming & TDD",
-        "tags": ["#TDD", "#Agile", "#Performance"]
+        "title": "Creator of Extreme Programming & Test-Driven Development",
+        "topic": "Architecture & Quality"
     }
 ]
 
@@ -78,27 +78,27 @@ def get_daily_quote():
 def build_quote_svg(quote_data, theme="dark"):
     is_dark = (theme == "dark")
     
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    border = "rgba(56, 189, 248, 0.35)" if is_dark else "rgba(2, 132, 199, 0.25)"
-    quote_text_color = "#F8FAFC" if is_dark else "#0F172A"
-    author_color = "#38BDF8" if is_dark else "#0284C7"
-    title_color = "#94A3B8" if is_dark else "#64748B"
-    tag_bg = "#1E293B" if is_dark else "#E2E8F0"
-    tag_text = "#E2E8F0" if is_dark else "#334155"
+    # Exact Ocean theme colors matching Pic 2 (ghstats.dev)
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
+    text_muted = "#5B7CA3" if is_dark else "#94A3B8"
+    accent_cyan = "#00E8FF" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
-    quote_mark_color = "rgba(56, 189, 248, 0.12)" if is_dark else "rgba(2, 132, 199, 0.10)"
+    badge_bg = "rgba(0, 232, 255, 0.1)" if is_dark else "rgba(2, 132, 199, 0.1)"
 
     quote_str = quote_data["quote"]
     author_str = quote_data["author"]
     title_str = quote_data["title"]
-    tags = quote_data.get("tags", ["#Engineering", "#CleanCode"])
+    topic_str = quote_data["topic"]
 
     # Wrap quote text cleanly
     words = quote_str.split()
     lines = []
     curr_line = []
-    max_len = 56
+    max_len = 62
     for w in words:
         if sum(len(x) + 1 for x in curr_line) + len(w) <= max_len:
             curr_line.append(w)
@@ -108,78 +108,56 @@ def build_quote_svg(quote_data, theme="dark"):
     if curr_line:
         lines.append(" ".join(curr_line))
 
-    # Calculate y-positions for lines
+    # Format tspans
     line_tspans = []
-    start_y = 100 if len(lines) <= 2 else 92
-    line_height = 28
+    start_y = 86 if len(lines) <= 2 else 80
+    line_height = 24
     for i, l in enumerate(lines):
-        line_tspans.append(f'<tspan x="42" y="{start_y + (i * line_height)}" xml:space="preserve">{esc(l)}</tspan>')
+        line_tspans.append(f'<tspan x="36" y="{start_y + (i * line_height)}" xml:space="preserve">{esc(l)}</tspan>')
 
-    # Build tag pills
-    tag_pills = []
-    tag_x = 42
-    for t in tags:
-        pill_w = len(t) * 7.5 + 16
-        tag_pills.append(f"""
-        <g transform="translate({tag_x}, 190)">
-          <rect width="{pill_w:.1f}" height="24" rx="6" fill="{tag_bg}" stroke="{border}" stroke-width="0.8"/>
-          <text x="{pill_w / 2:.1f}" y="16" class="font-mono" font-size="10.5px" font-weight="700" fill="{tag_text}" text-anchor="middle">{esc(t)}</text>
-        </g>
-        """)
-        tag_x += pill_w + 10
+    author_y = start_y + (len(lines) * line_height) + 16
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="236" viewBox="0 0 790 236" role="img" aria-label="Daily Developer Wisdom and Quote Card">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="195" viewBox="0 0 790 195" role="img" aria-label="Daily Developer Wisdom">
   <defs>
     <style>
-      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
-      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }}
+      .font-mono {{ font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }}
     </style>
-    <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{card_bg}"/>
-      <stop offset="100%" stop-color="{bg}"/>
-    </linearGradient>
-    <linearGradient id="glowLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38BDF8"/>
-      <stop offset="50%" stop-color="#818CF8"/>
-      <stop offset="100%" stop-color="#10B981"/>
+    <linearGradient id="quoteCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{bg}"/>
+      <stop offset="100%" stop-color="{card_bg}"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="236" rx="16" fill="url(#quoteGrad)" stroke="{border}" stroke-width="1.5"/>
-  <rect x="0" y="0" width="790" height="3" fill="url(#glowLine)" rx="1.5"/>
+  <rect width="790" height="195" rx="12" fill="url(#quoteCardBg)" stroke="{border}" stroke-width="1.2"/>
 
-  <!-- Giant Background Quote Glyph -->
-  <text x="32" y="140" font-family="'Georgia', serif" font-size="160px" font-weight="900" fill="{quote_mark_color}">“</text>
-
-  <!-- Header Telemetry -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="{accent_emerald}">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="19" class="font-sans" font-size="14.5px" font-weight="800" fill="{quote_text_color}">💬 DAILY DEVELOPER INSPIRATION</text>
-    <text x="22" y="34" class="font-mono" font-size="10.5px" font-weight="600" fill="{title_color}">Engineering Philosophy // Wisdom Matrix</text>
+  <!-- Header Section (Matching Pic 2 Header) -->
+  <g transform="translate(32, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="{accent_cyan}"/>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="{accent_cyan}">Daily Developer Wisdom</text>
+    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">// {esc(topic_str)}</text>
 
     <!-- Daily Sync Badge -->
-    <g transform="translate(615, 2)">
-      <rect width="112" height="26" rx="7" fill="{accent_emerald}" fill-opacity="0.15" stroke="{accent_emerald}" stroke-width="1"/>
-      <text x="56" y="17" class="font-mono" font-size="10px" font-weight="700" fill="{accent_emerald}" text-anchor="middle">DAILY SYNC</text>
+    <g transform="translate(618, 0)">
+      <rect width="104" height="24" rx="6" fill="{badge_bg}" stroke="{accent_cyan}" stroke-width="0.8"/>
+      <text x="52" y="16" class="font-mono" font-size="10px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">DAILY SYNC</text>
     </g>
   </g>
 
-  <!-- Quote Text -->
-  <text class="font-sans" font-size="16.5px" font-style="italic" font-weight="700" fill="{quote_text_color}">
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="758" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <!-- Quote Body -->
+  <text class="font-sans" font-size="14.5px" font-weight="600" fill="{text_primary}">
     {''.join(line_tspans)}
   </text>
 
-  <!-- Author Info -->
-  <g transform="translate(520, {start_y + (len(lines) * line_height) - 2})">
-    <text x="238" y="0" class="font-sans" font-size="14px" font-weight="800" fill="{author_color}" text-anchor="end">— {esc(author_str)}</text>
-    <text x="238" y="16" class="font-mono" font-size="10.5px" font-weight="600" fill="{title_color}" text-anchor="end">{esc(title_str)}</text>
+  <!-- Author Attribution -->
+  <g transform="translate(36, {author_y})">
+    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="{accent_cyan}">— {esc(author_str)}</text>
+    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="{text_secondary}">{esc(title_str)}</text>
   </g>
-
-  <!-- Tag Pills -->
-  {''.join(tag_pills)}
 
 </svg>
 '''
@@ -199,7 +177,7 @@ def main():
     with open(OUTPUT_MAIN, "w", encoding="utf-8") as f:
         f.write(dark_svg)
 
-    print(f"Generated ultra-sleek developer quote card ({quote['author']}) successfully!")
+    print(f"Generated professional developer wisdom card ({quote['author']}) successfully!")
 
 if __name__ == "__main__":
     main()

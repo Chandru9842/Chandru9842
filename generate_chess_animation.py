@@ -70,11 +70,11 @@ def build_animated_chess_svg(theme="dark"):
     
     piece_svgs_map = get_piece_svg_dict()
 
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    border_color = "rgba(56, 189, 248, 0.35)" if is_dark else "rgba(15, 23, 42, 0.15)"
-    text_primary = "#F8FAFC" if is_dark else "#0F172A"
-    text_secondary = "#94A3B8" if is_dark else "#475569"
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border_color = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
     sq_light = "#334155" if is_dark else "#EBECD0"
     sq_dark = "#1E293B" if is_dark else "#779952"
     sq_hi = "#0284C7" if is_dark else "#FCD34D"

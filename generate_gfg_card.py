@@ -75,12 +75,12 @@ def fetch_live_gfg_stats(username=USERNAME):
 def build_gfg_card(theme="dark", stats=DEFAULT_STATS):
     is_dark = (theme == "dark")
 
-    bg = "#0B1120" if is_dark else "#FFFFFF"
-    card_bg = "#0F172A" if is_dark else "#F8FAFC"
-    border_color = "rgba(47, 141, 70, 0.35)" if is_dark else "rgba(47, 141, 70, 0.25)"
-    text_primary = "#F8FAFC" if is_dark else "#0F172A"
-    text_secondary = "#94A3B8" if is_dark else "#475569"
-    text_muted = "#64748B" if is_dark else "#94A3B8"
+    bg = "#040F1D" if is_dark else "#FFFFFF"
+    card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
+    border_color = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
+    text_primary = "#FFFFFF" if is_dark else "#0F172A"
+    text_secondary = "#8BB9FE" if is_dark else "#475569"
+    text_muted = "#5B7CA3" if is_dark else "#94A3B8"
     gfg_green = "#2F8D46"
     gfg_green_glow = "#34D399"
     color_basic = "#94A3B8"
