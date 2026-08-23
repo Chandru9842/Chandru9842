@@ -612,19 +612,15 @@
 
 </div>
 
-## ⏱️ &nbsp;WakaTime Coding Activity
+## ⏱️ &nbsp;WakaTime Developer Activity Dashboard
 
-<!--START_SECTION:waka-->
-
-```txt
-From: 15 August 2026 - To: 22 August 2026
-
-Total Time: 0 secs
-
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/wakatime-dashboard-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/wakatime-dashboard-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/wakatime-dashboard.svg" alt="Chandru's WakaTime Developer Coding Dashboard" width="100%" loading="lazy" />
+  </picture>
+</p>
 
 <br/>
 

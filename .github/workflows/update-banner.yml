@@ -1,4 +1,4 @@
-name: Update Profile Banner, ASCII, LeetCode & GFG Stats
+name: Update Profile Banner, ASCII, LeetCode, GFG & WakaTime Stats
 
 on:
   schedule:
@@ -30,16 +30,18 @@ jobs:
       - name: Install dependencies
         run: pip install Pillow
 
-      - name: Generate Banner, LeetCode & GFG Stats SVGs
+      - name: Generate Banner, LeetCode, GFG & WakaTime Stats SVGs
         env:
           GH_USERNAME: ${{ github.repository_owner }}
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python build_hero_banner.py
           python generate_gfg_card.py
           python generate_leetcode_card.py
+          python generate_wakatime_dashboard.py
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update profile banner, LeetCode and GFG stats [skip ci]"
-          file_pattern: "dark.svg light.svg dark_mode.svg light_mode.svg assets/gfg-card*.svg assets/leetcode-card*.svg"
+          commit_message: "chore: update profile banner, LeetCode, GFG and WakaTime stats [skip ci]"
+          file_pattern: "dark.svg light.svg dark_mode.svg light_mode.svg assets/gfg-card*.svg assets/leetcode-card*.svg assets/wakatime-dashboard*.svg"
