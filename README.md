@@ -618,51 +618,7 @@
 1. ❗ Opened issue [#1](https://github.com/Chandru9842/Chandru9842/issues/1) in [Chandru9842/Chandru9842](https://github.com/Chandru9842/Chandru9842)
 <!--END_SECTION:activity-->
 
-
-
 <br/>
-
-<div align="center">
-
-
-
-</div>
-
-## ✍️ &nbsp;Latest Content
-
-<details>
-<summary><b>📝 Recent Blog Posts</b></summary>
-<br/>
-
-<!--START_SECTION:blog-->
-- No blog RSS feed configured yet. Add your feed URL to `BLOG_FEED_LIST` in `.github/workflows/blog-posts.yml` (e.g. a Hashnode, Dev.to, Medium, or Substack feed) to auto-populate this list.
-<!--END_SECTION:blog-->
-
-</details>
-
-<details>
-<summary><b>▶️ Latest YouTube Videos</b></summary>
-<br/>
-
-No YouTube channel configured yet. To enable, add your channel ID as `YOUTUBE_CHANNEL_ID` and a `YOUTUBE_API_KEY` secret, then re-enable the `youtube` job in `.github/workflows/recent-activity.yml`.
-
-</details>
-
-<details>
-<summary><b>💼 Latest LinkedIn Articles</b></summary>
-<br/>
-
-LinkedIn discontinued public RSS/API access for personal article feeds, so there is no reliable automated source for this section. Recommended alternative: manually pin 2–3 article links here, or publish long-form posts on a platform with an open feed (Hashnode/Dev.to/Medium) and cross-post to LinkedIn — those feeds work with the blog-posts workflow above.
-
-</details>
-
-<br/>
-
-<div align="center">
-
-
-
-</div>
 
 ## 💬 &nbsp;Daily Developer Wisdom
 
