@@ -162,7 +162,7 @@
 ## 🚀 &nbsp;Featured Projects
 
 <details open>
-<summary><b>&nbsp;📊&nbsp; Coding Tracker</b></summary>
+<summary><b>&nbsp;📊&nbsp; Coding Progress Tracker</b></summary>
 <br/>
 
 > Automated developer coding activity and telemetry tracking platform that monitors daily problem-solving across LeetCode, GeeksforGeeks, and GitHub, logging progress metrics and streak analytics to a centralized dashboard.
@@ -173,7 +173,7 @@
 | **Architecture** | React Dashboard UI → Spring Boot Service Engine → Telemetry Aggregator → MySQL Persistence |
 | **Features** | Multi-platform stats aggregation (LeetCode/GFG/GitHub), streak tracking, automated progress logging |
 | **Impact** | Provides a single unified telemetry hub to track algorithmic consistency and developer activity |
-| **Repository** | [Chandru9842 / coding-tracker](https://github.com/Chandru9842/coding-tracker) |
+| **Repository** | [Chandru9842 / coding-progress-tracker](https://github.com/Chandru9842/coding-progress-tracker) |
 
 </details>
 
