@@ -94,24 +94,34 @@
 ## 🧰 &nbsp;Tech Stack
 
 <table>
-<tr><td width="140"><b>Languages</b></td><td>
+<tr><td width="160"><b>Languages</b></td><td>
 
-![Java](https://skillicons.dev/icons?i=java) ![Python](https://skillicons.dev/icons?i=py) ![JavaScript](https://skillicons.dev/icons?i=js)
+![Java](https://skillicons.dev/icons?i=java) ![Python](https://skillicons.dev/icons?i=py) ![JavaScript](https://skillicons.dev/icons?i=js) ![TypeScript](https://skillicons.dev/icons?i=ts) ![C++](https://skillicons.dev/icons?i=cpp)
 
 </td></tr>
 <tr><td><b>Frontend</b></td><td>
 
-![HTML5](https://skillicons.dev/icons?i=html) ![CSS3](https://skillicons.dev/icons?i=css) ![React](https://skillicons.dev/icons?i=react) ![Bootstrap](https://skillicons.dev/icons?i=bootstrap)
+![HTML5](https://skillicons.dev/icons?i=html) ![CSS3](https://skillicons.dev/icons?i=css) ![React](https://skillicons.dev/icons?i=react) ![Tailwind CSS](https://skillicons.dev/icons?i=tailwind) ![Bootstrap](https://skillicons.dev/icons?i=bootstrap)
 
 </td></tr>
-<tr><td><b>Backend &<br/>Databases</b></td><td>
+<tr><td><b>Backend &<br/>Frameworks</b></td><td>
 
-![Spring Boot](https://skillicons.dev/icons?i=spring) ![Nodejs](https://skillicons.dev/icons?i=nodejs) ![Express](https://skillicons.dev/icons?i=express) ![MySQL](https://skillicons.dev/icons?i=mysql)
+![Spring Boot](https://skillicons.dev/icons?i=spring) ![Node.js](https://skillicons.dev/icons?i=nodejs) ![Express](https://skillicons.dev/icons?i=express)
 
 </td></tr>
-<tr><td><b>Cloud, DevOps<br/>& Tooling</b></td><td>
+<tr><td><b>Databases &<br/>Storage</b></td><td>
 
-![Git](https://skillicons.dev/icons?i=git) ![GitHub](https://skillicons.dev/icons?i=github) ![VSCode](https://skillicons.dev/icons?i=vscode) ![IntelliJ](https://skillicons.dev/icons?i=idea) ![Postman](https://skillicons.dev/icons?i=postman) ![Vercel](https://skillicons.dev/icons?i=vercel) ![Docker](https://skillicons.dev/icons?i=docker)
+![MySQL](https://skillicons.dev/icons?i=mysql) ![PostgreSQL](https://skillicons.dev/icons?i=postgres) ![MongoDB](https://skillicons.dev/icons?i=mongodb) ![Redis](https://skillicons.dev/icons?i=redis) ![SQLite](https://skillicons.dev/icons?i=sqlite)
+
+</td></tr>
+<tr><td><b>AI & Developer<br/>Productivity</b></td><td>
+
+![OpenAI / ChatGPT](https://skillicons.dev/icons?i=openai) ![GitHub Copilot](https://skillicons.dev/icons?i=copilot)
+
+</td></tr>
+<tr><td><b>DevOps, Cloud<br/>& Tooling</b></td><td>
+
+![Git](https://skillicons.dev/icons?i=git) ![GitHub](https://skillicons.dev/icons?i=github) ![Docker](https://skillicons.dev/icons?i=docker) ![Postman](https://skillicons.dev/icons?i=postman) ![VSCode](https://skillicons.dev/icons?i=vscode) ![IntelliJ IDEA](https://skillicons.dev/icons?i=idea) ![Linux](https://skillicons.dev/icons?i=linux) ![Vercel](https://skillicons.dev/icons?i=vercel)
 
 </td></tr>
 </table>
