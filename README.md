@@ -7,17 +7,17 @@
 </picture>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-00E8FF?style=flat-square&labelColor=040F1D" alt="Degree"/>
-  <img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-00E8FF?style=flat-square&labelColor=040F1D" alt="College"/>
-  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=040F1D" alt="Location"/>
-</p>
-
-<p align="center">
   <a href="https://github.com/Chandru9842" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/chandru9842/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
   <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank"><img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/></a>
   <a href="mailto:chandrumohan550@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-00E8FF?style=flat-square&labelColor=040F1D" alt="Degree"/>
+  <img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-00E8FF?style=flat-square&labelColor=040F1D" alt="College"/>
+  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=040F1D" alt="Location"/>
 </p>
 
 <p align="center">
