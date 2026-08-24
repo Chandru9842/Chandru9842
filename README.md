@@ -20,7 +20,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/B.E.-Computer%20Science%20Engineering-00E8FF?style=flat-square&labelColor=040F1D" alt="Degree"/>
   <img src="https://img.shields.io/badge/SRM%20TRP-Expected%202027-00E8FF?style=flat-square&labelColor=040F1D" alt="College"/>
-  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-94A3B8?style=flat-square&labelColor=040F1D" alt="Location"/>
+  <img src="https://img.shields.io/badge/Location-Tamil%20Nadu,%20India-00E8FF?style=flat-square&labelColor=040F1D" alt="Location"/>
 </p>
 
 <p align="center">
@@ -279,7 +279,7 @@
 
 <br/>
 
-![React](https://img.shields.io/badge/React-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![JavaScript](https://img.shields.io/badge/JavaScript-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Node.js](https://img.shields.io/badge/Node.js-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Express.js](https://img.shields.io/badge/Express.js-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![REST APIs](https://img.shields.io/badge/REST%20APIs-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8) ![Git](https://img.shields.io/badge/Git-0B1E3B?style=flat-square&labelColor=040F1D&color=94A3B8)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white) ![REST APIs](https://img.shields.io/badge/REST_APIs-00E8FF?style=flat-square&labelColor=040F1D) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
 </td>
 </tr>
