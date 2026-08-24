@@ -14,6 +14,39 @@ from PIL import Image, ImageEnhance, ImageOps
 
 USERNAME = os.environ.get("GH_USERNAME", "Chandru9842")
 
+DEFAULT_AVATAR_ASCII = [
+    "                       :+#@@@@@@@@@@@@@@@%+:                        ",
+    "                    .+%@@@@@@@@@@@@@@@@@@@@@@#=.                    ",
+    "                   =@@@@@@@@@@@@@@@@@@@@@@@@@@@@-                   ",
+    "                  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*:                 ",
+    "                 *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#                ",
+    "                .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%                ",
+    "                :@@@@@%#*+=*#%%%##%@@%@@@@@@@@@@@@@.                ",
+    "                .@@@@@=--:..:=*##*####@@@@@@@@@@@@-                 ",
+    "                 *@@@*-=+=-...:-=+====*%@@@@@%@@@%                  ",
+    "                 :@@*:***#%@@@%%*+*#%@@@@@@@@@#@@-                  ",
+    "                 -@@:=*##+*@@@@+++%@@@@#@@@@@@%#@*                  ",
+    "                *+-=-+--=++**+==--+%@@@@@@%###%#%@=                 ",
+    "                #=*=--: .:=+=:--: :+#%%@%#**##%%@@*                 ",
+    "                *##*==-:.:+*--*#*+#@@@@@@@@@@@%%@@*                 ",
+    "                -+*%*++++=*#####*%@@@@@@@@@@@@@@%%-                 ",
+    "                   .=+++==%%%*-::-=+#%@@@@@@@@@*                    ",
+    "                    .+++++=:::--=*###@@@@@@@@@%                     ",
+    "                     .*#**+-:::-=*%%@@@@@@@@@+                      ",
+    "                      :*###*=--::+##%@@@@@@@*                       ",
+    "                     .+==+*#%%%%%@@@@@@@@@@@@=                      ",
+    "                     .@+==-=++*%@@@@@@@@@@@@@+                      ",
+    "                      *@+======+*#@@@@@@@@@@%   .:                  ",
+    "                       #@#+===-=+*#%@@@@@@@@.    :=                 ",
+    "                       .*@@#++++*##%%%%@@@@:      :. ...            ",
+    "                     .-: *@@@#########@@@@: -=:.    .. .            ",
+    "                   -=-+*: -*@@@%##*++#@%=  +%#%*=-                  ",
+    "                 ..:.   :.  .+%@@#*+++-  -+=---:::                  ",
+    "                               -%@%#-   --. .                       ",
+    "                                 +%:.:::                            ",
+    "                                  ..:.                              "
+]
+
 def fetch_avatar_ascii(username=USERNAME, cols=68, rows=30):
     """
     Fetches avatar from GitHub and converts it to the exact
@@ -22,7 +55,7 @@ def fetch_avatar_ascii(username=USERNAME, cols=68, rows=30):
     try:
         url = f"https://github.com/{username}.png"
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        data = urllib.request.urlopen(req, timeout=10).read()
+        data = urllib.request.urlopen(req, timeout=4).read()
         img = Image.open(io.BytesIO(data)).convert("L")
 
         w, h = img.size
@@ -49,10 +82,12 @@ def fetch_avatar_ascii(username=USERNAME, cols=68, rows=30):
                 idx = int(((255 - p) / 255.0) * (len(RAMP) - 1))
                 line += RAMP[idx]
             lines.append(line)
-        return lines
+        if any(c.strip() for c in lines):
+            return lines
+        return DEFAULT_AVATAR_ASCII
     except Exception as e:
-        print(f"Warning: Avatar fetch fallback ({e})")
-        return [" " * cols for _ in range(rows)]
+        print(f"Warning: Using baked high-contrast avatar ASCII ({e})")
+        return DEFAULT_AVATAR_ASCII
 
 def build_banner(theme_mode="dark"):
     is_dark = (theme_mode == "dark")

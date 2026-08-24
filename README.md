@@ -9,9 +9,12 @@
 <p align="center">
   <a href="https://github.com/Chandru9842" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/chandru9842/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:chandrumohan550@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
+
+<p align="center">
   <a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
   <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank"><img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/></a>
-  <a href="mailto:chandrumohan550@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
 </p>
 
 <p align="center">
@@ -25,8 +28,8 @@
   <img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=00E8FF" alt="Followers"/>
   <img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=00E8FF" alt="Stars"/>
   <!--START_SECTION:public_repos-->
-<img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
-<!--END_SECTION:public_repos-->
+  <img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
+  <!--END_SECTION:public_repos-->
   <img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=00E8FF" alt="Last Updated"/>
 </p>
 
@@ -116,7 +119,7 @@
 </td></tr>
 <tr><td><b>AI & Developer<br/>Productivity</b></td><td>
 
-![OpenAI / ChatGPT](https://skillicons.dev/icons?i=openai) ![GitHub Copilot](https://skillicons.dev/icons?i=copilot)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white) ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white) ![Claude AI](https://img.shields.io/badge/Claude%20AI-D97706?style=for-the-badge&logo=anthropic&logoColor=white) ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75FF?style=for-the-badge&logo=googlegemini&logoColor=white) ![Cursor AI](https://img.shields.io/badge/Cursor%20AI-000000?style=for-the-badge&logo=cursor&logoColor=white) ![Perplexity AI](https://img.shields.io/badge/Perplexity%20AI-20808D?style=for-the-badge&logo=perplexity&logoColor=white)
 
 </td></tr>
 <tr><td><b>DevOps, Cloud<br/>& Tooling</b></td><td>
