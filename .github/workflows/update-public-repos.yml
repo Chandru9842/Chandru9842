@@ -38,7 +38,7 @@ jobs:
 
           replacement = (
               "<!--START_SECTION:public_repos-->\n"
-              f'<img src="https://img.shields.io/badge/Public%20Repos-{count}-8B5CF6?style=flat-square&labelColor=161B22" '
+              f'<img src="https://img.shields.io/badge/Public%20Repos-{count}-00E8FF?style=flat-square&labelColor=0B1E3B" '
               'alt="Public Repositories"/>\n'
               "<!--END_SECTION:public_repos-->"
           )

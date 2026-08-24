@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 High-End Real WakaTime & Developer Activity Dashboard Generator for Chandru M (@Chandru9842).
+- Designed in the exact typography, color palette, and layout of GitHub Developer Stats (Ocean Theme) and Terminal Telemetry.
+- Uses 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, Roboto, sans-serif for UI.
+- Uses 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace for stats and code tags.
 - Authenticates securely with WakaTime API via WAKATIME_API_KEY environment variable.
 - Surfaces real verified telemetry (languages, editors, OS, total hours, best session).
 - Automatically updates daily via GitHub Actions.
@@ -11,22 +14,27 @@ import sys
 import json
 import base64
 import urllib.request
+import xml.sax.saxutils as saxutils
 
 USERNAME = "Chandru9842"
 OUTPUT_DARK = "assets/wakatime-dashboard-dark.svg"
 OUTPUT_LIGHT = "assets/wakatime-dashboard-light.svg"
 OUTPUT_MAIN = "assets/wakatime-dashboard.svg"
 
+def esc(text):
+    return saxutils.escape(str(text))
+
+# Ocean/Cyan Theme-aligned Language Colors
 LANGUAGE_COLORS = {
-    "Java": "#F472B6",
-    "Python": "#38BDF8",
-    "JavaScript": "#FCD34D",
+    "Java": "#00E8FF",
+    "Python": "#22D3EE",
+    "JavaScript": "#38BDF8",
     "TypeScript": "#60A5FA",
-    "Markdown": "#A78BFA",
-    "XML": "#34D399",
-    "HTML": "#FB923C",
+    "Markdown": "#8BB9FE",
+    "XML": "#10B981",
+    "HTML": "#818CF8",
     "CSS": "#38BDF8",
-    "C++": "#EC4899",
+    "C++": "#00E8FF",
     "C": "#94A3B8"
 }
 
@@ -39,11 +47,11 @@ VERIFIED_WAKA_SNAPSHOT = {
     "best_day": "3 hrs 18 mins",
     "best_day_date": "July 30, 2026",
     "languages": [
-        {"name": "Java", "text": "6 hrs 17 mins", "percent": 50.3, "color": "#F472B6"},
-        {"name": "Markdown", "text": "2 hrs 27 mins", "percent": 19.6, "color": "#A78BFA"},
-        {"name": "JavaScript", "text": "1 hr 23 mins", "percent": 11.1, "color": "#FCD34D"},
+        {"name": "Java", "text": "6 hrs 17 mins", "percent": 50.3, "color": "#00E8FF"},
+        {"name": "Markdown", "text": "2 hrs 27 mins", "percent": 19.6, "color": "#8BB9FE"},
+        {"name": "JavaScript", "text": "1 hr 23 mins", "percent": 11.1, "color": "#38BDF8"},
         {"name": "TypeScript", "text": "1 hr 4 mins", "percent": 8.6, "color": "#60A5FA"},
-        {"name": "XML", "text": "29 mins", "percent": 3.9, "color": "#34D399"}
+        {"name": "XML", "text": "29 mins", "percent": 3.9, "color": "#10B981"}
     ],
     "daily_hours": [
         {"day": "Mon", "hours": 2.4, "label": "2.4h"},
@@ -112,7 +120,7 @@ def fetch_live_wakatime():
                 "name": name,
                 "text": txt,
                 "percent": pct,
-                "color": LANGUAGE_COLORS.get(name, "#38BDF8")
+                "color": LANGUAGE_COLORS.get(name, "#00E8FF")
             })
 
         if not languages:
@@ -138,14 +146,15 @@ def build_dashboard_svg(data, theme="dark"):
     bg = "#040F1D" if is_dark else "#FFFFFF"
     card_bg = "#0B1E3B" if is_dark else "#F8FAFC"
     border = "rgba(56, 189, 248, 0.22)" if is_dark else "rgba(15, 23, 42, 0.12)"
-    stat_box_bg = "rgba(11, 30, 59, 0.6)" if is_dark else "rgba(241, 245, 249, 0.9)"
-    stat_box_border = "rgba(56, 189, 248, 0.15)" if is_dark else "rgba(0, 0, 0, 0.06)"
+    stat_box_bg = "rgba(11, 30, 59, 0.7)" if is_dark else "rgba(241, 245, 249, 0.9)"
+    stat_box_border = "rgba(56, 189, 248, 0.18)" if is_dark else "rgba(0, 0, 0, 0.08)"
     text_primary = "#FFFFFF" if is_dark else "#0F172A"
     text_secondary = "#8BB9FE" if is_dark else "#475569"
     text_muted = "#5B7CA3" if is_dark else "#94A3B8"
-    accent = "#00E8FF" if is_dark else "#0284C7"
+    accent_cyan = "#00E8FF" if is_dark else "#0284C7"
     accent_emerald = "#10B981" if is_dark else "#059669"
-    bar_bg = "#112240" if is_dark else "#E2E8F0"
+    badge_bg = "rgba(0, 232, 255, 0.1)" if is_dark else "rgba(2, 132, 199, 0.1)"
+    bar_bg = "#081426" if is_dark else "#E2E8F0"
 
     range_label = data.get("range_label", "All-Time Verified")
     total_time = data.get("total_time", "12 hrs 3 mins")
@@ -156,133 +165,149 @@ def build_dashboard_svg(data, theme="dark"):
     languages = data.get("languages", [])
     daily_hours = data.get("daily_hours", [])
 
-    # Build language progress bars (left side)
+    # Build language progress bars (left side: x = 28 to 410, width = 380)
     lang_elements = []
-    y_pos = 175
+    y_pos = 194
     for lang in languages:
-        name = lang.get("name", "Unknown")
-        time_text = lang.get("text", "")
+        name = esc(lang.get("name", "Unknown"))
+        time_text = esc(lang.get("text", ""))
         percent = float(lang.get("percent", 0))
-        color = lang.get("color", accent)
-        bar_width = int((percent / 100.0) * 340)
+        color = lang.get("color", accent_cyan)
+        bar_width = max(int((percent / 100.0) * 380), 4)
 
         lang_elements.append(f"""
-        <g transform="translate(32, {y_pos})">
-          <circle cx="6" cy="6" r="4.5" fill="{color}"/>
-          <text x="18" y="10" class="font-sans" font-size="12.5px" font-weight="700" fill="{text_primary}">{name}</text>
-          <text x="340" y="10" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}" text-anchor="end">{time_text} ({percent:.1f}%)</text>
+        <g transform="translate(28, {y_pos})">
+          <circle cx="5" cy="5" r="3.5" fill="{color}"/>
+          <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="{text_primary}">{name}</text>
+          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="{text_secondary}" text-anchor="end">{time_text} ({percent:.1f}%)</text>
           
-          <!-- Progress Bar -->
-          <rect x="0" y="18" width="340" height="7" rx="3.5" fill="{bar_bg}"/>
-          <rect x="0" y="18" width="{bar_width}" height="7" rx="3.5" fill="{color}">
+          <!-- Progress Bar Track & Fill -->
+          <rect x="0" y="16" width="380" height="6" rx="3" fill="{bar_bg}"/>
+          <rect x="0" y="16" width="{bar_width}" height="6" rx="3" fill="{color}">
             <animate attributeName="width" from="0" to="{bar_width}" dur="1.2s" fill="freeze"/>
           </rect>
         </g>
         """)
-        y_pos += 38
+        y_pos += 29
 
-    # Build weekly velocity chart (right side)
+    # Build weekly velocity chart (right side: x = 450 to 852)
     max_h = max([d["hours"] for d in daily_hours] + [4.0])
     chart_elements = []
-    x_chart_start = 420
+    x_chart_start = 450
+    chart_w = 402
+    col_spacing = chart_w / len(daily_hours)
+    
     for idx, day_info in enumerate(daily_hours):
-        day = day_info["day"]
+        day = esc(day_info["day"])
         hrs = day_info["hours"]
-        lbl = day_info["label"]
-        col_x = x_chart_start + (idx * 48)
-        bar_h = max(int((hrs / max_h) * 110), 6) if hrs > 0 else 6
-        bar_y = 310 - bar_h
+        lbl = esc(day_info["label"])
+        col_x = int(x_chart_start + (idx * col_spacing) + 12)
+        bar_h = max(int((hrs / max_h) * 95), 6) if hrs > 0 else 6
+        bar_y = 295 - bar_h
 
         is_top = (hrs == max([d["hours"] for d in daily_hours]) and hrs > 0)
-        col_color = "#10B981" if is_top else "#38BDF8"
+        col_color = accent_emerald if is_top else accent_cyan
 
         chart_elements.append(f"""
         <g transform="translate({col_x}, 0)">
           <!-- Bar background track -->
-          <rect x="8" y="200" width="24" height="110" rx="6" fill="{bar_bg}" opacity="0.6"/>
+          <rect x="0" y="200" width="28" height="95" rx="5" fill="{bar_bg}"/>
           <!-- Active bar -->
-          <rect x="8" y="{bar_y}" width="24" height="{bar_h}" rx="6" fill="{col_color}">
+          <rect x="0" y="{bar_y}" width="28" height="{bar_h}" rx="5" fill="{col_color}">
             <animate attributeName="height" from="0" to="{bar_h}" dur="1.2s" fill="freeze"/>
-            <animate attributeName="y" from="310" to="{bar_y}" dur="1.2s" fill="freeze"/>
+            <animate attributeName="y" from="295" to="{bar_y}" dur="1.2s" fill="freeze"/>
           </rect>
           <!-- Value label -->
-          <text x="20" y="{bar_y - 6}" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}" text-anchor="middle">{lbl}</text>
+          <text x="14" y="{bar_y - 6}" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}" text-anchor="middle">{lbl}</text>
           <!-- Day label -->
-          <text x="20" y="328" class="font-mono" font-size="11px" font-weight="700" fill="{text_primary if is_top else text_muted}" text-anchor="middle">{day}</text>
+          <text x="14" y="312" class="font-mono" font-size="11px" font-weight="700" fill="{accent_emerald if is_top else text_muted}" text-anchor="middle">{day}</text>
         </g>
         """)
 
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="790" height="380" viewBox="0 0 790 380" role="img" aria-label="WakaTime Developer Coding Activity Dashboard">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="880" height="375" viewBox="0 0 880 375" role="img" aria-label="WakaTime Developer Coding Activity Dashboard">
   <defs>
     <style>
-      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }}
-      .font-mono {{ font-family: 'Segoe UI', Ubuntu, monospace; }}
+      .font-sans {{ font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Roboto, sans-serif; }}
+      .font-mono {{ font-family: 'Consolas', 'Courier New', 'Fira Code', 'JetBrains Mono', monospace; }}
     </style>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="{card_bg}"/>
-      <stop offset="100%" stop-color="{bg}"/>
+    <linearGradient id="wakaCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="{bg}"/>
+      <stop offset="100%" stop-color="{card_bg}"/>
     </linearGradient>
   </defs>
 
   <!-- Container -->
-  <rect width="790" height="380" rx="16" fill="url(#cardGrad)" stroke="{border}" stroke-width="1.5"/>
+  <rect width="880" height="375" rx="12" fill="url(#wakaCardBg)" stroke="{border}" stroke-width="1.2"/>
 
-  <!-- Header -->
-  <g transform="translate(32, 24)">
-    <circle cx="8" cy="14" r="5" fill="{accent_emerald}">
-      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+  <!-- Header Section (Matching Current Focus & Objectives Header) -->
+  <g transform="translate(28, 22)">
+    <circle cx="6" cy="11" r="4.5" fill="{accent_cyan}">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite"/>
     </circle>
-    <text x="22" y="19" class="font-sans" font-size="16.5px" font-weight="800" fill="{text_primary}">⏱️ WakaTime Dev Activity Dashboard</text>
-    <text x="22" y="35" class="font-mono" font-size="11px" font-weight="600" fill="{text_secondary}">{range_label} Developer Telemetry • Real API Connected</text>
+    <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="{accent_cyan}">WakaTime Developer Activity Dashboard</text>
+    <text x="325" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">// {range_label} Telemetry &amp; Coding Activity</text>
     
-    <g transform="translate(605, 2)">
-      <rect width="122" height="28" rx="8" fill="{accent_emerald}" fill-opacity="0.15" stroke="{accent_emerald}" stroke-width="1"/>
-      <text x="61" y="18" class="font-mono" font-size="10.5px" font-weight="700" fill="{accent_emerald}" text-anchor="middle">LIVE API SYNC</text>
+    <!-- Live Status Pill Badge -->
+    <g transform="translate(710, 0)">
+      <rect width="114" height="24" rx="6" fill="{badge_bg}" stroke="{accent_cyan}" stroke-width="0.8"/>
+      <text x="57" y="16" class="font-mono" font-size="10px" font-weight="700" fill="{accent_cyan}" text-anchor="middle">LIVE API SYNC</text>
     </g>
   </g>
 
-  <!-- 4 Stat Metric Cards -->
-  <g transform="translate(32, 72)">
+  <!-- Divider -->
+  <line x1="28" y1="56" x2="852" y2="56" stroke="{border}" stroke-width="1"/>
+
+  <!-- 4 Stat Metric Cards (Aligned across 880px width) -->
+  <g transform="translate(28, 70)">
     <!-- Metric 1: Total Time -->
     <g transform="translate(0, 0)">
-      <rect width="170" height="66" rx="10" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="{text_muted}">⏳ TOTAL TRACKED</text>
-      <text x="14" y="44" class="font-sans" font-size="15px" font-weight="800" fill="{text_primary}">{total_time}</text>
-      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="{accent_emerald}">Avg: {daily_avg}/day</text>
+      <rect width="194" height="66" rx="8" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1"/>
+      <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}">⏳ TOTAL TRACKED</text>
+      <text x="14" y="42" class="font-sans" font-size="15.5px" font-weight="700" fill="{text_primary}">{esc(total_time)}</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="{accent_emerald}">Avg: {esc(daily_avg)}/day</text>
     </g>
-    <!-- Metric 2: Environment -->
-    <g transform="translate(185, 0)">
-      <rect width="170" height="66" rx="10" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="{text_muted}">🚀 PRIMARY IDE</text>
-      <text x="14" y="44" class="font-sans" font-size="14px" font-weight="800" fill="{text_primary}">{top_editor}</text>
-      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="{text_secondary}">OS: Windows 11 (100%)</text>
+    <!-- Metric 2: Primary IDE -->
+    <g transform="translate(210, 0)">
+      <rect width="194" height="66" rx="8" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1"/>
+      <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}">🚀 PRIMARY IDE</text>
+      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="{text_primary}">{esc(top_editor)}</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="{text_secondary}">OS: Windows 11 (100%)</text>
     </g>
     <!-- Metric 3: Best Day -->
-    <g transform="translate(370, 0)">
-      <rect width="170" height="66" rx="10" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="{text_muted}">🔥 RECORD SESSION</text>
-      <text x="14" y="44" class="font-sans" font-size="14.5px" font-weight="800" fill="{text_primary}">{best_day}</text>
-      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="{accent}">{best_day_date}</text>
+    <g transform="translate(420, 0)">
+      <rect width="194" height="66" rx="8" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1"/>
+      <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}">🔥 RECORD SESSION</text>
+      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="{text_primary}">{esc(best_day)}</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="{accent_cyan}">{esc(best_day_date)}</text>
     </g>
-    <!-- Metric 4: Live Status -->
-    <g transform="translate(555, 0)">
-      <rect width="170" height="66" rx="10" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1.2"/>
-      <text x="14" y="22" class="font-mono" font-size="10px" font-weight="700" fill="{text_muted}">⚡ AUTO SYNC</text>
-      <text x="14" y="44" class="font-sans" font-size="14px" font-weight="800" fill="{accent_emerald}">Daily 06:00 UTC</text>
-      <text x="14" y="58" class="font-mono" font-size="9.5px" fill="{text_secondary}">100% Automated</text>
+    <!-- Metric 4: Live Automation Status -->
+    <g transform="translate(630, 0)">
+      <rect width="194" height="66" rx="8" fill="{stat_box_bg}" stroke="{stat_box_border}" stroke-width="1"/>
+      <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="{text_secondary}">⚡ AUTO SYNC</text>
+      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="{accent_emerald}">Daily 06:00 UTC</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="{text_secondary}">100% Automated</text>
     </g>
   </g>
 
   <!-- Left Header: Languages -->
-  <text x="32" y="162" class="font-sans" font-size="13px" font-weight="800" fill="{text_primary}">📊 Real Language Telemetry</text>
+  <g transform="translate(28, 168)">
+    <circle cx="4" cy="5" r="3.5" fill="{accent_cyan}"/>
+    <text x="14" y="9" class="font-sans" font-size="13px" font-weight="700" fill="{accent_cyan}">Language Telemetry</text>
+    <text x="160" y="9" class="font-mono" font-size="11px" font-weight="600" fill="{text_secondary}">// Real Verified Breakdown</text>
+  </g>
   {''.join(lang_elements)}
 
   <!-- Right Header: Weekly Velocity -->
-  <text x="420" y="162" class="font-sans" font-size="13px" font-weight="800" fill="{text_primary}">📈 Coding Velocity Trend</text>
+  <g transform="translate(450, 168)">
+    <circle cx="4" cy="5" r="3.5" fill="{accent_emerald}"/>
+    <text x="14" y="9" class="font-sans" font-size="13px" font-weight="700" fill="{accent_emerald}">Coding Velocity Trend</text>
+    <text x="175" y="9" class="font-mono" font-size="11px" font-weight="600" fill="{text_secondary}">// 7-Day Rhythm</text>
+  </g>
   {''.join(chart_elements)}
 
-  <!-- Footer Tag -->
-  <g transform="translate(32, 362)">
+  <!-- Footer Divider & Tag -->
+  <line x1="28" y1="344" x2="852" y2="344" stroke="{border}" stroke-width="1"/>
+  <g transform="translate(28, 360)">
     <text x="0" y="0" class="font-mono" font-size="9.5px" font-weight="600" fill="{text_muted}">OFFICIAL WAKATIME TELEMETRY API • ACCOUNT ID: CHANDRU9842 • LIVE UPDATED</text>
   </g>
 </svg>
@@ -303,7 +328,7 @@ def main():
     with open(OUTPUT_MAIN, "w", encoding="utf-8") as f:
         f.write(dark_svg)
 
-    print(f"Generated 100% Real Live WakaTime dashboard SVGs successfully!")
+    print(f"Generated 100% Real Live WakaTime dashboard SVGs with Ocean/Cyan theme successfully!")
 
 if __name__ == "__main__":
     main()
