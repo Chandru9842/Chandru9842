@@ -28,8 +28,8 @@
   <img src="https://img.shields.io/github/followers/Chandru9842?label=Followers&style=flat-square&color=00E8FF" alt="Followers"/>
   <img src="https://img.shields.io/github/stars/Chandru9842?label=Stars&style=flat-square&color=00E8FF" alt="Stars"/>
   <!--START_SECTION:public_repos-->
-  <img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
-  <!--END_SECTION:public_repos-->
+<img src="https://img.shields.io/badge/Public%20Repos-39-00E8FF?style=flat-square&labelColor=0B1E3B" alt="Public Repositories"/>
+<!--END_SECTION:public_repos-->
   <img src="https://img.shields.io/github/last-commit/Chandru9842/Chandru9842?label=Last%20Updated&style=flat-square&color=00E8FF" alt="Last Updated"/>
 </p>
 
