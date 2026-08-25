@@ -688,7 +688,7 @@
 
 <br/><br/>
 
-<sub>🕒 Last Updated: <!--LAST_UPDATED-->2026-08-24 18:25 UTC<!--END_LAST_UPDATED--></sub>
+<sub>🕒 Last Updated: <!--LAST_UPDATED-->25 Aug 2026<!--END_LAST_UPDATED--></sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:040F1D,50:0B1E3B,100:040F1D&height=120&section=footer" width="100%" alt=""/>
 
