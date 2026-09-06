@@ -28,7 +28,7 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install Pillow
+        run: pip install Pillow chess
 
       - name: Generate All Profile Dashboard SVGs
         env:
@@ -36,6 +36,8 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python build_hero_banner.py
+          python generate_activity_graph.py
+          python generate_chess_animation.py
           python generate_gfg_card.py
           python generate_leetcode_card.py
           python generate_wakatime_dashboard.py
