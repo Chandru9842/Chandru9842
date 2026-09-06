@@ -134,7 +134,7 @@
     <!-- Metric 3: Acceptance Rate -->
     <g transform="translate(232, 0)">
       <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">59.2%</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">59.3%</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">ACCEPTANCE</text>
     </g>
 
