@@ -335,14 +335,7 @@
 
 ## 💼 &nbsp;Professional Coding Profiles
 
-> **Live Synchronized Metrics**: Real-time stats queried directly from the **LeetCode GraphQL API**, **GeeksforGeeks Profile**, and **GitHub GraphQL API**.
-> Automatically refreshes every 2 hours, on every Git commit, and on-demand via the instant sync button below.
-
-<p align="center">
-  <a href="https://github.com/Chandru9842/Chandru9842/actions/workflows/sync-coding-profiles.yml">
-    <img src="https://img.shields.io/badge/⚡_Sync_Live_Coding_Stats_Now-Run_Action-00E8FF?style=for-the-badge&logo=githubactions&logoColor=040F1D" alt="Sync Live Coding Stats Now"/>
-  </a>
-</p>
+> **Automated Real-Time Telemetry**: Real-time coding statistics queried directly from the **LeetCode GraphQL API**, **GeeksforGeeks Profile**, and **GitHub GraphQL API** — automatically synchronized every 2 hours (12 times a day) and on every Git commit.
 
 <div align="center">
 
