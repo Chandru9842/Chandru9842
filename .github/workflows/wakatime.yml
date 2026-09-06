@@ -1,27 +1,39 @@
-name: WakaTime Stats
+name: WakaTime Weekly Sync
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    # Runs weekly on Sunday at 00:00 UTC (05:30 AM IST)
+    - cron: "0 0 * * 0"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: wakatime-weekly-sync
+  cancel-in-progress: true
+
 jobs:
-  update-readme:
+  update-wakatime:
     runs-on: ubuntu-latest
-    if: secrets.WAKATIME_API_KEY != ''
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update WakaTime Stats
-        uses: athul/waka-readme@v0.3.0
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
+          python-version: "3.12"
+
+      - name: Generate WakaTime Dashboard SVGs
+        env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHOW_TITLE: true
-          BLOCKS: █
-          LANG_COUNT: 8
-          SHOW_TOTAL: true
+        run: |
+          python generate_wakatime_dashboard.py
+
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: weekly update wakatime activity dashboard [skip ci]"
+          file_pattern: "assets/wakatime-dashboard*.svg"

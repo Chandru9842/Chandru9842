@@ -510,6 +510,8 @@
 
 ## ♟️ &nbsp;Automated Grandmaster Chessboard
 
+> **Autonomous Daily Rotation**: Rotates through legendary historical chess games automatically every day at 06:00 UTC. Built with a standalone Python chess engine and SVG vector renderer.
+
 <!-- CHESS:START -->
 <p align="center">
   <picture>
@@ -519,6 +521,145 @@
   </picture>
 </p>
 <!-- CHESS:END -->
+
+<p align="center">
+  <a href="#-speed-controller"><b>⚡ Playback Speeds:</b></a>&nbsp;
+  <code>🐢 Slow (4.2s/move)</code>&nbsp;•&nbsp;
+  <code>⚡ Normal (2.8s/move)</code>&nbsp;•&nbsp;
+  <code>🚀 Fast (1.5s/move)</code>
+</p>
+
+<details id="-speed-controller">
+<summary><b>⏱️ &nbsp;Speed Controller — Choose Your Playback Pace (Slow / Normal / Fast)</b></summary>
+<br/>
+
+<div align="center">
+
+> Adjust animation playback tempo to your preferred learning speed.
+
+| Mode | Speed | Best For | View Link |
+| :--- | :--- | :--- | :--- |
+| 🐢 **Slow Pace** | `4.2s / move` | In-depth tactical analysis & human understanding | [Switch to Slow](#-slow-pace) |
+| ⚡ **Normal Pace** | `2.8s / move` | Balanced showcase & standard review | [Default View Above](#♟️-automated-grandmaster-chessboard) |
+| 🚀 **Fast Pace** | `1.5s / move` | Rapid overview & blitz replay | [Switch to Fast](#-fast-pace) |
+
+</div>
+
+<details id="-slow-pace">
+<summary><b>🐢 &nbsp;View at Slow Speed (4.2s / move — Deep Tactical Study)</b></summary>
+<br/>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-slow-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-slow-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-slow.svg" alt="Chess Animation - Slow Pace" width="100%" loading="lazy" />
+  </picture>
+</p>
+</details>
+
+<details id="-fast-pace">
+<summary><b>🚀 &nbsp;View at Fast Speed (1.5s / move — Blitz Replay)</b></summary>
+<br/>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-fast-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-fast-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-animated-fast.svg" alt="Chess Animation - Fast Pace" width="100%" loading="lazy" />
+  </picture>
+</p>
+</details>
+
+</details>
+
+<details>
+<summary><b>📚 &nbsp;Grandmaster Game Library — Explore All 6 Legendary Games</b></summary>
+<br/>
+
+<div align="center">
+  <p>Select any game below to inspect the move-by-move animated masterwork:</p>
+</div>
+
+<details>
+<summary><b>🎭 The Opera Game (1858) — Paul Morphy vs Duke Karl & Count Isouard</b></summary>
+<br/>
+
+> **Theme**: Romantic Attacking Chess & Rapid Development  
+> **Opening**: Philidor Defense (`1. e4 e5 2. Nf3 d6 3. d4 Bg4...`)  
+> **Historic Climax**: Morphy sacrificed both rooks and queen to deliver checkmate with bishop and rook.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-opera.svg" alt="The Opera Game (1858)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>⚡ The Immortal Game (1851) — Adolf Anderssen vs Lionel Kieseritzky</b></summary>
+<br/>
+
+> **Theme**: Queen & Double Rook Sacrifices  
+> **Opening**: King's Gambit Accepted (`1. e4 e5 2. f4 exf4...`)  
+> **Historic Climax**: Anderssen gave up both rooks and queen, checkmating with three minor pieces.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-immortal.svg" alt="The Immortal Game (1851)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>👑 The Game of the Century (1956) — Donald Byrne vs Bobby Fischer (Age 13)</b></summary>
+<br/>
+
+> **Theme**: Bobby Fischer's Legendary Queen Sacrifice  
+> **Opening**: Grünfeld Defence (`1. Nf3 Nf6 2. c4 g6...`)  
+> **Historic Climax**: 13-year-old Fischer unleashed `17...Be6!!`, leading to windmill tactics and forced checkmate.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-century.svg" alt="The Game of the Century (1956)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🌲 The Evergreen Game (1852) — Adolf Anderssen vs Jean Dufresne</b></summary>
+<br/>
+
+> **Theme**: Brilliant King Hunt & Double Rook Sacrifices  
+> **Opening**: Evans Gambit (`1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4...`)  
+> **Historic Climax**: Anderssen concluded with stunning queen sacrifice `24. Qxd7+!!`.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-evergreen.svg" alt="The Evergreen Game (1852)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>⚔️ Kasparov's Immortal (1999) — Garry Kasparov vs Veselin Topalov</b></summary>
+<br/>
+
+> **Theme**: The Greatest Modern King Hunt in Chess History  
+> **Opening**: Pirc Defence (`1. e4 d6 2. d4 Nf6...`)  
+> **Historic Climax**: Kasparov played `24. Rxd4!!`, chasing the black King across the board into the white camp.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-kasparov.svg" alt="Kasparov's Immortal (1999)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🔥 Tal's Attacking Brilliance (1959) — Mikhail Tal vs Vasily Smyslov</b></summary>
+<br/>
+
+> **Theme**: The Magician from Riga's Dynamic Piece Sacrifices  
+> **Opening**: Caro-Kann Defense (`1. e4 c6 2. d4 d5...`)  
+> **Historic Climax**: Tal sacrificed knight and queen exchange pressure to dismantle the former World Champion.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-tal.svg" alt="Tal's Attacking Brilliance (1959)" width="100%" loading="lazy" />
+</p>
+</details>
+
+</details>
 
 <br/>
 

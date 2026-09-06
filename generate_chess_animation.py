@@ -209,12 +209,23 @@ def get_piece_svg_dict():
         piece_dict[p_sym] = inner
     return piece_dict
 
-def build_animated_chess_svg(game_meta, theme="dark", seconds_per_move=3.2):
+SPEED_PRESETS = {
+    "slow": {"seconds": 4.2, "label": "4.2s / move (Slow)", "tag": "🐢 SLOW (4.2s)"},
+    "normal": {"seconds": 2.8, "label": "2.8s / move (Normal)", "tag": "⚡ NORMAL (2.8s)"},
+    "fast": {"seconds": 1.5, "label": "1.5s / move (Fast)", "tag": "🚀 FAST (1.5s)"}
+}
+
+def build_animated_chess_svg(game_meta, theme="dark", speed_key="normal"):
     """
-    Builds the complete animated SVG with human-comprehensible speed (3.2s/move)
+    Builds the complete animated SVG with controllable playback speed
     and square movement highlights.
     """
     is_dark = (theme == "dark")
+    speed_info = SPEED_PRESETS.get(speed_key, SPEED_PRESETS["normal"])
+    seconds_per_move = speed_info["seconds"]
+    speed_label = speed_info["label"]
+    speed_tag = speed_info["tag"]
+
     frames = parse_game(game_meta)
     num_frames = len(frames)
     total_duration = num_frames * seconds_per_move
@@ -321,7 +332,7 @@ def build_animated_chess_svg(game_meta, theme="dark", seconds_per_move=3.2):
       <!-- Live Move HUD -->
       <g transform="translate(416, 80)">
         <rect width="276" height="52" rx="10" fill="{card_bg}" stroke="{border_color}" stroke-width="1.2"/>
-        <text x="16" y="24" class="font-mono" font-size="11px" fill="{text_muted}">CURRENT MOVE (3.2s / move):</text>
+        <text x="16" y="24" class="font-mono" font-size="10.5px" fill="{text_muted}">CURRENT MOVE ({speed_label}):</text>
         <text x="16" y="42" class="font-mono" font-size="14px" font-weight="700" fill="{accent}">{move_display}</text>
         <g transform="translate(170, 14)">
           <rect width="92" height="24" rx="6" fill="{badge_bg}" stroke="{status_color}" stroke-width="0.8"/>
@@ -361,7 +372,7 @@ def build_animated_chess_svg(game_meta, theme="dark", seconds_per_move=3.2):
 
         <!-- Footer tag -->
         <line x1="16" y1="198" x2="260" y2="198" stroke="{border_color}" stroke-width="0.8"/>
-        <text x="138" y="216" class="font-mono" font-size="10px" fill="{text_muted}" text-anchor="middle">Daily Grandmaster Game Rotation • 6 Classics</text>
+        <text x="138" y="216" class="font-mono" font-size="10px" fill="{text_muted}" text-anchor="middle">Daily Grandmaster Rotation • 6 Classics</text>
       </g>
     </g>
         """
@@ -384,12 +395,12 @@ def build_animated_chess_svg(game_meta, theme="dark", seconds_per_move=3.2):
   <g transform="translate(32, 22)">
     <circle cx="6" cy="11" r="5" fill="{accent}"/>
     <text x="18" y="16" class="font-sans" font-size="16px" font-weight="800" fill="{text_primary}">♟️ Automated Grandmaster Chessboard</text>
-    <text x="0" y="34" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">Human Speed (3.2s/move) • Daily Grandmaster Rotation</text>
+    <text x="0" y="34" class="font-mono" font-size="11.5px" font-weight="600" fill="{text_secondary}">Speed: {speed_label} • Daily Classic Game Rotation</text>
     
-    <g transform="translate(530, 0)">
-      <rect width="134" height="28" rx="8" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+    <g transform="translate(520, 0)">
+      <rect width="146" height="28" rx="8" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
       <circle cx="14" cy="14" r="4" fill="#10B981"/>
-      <text x="26" y="18" class="font-mono" font-size="10.5px" font-weight="700" fill="#10B981">AUTOPLAY (3.2s)</text>
+      <text x="26" y="18" class="font-mono" font-size="10.5px" font-weight="700" fill="#10B981">{speed_tag}</text>
     </g>
   </g>
 
@@ -421,25 +432,68 @@ def build_animated_chess_svg(game_meta, theme="dark", seconds_per_move=3.2):
 def main():
     parser = argparse.ArgumentParser(description="Generate Grandmaster Chessboard Animation SVG")
     parser.add_argument("--game", type=int, default=None, help="Index of game (0 to 5)")
+    parser.add_argument("--speed", type=str, default="normal", choices=["slow", "normal", "fast"], help="Playback speed")
+    parser.add_argument("--all", action="store_true", help="Generate all game and speed combinations")
     args = parser.parse_args()
 
     os.makedirs("assets", exist_ok=True)
-    game_meta = get_current_game(args.game)
-    print(f"Generating Grandmaster Chessboard for: {game_meta['title']}")
-    print(f"White: {game_meta['white']} vs Black: {game_meta['black']} ({game_meta['opening']})")
-    print(f"Playback speed: 3.2s per move")
 
-    dark_svg = build_animated_chess_svg(game_meta, "dark", seconds_per_move=3.2)
-    light_svg = build_animated_chess_svg(game_meta, "light", seconds_per_move=3.2)
+    # 1. Daily featured game (rotates daily)
+    featured_game = get_current_game(args.game)
+    print(f"Daily Featured Game: {featured_game['title']}")
+
+    # Render Default (Normal speed)
+    dark_normal = build_animated_chess_svg(featured_game, "dark", "normal")
+    light_normal = build_animated_chess_svg(featured_game, "light", "normal")
 
     with open("assets/chess-animated-dark.svg", "w", encoding="utf-8") as f:
-        f.write(dark_svg)
+        f.write(dark_normal)
     with open("assets/chess-animated-light.svg", "w", encoding="utf-8") as f:
-        f.write(light_svg)
+        f.write(light_normal)
     with open("assets/chess-animated.svg", "w", encoding="utf-8") as f:
-        f.write(dark_svg)
+        f.write(dark_normal)
+    print("Generated default assets/chess-animated.svg (Normal 2.8s)")
 
-    print(f"Generated assets/chess-animated.svg ({len(dark_svg)} bytes) successfully!")
+    # Render Slow speed variant (4.2s)
+    dark_slow = build_animated_chess_svg(featured_game, "dark", "slow")
+    light_slow = build_animated_chess_svg(featured_game, "light", "slow")
+    with open("assets/chess-animated-slow.svg", "w", encoding="utf-8") as f:
+        f.write(dark_slow)
+    with open("assets/chess-animated-slow-dark.svg", "w", encoding="utf-8") as f:
+        f.write(dark_slow)
+    with open("assets/chess-animated-slow-light.svg", "w", encoding="utf-8") as f:
+        f.write(light_slow)
+    print("Generated assets/chess-animated-slow.svg (Slow 4.2s)")
+
+    # Render Fast speed variant (1.5s)
+    dark_fast = build_animated_chess_svg(featured_game, "dark", "fast")
+    light_fast = build_animated_chess_svg(featured_game, "light", "fast")
+    with open("assets/chess-animated-fast.svg", "w", encoding="utf-8") as f:
+        f.write(dark_fast)
+    with open("assets/chess-animated-fast-dark.svg", "w", encoding="utf-8") as f:
+        f.write(dark_fast)
+    with open("assets/chess-animated-fast-light.svg", "w", encoding="utf-8") as f:
+        f.write(light_fast)
+    print("Generated assets/chess-animated-fast.svg (Fast 1.5s)")
+
+    # 2. Render each of the 6 legendary Grandmaster games for individual viewing
+    game_slugs = [
+        ("opera", 0),
+        ("immortal", 1),
+        ("century", 2),
+        ("evergreen", 3),
+        ("kasparov", 4),
+        ("tal", 5)
+    ]
+    for slug, g_idx in game_slugs:
+        g_meta = GAMES_DATABASE[g_idx]
+        g_svg = build_animated_chess_svg(g_meta, "dark", "normal")
+        out_path = f"assets/chess-game-{slug}.svg"
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(g_svg)
+        print(f"Generated {out_path} ({g_meta['title']})")
+
+    print("All chess multi-speed and multi-game assets generated successfully!")
 
 if __name__ == "__main__":
     main()
