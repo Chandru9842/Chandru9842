@@ -143,6 +143,174 @@ GAMES_DATABASE = [
 
 1. e4 c6 2. d3 d5 3. Nd2 e5 4. Ngf3 Nd7 5. d4 dxe4 6. Nxe4 exd4 7. Qxd4 Ngf6 8. Bg5 Be7 9. O-O-O O-O 10. Nd6 Qa5 11. Bc4 b5 12. Bd2 Qa6 13. Nf5 Bd8 14. Qh4 bxc4 15. Qg5 Nh5 16. Nh6+ Kh8 17. Qxh5 Qxa2 18. Bc3 Nf6 19. Qxf7 Qa1+ 20. Kd2 Rxf7 21. Nxf7+ Kg8 22. Rxa1 Kxf7 23. Ne5+ Ke6 24. Nxc6 1-0
 """
+    },
+    {
+        "id": "gold-coins-game",
+        "title": "The Gold Coins Game (1912)",
+        "white": "Stefan Levitsky",
+        "black": "Frank Marshall",
+        "event": "DSB Congress, Breslau",
+        "year": "1912",
+        "opening": "French Defense",
+        "result": "0-1 (Black wins by Legendary 23...Qg3!! Queen Sacrifice)",
+        "theme_tag": "Gold Coins Queen Sacrifice",
+        "pgn": """
+[Event "Breslau"]
+[Site "Breslau GER"]
+[Date "1912.07.20"]
+[White "Stefan Levitsky"]
+[Black "Frank Marshall"]
+[Result "0-1"]
+
+1. d4 e6 2. e4 d5 3. Nc3 c5 4. Nf3 Nc6 5. exd5 exd5 6. Be2 Nf6 7. O-O Be7 8. Bg5 O-O 9. dxc5 Be6 10. Nd4 Bxc5 11. Nxe6 fxe6 12. Bg4 Qd6 13. Bh3 Rae8 14. Qd2 Bb4 15. Bxf6 Rxf6 16. Rad1 Qc5 17. Qe2 Bxc3 18. bxc3 Qxc3 19. Rxd5 Nd4 20. Qh5 Ref8 21. Re5 Rh6 22. Qg5 Rxh3 23. Rc5 Qg3 0-1
+"""
+    },
+    {
+        "id": "capablanca-marshall",
+        "title": "Capablanca's Counter-Attack (1918)",
+        "white": "Jose Raul Capablanca",
+        "black": "Frank Marshall",
+        "event": "Manhattan Chess Club, New York",
+        "year": "1918",
+        "opening": "Ruy Lopez (Marshall Attack)",
+        "result": "1-0 (White refutes Marshall Attack over the board)",
+        "theme_tag": "The Human Chess Machine",
+        "pgn": """
+[Event "New York"]
+[Site "New York, NY USA"]
+[Date "1918.10.23"]
+[White "Jose Raul Capablanca"]
+[Black "Frank Marshall"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 Nf6 12. d4 Bd6 13. Re1 Ng4 14. h3 Qh4 15. Qf3 Nxf2 16. Re2 Bg4 17. Qxf2 Bg3 18. Qf1 Rae8 19. Rxe8 Rxe8 20. Nd2 Be2 21. Qf5 Bd3 22. Qxd3 Re1+ 23. Nf1 Bf2+ 24. Kh2 Rxf1 25. Qxf1 1-0
+"""
+    },
+    {
+        "id": "anand-immortal",
+        "title": "Anand's Immortal Masterpiece (2013)",
+        "white": "Levon Aronian",
+        "black": "Viswanathan Anand",
+        "event": "Tata Steel, Wijk aan Zee",
+        "year": "2013",
+        "opening": "Semi-Slav Defense (Meran)",
+        "result": "0-1 (Black wins by Tiger of Madras Tactical Storm)",
+        "theme_tag": "Vishy Anand Masterpiece",
+        "pgn": """
+[Event "Wijk aan Zee"]
+[Site "Wijk aan Zee NED"]
+[Date "2013.01.15"]
+[White "Levon Aronian"]
+[Black "Viswanathan Anand"]
+[Result "0-1"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. e3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5 8. Bd3 Bd6 9. O-O O-O 10. Qc2 Bb7 11. a3 Rc8 12. Ng5 c5 13. Nxh7 Ng4 14. f4 cxd4 15. exd4 Bc5 16. Be2 Nde5 17. Bxg4 Bxd4+ 18. Kh1 Nxg4 19. Nxf8 f5 20. Qe2 Qh4 21. Qxe6+ Kxf8 22. Qxf5+ Kg8 23. Qe6+ Kh8 0-1
+"""
+    },
+    {
+        "id": "botvinnik-capablanca",
+        "title": "Botvinnik's King Hunt (1938)",
+        "white": "Mikhail Botvinnik",
+        "black": "Jose Raul Capablanca",
+        "event": "AVRO Tournament, Netherlands",
+        "year": "1938",
+        "opening": "Nimzo-Indian Defense",
+        "result": "1-0 (White wins by Deep Positional 30. Ba3!! Sacrifice)",
+        "theme_tag": "Soviet Chess Patriarch",
+        "pgn": """
+[Event "AVRO"]
+[Site "Amsterdam NED"]
+[Date "1938.11.22"]
+[White "Mikhail Botvinnik"]
+[Black "Jose Raul Capablanca"]
+[Result "1-0"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 d5 5. a3 Bxc3+ 6. bxc3 c5 7. cxd5 exd5 8. Bd3 O-O 9. Ne2 b6 10. O-O Ba6 11. Bxa6 Nxa6 12. Bb2 Qd7 13. a4 Rfe8 14. Qd3 c4 15. Qc2 Nb8 16. Rae1 Nc6 17. Ng3 Na5 18. f3 Nb3 19. e4 Qxa4 20. e5 Nd7 21. Qf2 g6 22. f4 f5 23. exf6 Nxf6 24. f5 Rxe1 25. Rxe1 Re8 26. Re6 Rxe6 27. fxe6 Kg7 28. Qf4 Qe8 29. Qe5 Qe7 30. Ba3 Qxa3 31. Nh5+ gxh5 32. Qg5+ Kf8 33. Qxf6+ Kg8 34. e7 Qc1+ 35. Kf2 Qc2+ 36. Kg3 Qd3+ 37. Kh4 Qe4+ 38. Kxh5 Qe2+ 39. Kh4 Qe4+ 40. g4 Qe1+ 41. Kh5 1-0
+"""
+    },
+    {
+        "id": "fischer-spassky",
+        "title": "Match of the Century - Game 6 (1972)",
+        "white": "Bobby Fischer",
+        "black": "Boris Spassky",
+        "event": "World Championship, Reykjavik",
+        "year": "1972",
+        "opening": "Queen's Gambit Declined",
+        "result": "1-0 (White wins in Spassky-Applauded Classic)",
+        "theme_tag": "Match of the Century",
+        "pgn": """
+[Event "World Championship 1972"]
+[Site "Reykjavik ISL"]
+[Date "1972.07.23"]
+[White "Bobby Fischer"]
+[Black "Boris Spassky"]
+[Result "1-0"]
+
+1. c4 e6 2. Nf3 d5 3. d4 Nf6 4. Nc3 Be7 5. Bg5 O-O 6. e3 h6 7. Bh4 b6 8. cxd5 Nxd5 9. Bxe7 Qxe7 10. Nxd5 exd5 11. Rc1 Be6 12. Qa4 c5 13. Qa3 Rc8 14. Bb5 a6 15. dxc5 bxc5 16. O-O Ra7 17. Be2 Nd7 18. Nd4 Qf8 19. Nxe6 fxe6 20. e4 d4 21. f4 Qe7 22. e5 Rb8 23. Bc4 Kh8 24. Qh3 Nf8 25. b3 a5 26. f5 exf5 27. Rxf5 Nh7 28. Rcf1 Qd8 29. Qg3 Re7 30. h4 Rbb7 31. e6 Rbc7 32. Qe5 Qe8 33. a4 Qd8 34. R1f2 Qe8 35. R2f3 Qd8 36. Bd3 Qe8 37. Qe4 Nf6 38. Rxf6 gxf6 39. Rxf6 Kg8 40. Bc4 Kh8 41. Qf4 1-0
+"""
+    },
+    {
+        "id": "morphy-paulsen",
+        "title": "Morphy's Queen Sacrifice (1857)",
+        "white": "Louis Paulsen",
+        "black": "Paul Morphy",
+        "event": "1st American Chess Congress, New York",
+        "year": "1857",
+        "opening": "Four Knights Game",
+        "result": "0-1 (Black wins by Historic 17...Qxf3!! Sacrifice)",
+        "theme_tag": "Morphy Romantic Brilliance",
+        "pgn": """
+[Event "New York 1857"]
+[Site "New York, NY USA"]
+[Date "1857.11.08"]
+[White "Louis Paulsen"]
+[Black "Paul Morphy"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bb5 Bc5 5. O-O O-O 6. Nxe5 Re8 7. Nxc6 dxc6 8. Bc4 b5 9. Be2 Nxe4 10. Nxe4 Rxe4 11. Bf3 Re6 12. c3 Qd3 13. b4 Bb6 14. a4 bxa4 15. Qxa4 Bd7 16. Ra2 Rae8 17. Qa6 Qxf3 18. gxf3 Rg6+ 19. Kh1 Bh3 20. Rd1 Bg2+ 21. Kg1 Bxf3+ 22. Kf1 Bg2+ 23. Kg1 Bh3+ 24. Kh1 Bxf2 25. Qf1 Bxf1 26. Rxf1 Re2 27. Ra1 Rh6 28. d4 Be3 0-1
+"""
+    },
+    {
+        "id": "rotlewi-rubinstein",
+        "title": "Rubinstein's Immortal Game (1907)",
+        "white": "Georg Rotlewi",
+        "black": "Akiba Rubinstein",
+        "event": "Lodz, Poland",
+        "year": "1907",
+        "opening": "Queen's Gambit Declined (Tarrasch)",
+        "result": "0-1 (Black wins by Legendary Queen & Double Minor Sac)",
+        "theme_tag": "Positional & Tactical Perfection",
+        "pgn": """
+[Event "Lodz 1907"]
+[Site "Lodz POL"]
+[Date "1907.12.26"]
+[White "Georg Rotlewi"]
+[Black "Akiba Rubinstein"]
+[Result "0-1"]
+
+1. d4 d5 2. Nf3 e6 3. e3 c5 4. c4 Nc6 5. Nc3 Nf6 6. dxc5 Bxc5 7. a3 a6 8. b4 Bd6 9. Bb2 O-O 10. Qd2 Qe7 11. Bd3 dxc4 12. Bxc4 b5 13. Bd3 Rd8 14. Qe2 Bb7 15. O-O Ne5 16. Nxe5 Bxe5 17. f4 Bc7 18. e4 Rac8 19. e5 Bb6+ 20. Kh1 Ng4 21. Be4 Qh4 22. g3 Rxc3 23. gxh4 Rd2 24. Qxd2 Bxe4+ 25. Qg2 Rh3 0-1
+"""
+    },
+    {
+        "id": "pearl-of-zandvoort",
+        "title": "The Pearl of Zandvoort (1935)",
+        "white": "Max Euwe",
+        "black": "Alexander Alekhine",
+        "event": "World Championship (Game 26), Zandvoort",
+        "year": "1935",
+        "opening": "Slav Defense",
+        "result": "1-0 (White wins to Claim World Championship)",
+        "theme_tag": "World Crown Deciding Battle",
+        "pgn": """
+[Event "World Championship 1935"]
+[Site "Zandvoort NED"]
+[Date "1935.12.03"]
+[White "Max Euwe"]
+[Black "Alexander Alekhine"]
+[Result "1-0"]
+
+1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. Ne5 e6 7. f3 Bb4 8. e4 Bxe4 9. fxe4 Nxe4 10. Bd2 Qxd4 11. Nxe4 Qxe4+ 12. Qe2 Bxd2+ 13. Kxd2 Qd5+ 14. Kc2 Na6 15. Nxc4 O-O-O 16. Qe5 f6 17. Qxd5 exd5 18. Na5 Nc5 19. b4 Ne4 20. Bd3 Rhe8 21. Rhe1 Kc7 22. Nb3 g6 23. a5 f5 24. Bxe4 dxe4 25. Nc5 b6 26. axb6+ axb6 27. Ra7+ Kd6 28. Rd1+ Ke5 29. Nd7+ Kf4 30. Nxb6 Rxd1 31. Kxd1 1-0
+"""
     }
 ]
 
@@ -476,14 +644,22 @@ def main():
         f.write(light_fast)
     print("Generated assets/chess-animated-fast.svg (Fast 1.5s)")
 
-    # 2. Render each of the 6 legendary Grandmaster games for individual viewing
+    # 2. Render each of the 14 legendary Grandmaster games for individual viewing
     game_slugs = [
         ("opera", 0),
         ("immortal", 1),
         ("century", 2),
         ("evergreen", 3),
         ("kasparov", 4),
-        ("tal", 5)
+        ("tal", 5),
+        ("gold-coins", 6),
+        ("capablanca", 7),
+        ("anand", 8),
+        ("botvinnik", 9),
+        ("fischer-spassky", 10),
+        ("morphy-paulsen", 11),
+        ("rubinstein", 12),
+        ("zandvoort", 13),
     ]
     for slug, g_idx in game_slugs:
         g_meta = GAMES_DATABASE[g_idx]

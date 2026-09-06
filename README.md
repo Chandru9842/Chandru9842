@@ -608,15 +608,15 @@
 </details>
 
 <details>
-<summary><b>📚 &nbsp;Grandmaster Game Library — Explore All 6 Legendary Games</b></summary>
+<summary><b>📚 &nbsp;Grandmaster Game Library — Explore All 14 Legendary Masterpieces</b></summary>
 <br/>
 
 <div align="center">
-  <p>Select any game below to inspect the move-by-move animated masterwork:</p>
+  <p>Select any game below to inspect the move-by-move animated masterwork (14-game automatic rotation):</p>
 </div>
 
 <details>
-<summary><b>🎭 The Opera Game (1858) — Paul Morphy vs Duke Karl & Count Isouard</b></summary>
+<summary><b>🎭 1. The Opera Game (1858) — Paul Morphy vs Duke Karl & Count Isouard</b></summary>
 <br/>
 
 > **Theme**: Romantic Attacking Chess & Rapid Development  
@@ -629,7 +629,7 @@
 </details>
 
 <details>
-<summary><b>⚡ The Immortal Game (1851) — Adolf Anderssen vs Lionel Kieseritzky</b></summary>
+<summary><b>⚡ 2. The Immortal Game (1851) — Adolf Anderssen vs Lionel Kieseritzky</b></summary>
 <br/>
 
 > **Theme**: Queen & Double Rook Sacrifices  
@@ -642,7 +642,7 @@
 </details>
 
 <details>
-<summary><b>👑 The Game of the Century (1956) — Donald Byrne vs Bobby Fischer (Age 13)</b></summary>
+<summary><b>👑 3. The Game of the Century (1956) — Donald Byrne vs Bobby Fischer (Age 13)</b></summary>
 <br/>
 
 > **Theme**: Bobby Fischer's Legendary Queen Sacrifice  
@@ -655,7 +655,7 @@
 </details>
 
 <details>
-<summary><b>🌲 The Evergreen Game (1852) — Adolf Anderssen vs Jean Dufresne</b></summary>
+<summary><b>🌲 4. The Evergreen Game (1852) — Adolf Anderssen vs Jean Dufresne</b></summary>
 <br/>
 
 > **Theme**: Brilliant King Hunt & Double Rook Sacrifices  
@@ -668,7 +668,7 @@
 </details>
 
 <details>
-<summary><b>⚔️ Kasparov's Immortal (1999) — Garry Kasparov vs Veselin Topalov</b></summary>
+<summary><b>⚔️ 5. Kasparov's Immortal (1999) — Garry Kasparov vs Veselin Topalov</b></summary>
 <br/>
 
 > **Theme**: The Greatest Modern King Hunt in Chess History  
@@ -681,15 +681,119 @@
 </details>
 
 <details>
-<summary><b>🔥 Tal's Attacking Brilliance (1959) — Mikhail Tal vs Vasily Smyslov</b></summary>
+<summary><b>🔥 6. Tal's Attacking Brilliance (1959) — Mikhail Tal vs Vasily Smyslov</b></summary>
 <br/>
 
 > **Theme**: The Magician from Riga's Dynamic Piece Sacrifices  
-> **Opening**: Caro-Kann Defense (`1. e4 c6 2. d4 d5...`)  
+> **Opening**: Caro-Kann Defense (`1. e4 c6 2. d3 d5...`)  
 > **Historic Climax**: Tal sacrificed knight and queen exchange pressure to dismantle the former World Champion.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-tal.svg" alt="Tal's Attacking Brilliance (1959)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>💰 7. The Gold Coins Game (1912) — Stefan Levitsky vs Frank Marshall</b></summary>
+<br/>
+
+> **Theme**: The Legendary 23...Qg3!! Queen Sacrifice  
+> **Opening**: French Defense (`1. d4 e6 2. e4 d5...`)  
+> **Historic Climax**: Marshall played `23...Qg3!!`, offering his queen to three white pieces simultaneously. Spectators showered gold coins onto the board.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-gold-coins.svg" alt="The Gold Coins Game (1912)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🛡️ 8. Capablanca's Counter-Attack (1918) — Jose Raul Capablanca vs Frank Marshall</b></summary>
+<br/>
+
+> **Theme**: The Human Chess Machine Over-the-Board Refutation  
+> **Opening**: Ruy Lopez — Marshall Attack (`1. e4 e5 2. Nf3 Nc6 3. Bb5 a6...`)  
+> **Historic Climax**: Marshall prepared the Marshall Attack in secret for months, but Capablanca refuted it on the board with defensive perfection.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-capablanca.svg" alt="Capablanca's Counter-Attack (1918)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🐯 9. Anand's Immortal Masterpiece (2013) — Levon Aronian vs Viswanathan Anand</b></summary>
+<br/>
+
+> **Theme**: The Tiger of Madras Black-Piece Tactical Storm  
+> **Opening**: Semi-Slav Defense — Meran Variation (`1. d4 d5 2. c4 c6...`)  
+> **Historic Climax**: Indian World Champion Vishy Anand unleashed an astonishing tactical sequence with `15...Bc5!` and `16...Nde5!!`, devastating World No. 2 Aronian.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-anand.svg" alt="Anand's Immortal Masterpiece (2013)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🏛️ 10. Botvinnik's King Hunt (1938) — Mikhail Botvinnik vs Jose Raul Capablanca</b></summary>
+<br/>
+
+> **Theme**: Soviet Chess Patriarch's Deep Positional Sacrifices  
+> **Opening**: Nimzo-Indian Defense (`1. d4 Nf6 2. c4 e6...`)  
+> **Historic Climax**: Botvinnik played the stunning `30. Ba3!!` and `31. Nh5+!!`, decoying the black queen to force a winning passed pawn.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-botvinnik.svg" alt="Botvinnik's King Hunt (1938)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🌟 11. Match of the Century — Game 6 (1972) — Bobby Fischer vs Boris Spassky</b></summary>
+<br/>
+
+> **Theme**: Pure Classical Mastery — Even Spassky Applauded  
+> **Opening**: Queen's Gambit Declined — Tartakower (`1. c4 e6 2. Nf3 d5...`)  
+> **Historic Climax**: Fischer shifted to `1. c4` for the first time in his life, playing with such beauty that World Champion Spassky joined the audience in a standing ovation.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-fischer-spassky.svg" alt="Match of the Century Game 6 (1972)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>🔮 12. Morphy's Queen Sacrifice (1857) — Louis Paulsen vs Paul Morphy</b></summary>
+<br/>
+
+> **Theme**: Romantic Attacking Brilliance & Mating Net  
+> **Opening**: Four Knights Game (`1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6...`)  
+> **Historic Climax**: Morphy sacrificed his queen with `17...Qxf3!!` creating a devastating windmill bishop pair that pulverized the white king's castle.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-morphy-paulsen.svg" alt="Morphy's Queen Sacrifice (1857)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>✨ 13. Rubinstein's Immortal Game (1907) — Georg Rotlewi vs Akiba Rubinstein</b></summary>
+<br/>
+
+> **Theme**: Tactical Perfection & Quadruple Piece Coordination  
+> **Opening**: Queen's Gambit Declined (`1. d4 d5 2. Nf3 e6...`)  
+> **Historic Climax**: Rubinstein unleashed `22...Rxc3!!` followed by queen sacrifice `23...Rd2!!` and bishop maneuvers, considered one of chess's greatest tactical marvels.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-rubinstein.svg" alt="Rubinstein's Immortal Game (1907)" width="100%" loading="lazy" />
+</p>
+</details>
+
+<details>
+<summary><b>💎 14. The Pearl of Zandvoort (1935) — Max Euwe vs Alexander Alekhine</b></summary>
+<br/>
+
+> **Theme**: World Championship Deciding Masterpiece (Game 26)  
+> **Opening**: Slav Defense (`1. d4 d5 2. c4 c6...`)  
+> **Historic Climax**: Euwe sacrificed a knight on move 8 (`8. e4!`) to seize an overpowering initiative that secured the World Championship title.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/chess-game-zandvoort.svg" alt="The Pearl of Zandvoort (1935)" width="100%" loading="lazy" />
 </p>
 </details>
 
