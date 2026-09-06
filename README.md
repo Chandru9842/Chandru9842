@@ -964,6 +964,12 @@
 
 <sub>🕒 Last Updated: <!--LAST_UPDATED-->2026-09-06 09:54 UTC<!--END_LAST_UPDATED--></sub>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:040F1D,50:0B1E3B,100:040F1D&height=120&section=footer" width="100%" alt=""/>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/footer-wave-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/footer-wave-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/footer-wave.svg" width="100%" alt="Ocean Wave Footer" />
+  </picture>
+</p>
 
 </div>

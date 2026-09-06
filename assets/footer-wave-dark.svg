@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" width="100%" height="110" role="img" aria-label="Profile Footer Wave Decorator">
+  <defs>
+    <linearGradient id="waveGrad1_dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E8FF" />
+      <stop offset="50%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#00558A" />
+    </linearGradient>
+
+    <linearGradient id="waveGrad2_dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#00E8FF" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+
+    <linearGradient id="waveGrad3_dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#040F1D" />
+      <stop offset="50%" stop-color="#0B2545" />
+      <stop offset="100%" stop-color="#0077B6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Wave Layer 1 (Deepest Background Wave) -->
+  <path d="M0,42 C180,85 360,15 540,52 C720,88 920,22 1080,58 C1140,70 1180,50 1200,46 L1200,120 L0,120 Z"
+        fill="url(#waveGrad1_dark)"
+        opacity="0.22" />
+
+  <!-- Wave Layer 2 (Middle Rhythm Wave) -->
+  <path d="M0,58 C220,18 440,80 660,42 C880,5 1040,72 1200,56 L1200,120 L0,120 Z"
+        fill="url(#waveGrad2_dark)"
+        opacity="0.45" />
+
+  <!-- Wave Layer 3 (Foreground Wave) -->
+  <path d="M0,74 C280,108 560,38 840,78 C980,96 1120,66 1200,68 L1200,120 L0,120 Z"
+        fill="url(#waveGrad3_dark)" />
+
+  <!-- Wave Crest Line (Vibrant Top Stroke Highlight) -->
+  <path d="M0,74 C280,108 560,38 840,78 C980,96 1120,66 1200,68"
+        fill="none"
+        stroke="#00E8FF"
+        stroke-width="1.8"
+        stroke-opacity="0.9" />
+</svg>

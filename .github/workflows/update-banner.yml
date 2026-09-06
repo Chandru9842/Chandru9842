@@ -42,6 +42,7 @@ jobs:
           python generate_quote_card.py
           python generate_focus_card.py
           python generate_connect_card.py
+          python generate_footer_wave.py
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
