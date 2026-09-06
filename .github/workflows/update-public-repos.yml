@@ -64,4 +64,5 @@ jobs:
           fi
 
           git commit -m "chore: update public repo count [skip ci]"
+          git pull --rebase origin main
           git push

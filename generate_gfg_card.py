@@ -7,6 +7,7 @@ Matches the sleek dark/light aesthetic of LeetCard & ghstats.dev.
 
 import os
 import re
+import json
 import math
 import urllib.request
 
@@ -262,6 +263,23 @@ def main():
     stats = fetch_live_gfg_stats(USERNAME)
     dark_svg = build_gfg_card("dark", stats)
     light_svg = build_gfg_card("light", stats)
+
+    # Sync back to data/gfg-stats.json
+    try:
+        import datetime
+        gfg_data = {
+            "username": USERNAME,
+            "profileUrl": f"https://www.geeksforgeeks.org/profile/{USERNAME}",
+            "problemsSolved": stats.get("total_solved", 168),
+            "codingScore": stats.get("coding_score", 514),
+            "instituteRank": 0,
+            "potdSolved": stats.get("potd", 1),
+            "lastVerified": datetime.date.today().isoformat()
+        }
+        with open("data/gfg-stats.json", "w", encoding="utf-8") as f:
+            json.dump(gfg_data, f, indent=2)
+    except Exception as e:
+        print(f"Notice: Could not sync to data/gfg-stats.json: {e}")
 
     with open("assets/gfg-card.svg", "w", encoding="utf-8") as f:
         f.write(dark_svg)

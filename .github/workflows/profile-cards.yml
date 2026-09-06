@@ -38,11 +38,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
 
       - name: Generate GeeksforGeeks card
         run: node scripts/generate-gfg-card.js
@@ -52,17 +52,17 @@ jobs:
 
       - name: Generate GitHub Stats card
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/generate-github-stats-card.js
 
       - name: Generate Top Languages card
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/generate-top-langs-card.js
 
       - name: Generate Trophies card
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/generate-trophies-card.js
 
       - name: Validate generated SVGs are well-formed
@@ -75,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/*.svg
+          git add assets/*.svg data/*.json
           git diff --cached --quiet && echo "No changes" || git commit -m "chore: regenerate profile cards [skip ci]"
           git pull --rebase origin main
           git push

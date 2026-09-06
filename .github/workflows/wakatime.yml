@@ -11,7 +11,7 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-
+    if: secrets.WAKATIME_API_KEY != ''
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

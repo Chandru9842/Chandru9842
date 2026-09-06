@@ -11,6 +11,8 @@ permissions:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    # Set to true and replace the feed_list URL below once you have a blog feed (Dev.to / Hashnode / Medium)
+    if: false
     steps:
       - uses: actions/checkout@v4
 

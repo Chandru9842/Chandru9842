@@ -319,25 +319,18 @@ async function main() {
   console.log(`Successfully fetched ${weeks.length} weeks of contributions (source: ${isGql ? "GraphQL" : "Public API"}).`);
 
   // Ensure output dirs
-  const outDir = path.resolve(".");
   const distDir = path.resolve("dist");
   fs.mkdirSync(distDir, { recursive: true });
 
   const darkSvg = generateSvgContent(weeks, "dark");
   const lightSvg = generateSvgContent(weeks, "light");
 
-  // Write root files
-  fs.writeFileSync(path.join(outDir, "dark.svg"), darkSvg, "utf8");
-  fs.writeFileSync(path.join(outDir, "light.svg"), lightSvg, "utf8");
-
-  // Also write dist/ copies
+  // Write dist/ copies (never overwrite root dark.svg / light.svg which belong to hero banner)
   fs.writeFileSync(path.join(distDir, "dark.svg"), darkSvg, "utf8");
   fs.writeFileSync(path.join(distDir, "light.svg"), lightSvg, "utf8");
   fs.writeFileSync(path.join(distDir, "github-jet.svg"), darkSvg, "utf8");
 
   console.log("Generated:");
-  console.log("  - dark.svg");
-  console.log("  - light.svg");
   console.log("  - dist/dark.svg");
   console.log("  - dist/light.svg");
   console.log("  - dist/github-jet.svg");

@@ -47,4 +47,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update profile banner, stats, focus and quote cards [skip ci]"
-          file_pattern: "dark.svg light.svg dark_mode.svg light_mode.svg assets/*.svg"
+          file_pattern: "dark.svg light.svg dark_mode.svg light_mode.svg assets/*.svg data/gfg-stats.json"
