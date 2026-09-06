@@ -6,6 +6,7 @@ Matches the sleek dark/light aesthetic of the GitHub & GFG profile cards.
 """
 
 import os
+import re
 import math
 import json
 import urllib.request
@@ -322,6 +323,25 @@ def build_leetcode_card(theme="dark", stats=DEFAULT_STATS):
 '''
     return svg
 
+def update_readme_stats(total_solved):
+    if not total_solved:
+        return
+    try:
+        if os.path.exists("README.md"):
+            with open("README.md", "r", encoding="utf-8") as f:
+                content = f.read()
+            new_content = re.sub(
+                r'([0-9]+)\+?\s*problems solved on LeetCode',
+                f'{total_solved}+ problems solved on LeetCode',
+                content
+            )
+            if new_content != content:
+                with open("README.md", "w", encoding="utf-8") as f:
+                    f.write(new_content)
+                print(f"Updated README.md LeetCode solved count to {total_solved}+")
+    except Exception as e:
+        print(f"Notice: Could not update README LeetCode count: {e}")
+
 def main():
     os.makedirs("assets", exist_ok=True)
     stats = fetch_live_leetcode_stats(USERNAME)
@@ -335,6 +355,7 @@ def main():
     with open("assets/leetcode-card-light.svg", "w", encoding="utf-8") as f:
         f.write(light_svg)
     print("Generated assets/leetcode-card.svg and assets/leetcode-card-light.svg successfully!")
+    update_readme_stats(stats.get("total_solved"))
 
 if __name__ == "__main__":
     main()

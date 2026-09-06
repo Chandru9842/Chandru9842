@@ -1,169 +1,142 @@
-<svg
-    width="495"
-    height="220"
-    viewBox="0 0 495 220"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="GeeksforGeeks Stats">
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" role="img" aria-label="Chandru M - GeeksforGeeks Stats">
+  <defs>
+    <style>
+      .font-sans { font-family: 'Segoe UI', Ubuntu, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+      .font-mono { font-family: 'Segoe UI', Ubuntu, monospace; }
+      .t-title { font-size: 16px; font-weight: 700; fill: #FFFFFF; letter-spacing: -0.2px; }
+      .t-sub { font-size: 11.5px; font-weight: 600; fill: #8BB9FE; }
+      .t-num-big { font-size: 26px; font-weight: 700; fill: #FFFFFF; }
+      .t-lbl-sm { font-size: 10px; font-weight: 600; fill: #8BB9FE; letter-spacing: 0.5px; text-transform: uppercase; }
+      .t-diff-name { font-size: 12px; font-weight: 600; }
+      .t-diff-val { font-size: 12px; font-weight: 700; fill: #FFFFFF; }
+      .t-bottom-num { font-size: 18px; font-weight: 700; fill: #FFFFFF; }
+      .t-bottom-lbl { font-size: 10px; font-weight: 600; fill: #8BB9FE; text-transform: uppercase; letter-spacing: 0.5px; }
+    </style>
+    <linearGradient id="gfgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2F8D46"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
 
-  <title>GeeksforGeeks Stats — chandrum06</title>
+  <!-- Container -->
+  <rect width="500" height="300" rx="16" fill="#040F1D" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1.5"/>
+  <rect x="8" y="8" width="484" height="284" rx="12" fill="#0B1E3B" fill-opacity="0.7"/>
 
-  <rect
-    x="1"
-    y="1"
-    width="493"
-    height="218"
-    rx="14"
-    fill="#040F1D"
-    stroke="#00E8FF"
-    stroke-width="1.4"/>
+  <!-- Header -->
+  <g transform="translate(24, 20)">
+    <!-- GFG Logo -->
+    <g transform="translate(0, 2)">
+      <rect width="28" height="28" rx="7" fill="#2F8D46" fill-opacity="0.15"/>
+      <path d="M 14,7 C 10.13,7 7,10.13 7,14 C 7,17.87 10.13,21 14,21 C 17.87,21 21,17.87 21,14 C 21,13.4 20.92,12.82 20.78,12.26 L 14,12.26 L 14,15.74 L 17.58,15.74 C 17.06,17.06 15.68,18 14,18 C 11.79,18 10,16.21 10,14 C 10,11.79 11.79,10 14,10 C 15.08,10 16.06,10.43 16.78,11.13 L 19.38,8.53 C 18,7.24 16.1,7 14,7 Z" fill="#2F8D46"/>
+    </g>
+    <text x="36" y="16" class="font-sans t-title">GeeksforGeeks</text>
+    <text x="36" y="29" class="font-mono t-sub">@chandrum06</text>
 
-  <text
-    x="24"
-    y="33"
-    font-family="'Segoe UI', Ubuntu, Sans-Serif"
-    font-size="16"
-    font-weight="700"
-    fill="#8BB9FE">
-    GeeksforGeeks Stats
-  </text>
+    <!-- Coding Score Badge -->
+    <g transform="translate(340, 2)">
+      <rect width="112" height="28" rx="8" fill="#2F8D46" fill-opacity="0.15" stroke="#2F8D46" stroke-width="1"/>
+      <text x="56" y="18" text-anchor="middle" class="font-mono" font-size="11px" font-weight="700" fill="#2F8D46">SCORE: 514</text>
+    </g>
+  </g>
 
-  
-    <g transform="translate(24, 66)">
-      <rect
-        x="0"
-        y="0"
-        width="215"
-        height="58"
-        rx="10"
-        fill="#0B1E3B"
-        stroke="#00E8FF"
-        stroke-opacity="0.35"/>
+  <!-- Divider -->
+  <line x1="24" y1="62" x2="476" y2="62" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1" stroke-dasharray="3 3"/>
 
-      <text
-        x="16"
-        y="24"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="12"
-        fill="#94A3B8"
-        letter-spacing="0.3">
-        Problems Solved
-      </text>
+  <!-- Center Section: Ring & Breakdown -->
+  <g transform="translate(24, 76)">
+    <!-- Circular Progress Donut Chart -->
+    <g transform="translate(68, 62)">
+      <!-- Background track -->
+      <circle cx="0" cy="0" r="46" fill="none" stroke="#1E293B" stroke-width="9"/>
+      
+      <!-- Colored Segments (rotate -90 so starts at top) -->
+      <g transform="rotate(-90)">
+        <!-- Hard -->
+        <circle cx="0" cy="0" r="46" fill="none" stroke="#EF4444" stroke-width="9"
+          stroke-dasharray="10.32 289.03" stroke-dashoffset="-0.00"/>
+        <!-- Medium -->
+        <circle cx="0" cy="0" r="46" fill="none" stroke="#F59E0B" stroke-width="9"
+          stroke-dasharray="139.35 289.03" stroke-dashoffset="-10.32"/>
+        <!-- Easy -->
+        <circle cx="0" cy="0" r="46" fill="none" stroke="#10B981" stroke-width="9"
+          stroke-dasharray="94.62 289.03" stroke-dashoffset="-149.67"/>
+        <!-- Basic -->
+        <circle cx="0" cy="0" r="46" fill="none" stroke="#94A3B8" stroke-width="9"
+          stroke-dasharray="44.73 289.03" stroke-dashoffset="-244.30"/>
+      </g>
 
-      <text
-        x="16"
-        y="46"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="22"
-        font-weight="700"
-        fill="#F8FAFC">
-        168
-      </text>
+      <!-- Center Text -->
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">168</text>
+      <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
-    <g transform="translate(256, 66)">
-      <rect
-        x="0"
-        y="0"
-        width="215"
-        height="58"
-        rx="10"
-        fill="#0B1E3B"
-        stroke="#00E8FF"
-        stroke-opacity="0.35"/>
+    <!-- Difficulty Breakdown List -->
+    <g transform="translate(160, 10)">
+      <!-- Basic Row -->
+      <g transform="translate(0, 0)">
+        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <circle cx="14" cy="12" r="4.5" fill="#94A3B8"/>
+        <text x="26" y="16" class="font-sans t-diff-name" fill="#94A3B8">Basic</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">26</text>
+      </g>
 
-      <text
-        x="16"
-        y="24"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="12"
-        fill="#94A3B8"
-        letter-spacing="0.3">
-        Coding Score
-      </text>
+      <!-- Easy Row -->
+      <g transform="translate(0, 29)">
+        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <circle cx="14" cy="12" r="4.5" fill="#10B981"/>
+        <text x="26" y="16" class="font-sans t-diff-name" fill="#10B981">Easy</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">55</text>
+      </g>
 
-      <text
-        x="16"
-        y="46"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="22"
-        font-weight="700"
-        fill="#F8FAFC">
-        514
-      </text>
+      <!-- Medium Row -->
+      <g transform="translate(0, 58)">
+        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <circle cx="14" cy="12" r="4.5" fill="#F59E0B"/>
+        <text x="26" y="16" class="font-sans t-diff-name" fill="#F59E0B">Medium</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">81</text>
+      </g>
+
+      <!-- Hard Row -->
+      <g transform="translate(0, 87)">
+        <rect width="292" height="24" rx="6" fill="#1E293B"/>
+        <circle cx="14" cy="12" r="4.5" fill="#EF4444"/>
+        <text x="26" y="16" class="font-sans t-diff-name" fill="#EF4444">Hard</text>
+        <text x="280" y="16" text-anchor="end" class="font-mono t-diff-val">6</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="24" y1="214" x2="476" y2="214" stroke="rgba(56, 189, 248, 0.22)" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Bottom Stats Metric Cards -->
+  <g transform="translate(24, 226)">
+    <!-- Metric 1: Coding Score -->
+    <g transform="translate(0, 0)">
+      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#2F8D46">514</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">CODING SCORE</text>
     </g>
 
-    <g transform="translate(24, 122)">
-      <rect
-        x="0"
-        y="0"
-        width="215"
-        height="58"
-        rx="10"
-        fill="#0B1E3B"
-        stroke="#00E8FF"
-        stroke-opacity="0.35"/>
-
-      <text
-        x="16"
-        y="24"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="12"
-        fill="#94A3B8"
-        letter-spacing="0.3">
-        Institute Rank
-      </text>
-
-      <text
-        x="16"
-        y="46"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="22"
-        font-weight="700"
-        fill="#F8FAFC">
-        Unranked
-      </text>
+    <!-- Metric 2: Total Solved -->
+    <g transform="translate(116, 0)">
+      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">168</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">PROBLEMS</text>
     </g>
 
-    <g transform="translate(256, 122)">
-      <rect
-        x="0"
-        y="0"
-        width="215"
-        height="58"
-        rx="10"
-        fill="#0B1E3B"
-        stroke="#00E8FF"
-        stroke-opacity="0.35"/>
-
-      <text
-        x="16"
-        y="24"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="12"
-        fill="#94A3B8"
-        letter-spacing="0.3">
-        POTD Solved
-      </text>
-
-      <text
-        x="16"
-        y="46"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="22"
-        font-weight="700"
-        fill="#F8FAFC">
-        1
-      </text>
+    <!-- Metric 3: POTD Solved -->
+    <g transform="translate(232, 0)">
+      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num">1</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">POTD SOLVED</text>
     </g>
 
-  <text
-    x="24"
-    y="202"
-    font-family="'Segoe UI', Ubuntu, Sans-Serif"
-    font-size="10"
-    fill="#94A3B8">
-    @chandrum06 &#8226; verified 2026-09-06
-  </text>
-
+    <!-- Metric 4: Streak -->
+    <g transform="translate(348, 0)">
+      <rect width="104" height="52" rx="8" fill="#1E293B"/>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#F59E0B">🔥 1 Day</text>
+      <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">STREAK</text>
+    </g>
+  </g>
 </svg>

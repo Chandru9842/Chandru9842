@@ -185,9 +185,9 @@
         font-family="'Segoe UI', Ubuntu, Sans-Serif"
         font-size="24"
         font-weight="700"
-        fill="#F8FAFC"
+        fill="#00E8FF"
         text-anchor="middle">
-        SS
+        A
       </text>
 
       <text
@@ -198,7 +198,7 @@
         font-weight="700"
         fill="#F8FAFC"
         text-anchor="middle">
-        1042
+        145
       </text>
 
       <text
@@ -231,9 +231,9 @@
         font-family="'Segoe UI', Ubuntu, Sans-Serif"
         font-size="24"
         font-weight="700"
-        fill="#94A3B8"
+        fill="#8BB9FE"
         text-anchor="middle">
-        C
+        B
       </text>
 
       <text
@@ -244,7 +244,7 @@
         font-weight="700"
         fill="#F8FAFC"
         text-anchor="middle">
-        1
+        12
       </text>
 
       <text

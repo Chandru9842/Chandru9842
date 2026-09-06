@@ -4,7 +4,7 @@
     viewBox="0 0 495 220"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
-    aria-label="Chandru9842's most used languages: TypeScript 81.6%, JavaScript 7.6%, Java 5.7%, HTML 2.5%, Python 1.6%">
+    aria-label="Chandru9842's most used languages: HTML 35.3%, JavaScript 29.4%, TypeScript 14.7%, Python 11.8%, Java 8.8%">
 
   <title>Most Used Languages — Chandru9842</title>
 
@@ -35,7 +35,7 @@
         cx="5"
         cy="5"
         r="5"
-        fill="#3178c6"/>
+        fill="#e34c26"/>
 
       <text
         x="16"
@@ -43,7 +43,7 @@
         font-family="'Segoe UI', Ubuntu, Sans-Serif"
         font-size="12"
         fill="#F8FAFC">
-        TypeScript
+        HTML
       </text>
 
       <text
@@ -53,7 +53,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        81.6%
+        35.3%
       </text>
 
       <rect
@@ -67,10 +67,10 @@
       <rect
         x="0"
         y="16"
-        width="364.664156699746"
+        width="157.76470588235296"
         height="7"
         rx="3.5"
-        fill="#3178c6"/>
+        fill="#e34c26"/>
 
     </g>
 
@@ -98,7 +98,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        7.6%
+        29.4%
       </text>
 
       <rect
@@ -112,7 +112,7 @@
       <rect
         x="0"
         y="16"
-        width="34.18987269156077"
+        width="131.47058823529412"
         height="7"
         rx="3.5"
         fill="#f1e05a"/>
@@ -125,7 +125,7 @@
         cx="5"
         cy="5"
         r="5"
-        fill="#b07219"/>
+        fill="#3178c6"/>
 
       <text
         x="16"
@@ -133,7 +133,7 @@
         font-family="'Segoe UI', Ubuntu, Sans-Serif"
         font-size="12"
         fill="#F8FAFC">
-        Java
+        TypeScript
       </text>
 
       <text
@@ -143,7 +143,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        5.7%
+        14.7%
       </text>
 
       <rect
@@ -157,59 +157,14 @@
       <rect
         x="0"
         y="16"
-        width="25.457294729890855"
+        width="65.73529411764706"
         height="7"
         rx="3.5"
-        fill="#b07219"/>
+        fill="#3178c6"/>
 
     </g>
 
     <g transform="translate(24, 144)">
-
-      <circle
-        cx="5"
-        cy="5"
-        r="5"
-        fill="#e34c26"/>
-
-      <text
-        x="16"
-        y="9"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="12"
-        fill="#F8FAFC">
-        HTML
-      </text>
-
-      <text
-        x="447"
-        y="9"
-        font-family="'Segoe UI', Ubuntu, Sans-Serif"
-        font-size="11"
-        fill="#94A3B8"
-        text-anchor="end">
-        2.5%
-      </text>
-
-      <rect
-        x="0"
-        y="16"
-        width="447"
-        height="7"
-        rx="3.5"
-        fill="#0B1E3B"/>
-
-      <rect
-        x="0"
-        y="16"
-        width="11.255782465477308"
-        height="7"
-        rx="3.5"
-        fill="#e34c26"/>
-
-    </g>
-
-    <g transform="translate(24, 174)">
 
       <circle
         cx="5"
@@ -233,7 +188,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        1.6%
+        11.8%
       </text>
 
       <rect
@@ -247,10 +202,55 @@
       <rect
         x="0"
         y="16"
-        width="6.971259414168662"
+        width="52.58823529411764"
         height="7"
         rx="3.5"
         fill="#3572A5"/>
+
+    </g>
+
+    <g transform="translate(24, 174)">
+
+      <circle
+        cx="5"
+        cy="5"
+        r="5"
+        fill="#b07219"/>
+
+      <text
+        x="16"
+        y="9"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="12"
+        fill="#F8FAFC">
+        Java
+      </text>
+
+      <text
+        x="447"
+        y="9"
+        font-family="'Segoe UI', Ubuntu, Sans-Serif"
+        font-size="11"
+        fill="#94A3B8"
+        text-anchor="end">
+        8.8%
+      </text>
+
+      <rect
+        x="0"
+        y="16"
+        width="447"
+        height="7"
+        rx="3.5"
+        fill="#0B1E3B"/>
+
+      <rect
+        x="0"
+        y="16"
+        width="39.44117647058824"
+        height="7"
+        rx="3.5"
+        fill="#b07219"/>
 
     </g>
 

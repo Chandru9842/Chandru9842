@@ -15,6 +15,8 @@
 <p align="center">
   <a href="https://leetcode.com/u/Chandrum06/" target="_blank"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
   <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank"><img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/></a>
+  <br/>
+  <a href="#-professional-coding-profiles"><b>⚡ Jump to Live Coding Profiles (LeetCode • GFG • GitHub Stats) ⬇️</b></a>
 </p>
 
 <p align="center">
@@ -300,8 +302,8 @@
 | Recognition | Details |
 |:--|:--|
 | 🏆&nbsp; Hackathon Winner | Mediathon Hackathon |
-| 🧠&nbsp; Problem Solving | 270+ problems solved on LeetCode |
-| 📘&nbsp; Problem Solving | 160+ problems solved on GeeksforGeeks |
+| 🧠&nbsp; Problem Solving | 276+ problems solved on LeetCode |
+| 📘&nbsp; Problem Solving | 168+ problems solved on GeeksforGeeks |
 | 💼&nbsp; Industry Experience | Web Development Internship — Queenbug Technologies |
 | 🚀&nbsp; Project Delivery | Multiple full-stack projects built end-to-end (React + Spring Boot + MySQL) |
 
@@ -333,12 +335,36 @@
 
 ## 💼 &nbsp;Professional Coding Profiles
 
+> **Live Synchronized Metrics**: Real-time stats queried directly from the **LeetCode GraphQL API**, **GeeksforGeeks Profile**, and **GitHub GraphQL API**.
+> Automatically refreshes every 2 hours, on every Git commit, and on-demand via the instant sync button below.
+
+<p align="center">
+  <a href="https://github.com/Chandru9842/Chandru9842/actions/workflows/sync-coding-profiles.yml">
+    <img src="https://img.shields.io/badge/⚡_Sync_Live_Coding_Stats_Now-Run_Action-00E8FF?style=for-the-badge&logo=githubactions&logoColor=040F1D" alt="Sync Live Coding Stats Now"/>
+  </a>
+</p>
+
+<div align="center">
+
+[![LeetCode Profile](https://img.shields.io/badge/LeetCode-Chandrum06-FFA116?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/Chandrum06/)
+[![GeeksforGeeks Profile](https://img.shields.io/badge/GeeksforGeeks-chandrum06-2F8D46?style=flat-square&logo=geeksforgeeks&logoColor=white)](https://www.geeksforgeeks.org/profile/chandrum06)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-Chandru9842-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Chandru9842)
+[![LinkedIn Profile](https://img.shields.io/badge/LinkedIn-chandru9842-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chandru9842)
+
+</div>
+
+<br/>
+
 <table align="center">
 <tr>
 <td width="50%" align="center">
 
 <a href="https://github.com/Chandru9842">
-<img src="https://ghstats.dev/api/card?username=chandru9842&theme=ocean&hide_border=true&hide_title=true&border_radius=6" width="100%" alt="GitHub Stats Card"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/github-stats-card.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/github-stats-card.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/github-stats-card.svg" width="100%" alt="GitHub Stats Card"/>
+  </picture>
 </a>
 
 </td>
@@ -346,7 +372,11 @@
 <td width="50%" align="center">
 
 <a href="https://leetcode.com/u/Chandrum06/" target="_blank">
-<img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/leetcode-card.svg" width="100%" alt="LeetCode Stats"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/leetcode-card.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/leetcode-card-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/leetcode-card.svg" width="100%" alt="LeetCode Stats"/>
+  </picture>
 </a>
 
 </td>
@@ -356,7 +386,11 @@
 <td width="50%" align="center">
 
 <a href="https://www.geeksforgeeks.org/profile/chandrum06" target="_blank">
-<img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/gfg-card.svg" width="100%" alt="GeeksforGeeks Stats"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/gfg-card.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/gfg-card-light.svg" />
+    <img src="https://raw.githubusercontent.com/Chandru9842/Chandru9842/main/assets/gfg-card.svg" width="100%" alt="GeeksforGeeks Stats"/>
+  </picture>
 </a>
 
 </td>

@@ -258,6 +258,25 @@ def build_gfg_card(theme="dark", stats=DEFAULT_STATS):
 '''
     return svg
 
+def update_readme_stats(total_solved):
+    if not total_solved:
+        return
+    try:
+        if os.path.exists("README.md"):
+            with open("README.md", "r", encoding="utf-8") as f:
+                content = f.read()
+            new_content = re.sub(
+                r'([0-9]+)\+?\s*problems solved on GeeksforGeeks',
+                f'{total_solved}+ problems solved on GeeksforGeeks',
+                content
+            )
+            if new_content != content:
+                with open("README.md", "w", encoding="utf-8") as f:
+                    f.write(new_content)
+                print(f"Updated README.md GeeksforGeeks solved count to {total_solved}+")
+    except Exception as e:
+        print(f"Notice: Could not update README GFG count: {e}")
+
 def main():
     os.makedirs("assets", exist_ok=True)
     stats = fetch_live_gfg_stats(USERNAME)
@@ -288,6 +307,7 @@ def main():
     with open("assets/gfg-card-light.svg", "w", encoding="utf-8") as f:
         f.write(light_svg)
     print("Generated assets/gfg-card.svg and assets/gfg-card-light.svg successfully!")
+    update_readme_stats(stats.get("total_solved"))
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,73 @@
+name: Sync Coding Profiles & GitHub Stats
+
+on:
+  schedule:
+    # Runs every 2 hours (12 times a day) to capture daily problem-solving progress
+    - cron: "0 */2 * * *"
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "assets/chess-*.svg"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-coding-profiles
+  cancel-in-progress: true
+
+jobs:
+  sync-profiles:
+    name: Refresh LeetCode, GFG & GitHub Cards
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install Python Dependencies
+        run: pip install Pillow chess
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 🧠 Fetch Live LeetCode Stats Card & Update Solved Count
+        run: python generate_leetcode_card.py
+
+      - name: 📘 Fetch Live GeeksforGeeks Stats Card & Update Solved Count
+        run: python generate_gfg_card.py
+
+      - name: 🐙 Generate Live GitHub Stats Card
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-github-stats-card.js
+
+      - name: 💻 Generate Top Languages Card
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-top-langs-card.js
+
+      - name: 🏅 Generate GitHub Milestones Trophies
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-trophies-card.js
+
+      - name: 💼 Generate LinkedIn Card
+        run: node scripts/generate-linkedin-card.js
+
+      - name: Commit and Push Updated Coding Profiles
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: auto-sync live coding profiles (LeetCode, GFG, GitHub) [skip ci]"
+          file_pattern: "assets/leetcode-card*.svg assets/gfg-card*.svg assets/github-stats-card*.svg assets/top-langs-card*.svg assets/trophies-card*.svg assets/linkedin-card*.svg data/gfg-stats.json README.md"
