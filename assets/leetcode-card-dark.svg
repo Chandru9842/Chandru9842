@@ -106,7 +106,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="2" height="6" rx="3" fill="#FF375F"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">15</tspan><tspan class="t-diff-total"> / 972</tspan>
+          <tspan class="t-diff-val">15</tspan><tspan class="t-diff-total"> / 973</tspan>
         </text>
       </g>
     </g>
