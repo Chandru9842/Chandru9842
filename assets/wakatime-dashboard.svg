@@ -52,7 +52,7 @@
       <rect width="194" height="66" rx="8" fill="rgba(11, 30, 59, 0.7)" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
       <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">🔥 RECORD SESSION</text>
       <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="#FFFFFF">3 hrs 18 mins</text>
-      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#00E8FF">July 30, 2026</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#00E8FF">2026-07-30</text>
     </g>
     <!-- Metric 4: Live Automation Status -->
     <g transform="translate(630, 0)">
