@@ -37,7 +37,7 @@
     <!-- Global Rank Badge -->
     <g transform="translate(320, 2)">
       <rect width="132" height="28" rx="8" fill="#FFA116" fill-opacity="0.15" stroke="#FFA116" stroke-width="1"/>
-      <text x="66" y="18" text-anchor="middle" class="font-mono" font-size="11px" font-weight="700" fill="#FFA116">RANK: #553,891</text>
+      <text x="66" y="18" text-anchor="middle" class="font-mono" font-size="11px" font-weight="700" fill="#FFA116">RANK: #553,901</text>
     </g>
   </g>
 
@@ -55,17 +55,17 @@
       <g transform="rotate(-90)">
         <!-- Hard -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FF375F" stroke-width="9"
-          stroke-dasharray="15.43 289.03" stroke-dashoffset="-0.00"/>
+          stroke-dasharray="15.32 289.03" stroke-dashoffset="-0.00"/>
         <!-- Medium -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FFC01E" stroke-width="9"
-          stroke-dasharray="156.34 289.03" stroke-dashoffset="-15.43"/>
+          stroke-dasharray="155.24 289.03" stroke-dashoffset="-15.32"/>
         <!-- Easy -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#00B8A3" stroke-width="9"
-          stroke-dasharray="117.26 289.03" stroke-dashoffset="-171.77"/>
+          stroke-dasharray="118.47 289.03" stroke-dashoffset="-170.56"/>
       </g>
 
       <!-- Center Text -->
-      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">281</text>
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">283</text>
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
@@ -80,7 +80,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="11" height="6" rx="3" fill="#00B8A3"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">114</tspan><tspan class="t-diff-total"> / 965</tspan>
+          <tspan class="t-diff-val">116</tspan><tspan class="t-diff-total"> / 965</tspan>
         </text>
       </g>
 
@@ -120,7 +120,7 @@
     <!-- Metric 1: Total Solved -->
     <g transform="translate(0, 0)">
       <rect width="104" height="52" rx="8" fill="#1E293B"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">281</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">283</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">TOTAL SOLVED</text>
     </g>
 
@@ -134,7 +134,7 @@
     <!-- Metric 3: Acceptance Rate -->
     <g transform="translate(232, 0)">
       <rect width="104" height="52" rx="8" fill="#1E293B"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">59.7%</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#00B8A3">59.8%</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">ACCEPTANCE</text>
     </g>
 
