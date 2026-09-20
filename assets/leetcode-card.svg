@@ -80,7 +80,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="11" height="6" rx="3" fill="#00B8A3"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">117</tspan><tspan class="t-diff-total"> / 965</tspan>
+          <tspan class="t-diff-val">117</tspan><tspan class="t-diff-total"> / 966</tspan>
         </text>
       </g>
 
@@ -93,7 +93,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="7" height="6" rx="3" fill="#FFC01E"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">152</tspan><tspan class="t-diff-total"> / 2115</tspan>
+          <tspan class="t-diff-val">152</tspan><tspan class="t-diff-total"> / 2117</tspan>
         </text>
       </g>
 
@@ -106,7 +106,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="2" height="6" rx="3" fill="#FF375F"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">15</tspan><tspan class="t-diff-total"> / 975</tspan>
+          <tspan class="t-diff-val">15</tspan><tspan class="t-diff-total"> / 976</tspan>
         </text>
       </g>
     </g>
