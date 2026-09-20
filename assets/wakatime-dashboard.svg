@@ -19,7 +19,7 @@
       <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite"/>
     </circle>
     <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#00E8FF">WakaTime Developer Activity Dashboard</text>
-    <text x="325" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// All-Time Verified Telemetry &amp; Coding Activity</text>
+    <text x="325" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Last 7 Days Telemetry &amp; Coding Activity</text>
     
     <!-- Live Status Pill Badge -->
     <g transform="translate(710, 0)">
@@ -37,22 +37,22 @@
     <g transform="translate(0, 0)">
       <rect width="194" height="66" rx="8" fill="rgba(11, 30, 59, 0.7)" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
       <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">⏳ TOTAL TRACKED</text>
-      <text x="14" y="42" class="font-sans" font-size="15.5px" font-weight="700" fill="#FFFFFF">12 hrs 3 mins</text>
-      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#10B981">Avg: 1 hr 30 mins/day</text>
+      <text x="14" y="42" class="font-sans" font-size="15.5px" font-weight="700" fill="#FFFFFF">2 mins</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#10B981">Avg: 2 mins/day</text>
     </g>
     <!-- Metric 2: Primary IDE -->
     <g transform="translate(210, 0)">
       <rect width="194" height="66" rx="8" fill="rgba(11, 30, 59, 0.7)" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
       <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">🚀 PRIMARY IDE</text>
-      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="#FFFFFF">IntelliJ IDEA • 48.2%</text>
+      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="#FFFFFF">Antigravity IDE • 100.0%</text>
       <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#8BB9FE">OS: Windows 11 (100%)</text>
     </g>
     <!-- Metric 3: Best Day -->
     <g transform="translate(420, 0)">
       <rect width="194" height="66" rx="8" fill="rgba(11, 30, 59, 0.7)" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
       <text x="14" y="20" class="font-mono" font-size="10px" font-weight="700" fill="#8BB9FE">🔥 RECORD SESSION</text>
-      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="#FFFFFF">3 hrs 18 mins</text>
-      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#00E8FF">2026-07-30</text>
+      <text x="14" y="42" class="font-sans" font-size="14.5px" font-weight="700" fill="#FFFFFF">2 mins</text>
+      <text x="14" y="56" class="font-mono" font-size="10px" font-weight="600" fill="#00E8FF">2026-09-17</text>
     </g>
     <!-- Metric 4: Live Automation Status -->
     <g transform="translate(630, 0)">
@@ -71,62 +71,14 @@
   </g>
   
         <g transform="translate(28, 194)">
-          <circle cx="5" cy="5" r="3.5" fill="#00E8FF"/>
-          <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Java</text>
-          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">6 hrs 17 mins (50.3%)</text>
-          
-          <!-- Progress Bar Track & Fill -->
-          <rect x="0" y="16" width="380" height="6" rx="3" fill="#081426"/>
-          <rect x="0" y="16" width="191" height="6" rx="3" fill="#00E8FF">
-            <animate attributeName="width" from="0" to="191" dur="1.2s" fill="freeze"/>
-          </rect>
-        </g>
-        
-        <g transform="translate(28, 223)">
-          <circle cx="5" cy="5" r="3.5" fill="#8BB9FE"/>
-          <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">Markdown</text>
-          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">2 hrs 27 mins (19.6%)</text>
-          
-          <!-- Progress Bar Track & Fill -->
-          <rect x="0" y="16" width="380" height="6" rx="3" fill="#081426"/>
-          <rect x="0" y="16" width="74" height="6" rx="3" fill="#8BB9FE">
-            <animate attributeName="width" from="0" to="74" dur="1.2s" fill="freeze"/>
-          </rect>
-        </g>
-        
-        <g transform="translate(28, 252)">
-          <circle cx="5" cy="5" r="3.5" fill="#38BDF8"/>
-          <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">JavaScript</text>
-          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">1 hr 23 mins (11.1%)</text>
-          
-          <!-- Progress Bar Track & Fill -->
-          <rect x="0" y="16" width="380" height="6" rx="3" fill="#081426"/>
-          <rect x="0" y="16" width="42" height="6" rx="3" fill="#38BDF8">
-            <animate attributeName="width" from="0" to="42" dur="1.2s" fill="freeze"/>
-          </rect>
-        </g>
-        
-        <g transform="translate(28, 281)">
           <circle cx="5" cy="5" r="3.5" fill="#60A5FA"/>
           <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">TypeScript</text>
-          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">1 hr 4 mins (8.6%)</text>
+          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">2 mins (100.0%)</text>
           
           <!-- Progress Bar Track & Fill -->
           <rect x="0" y="16" width="380" height="6" rx="3" fill="#081426"/>
-          <rect x="0" y="16" width="32" height="6" rx="3" fill="#60A5FA">
-            <animate attributeName="width" from="0" to="32" dur="1.2s" fill="freeze"/>
-          </rect>
-        </g>
-        
-        <g transform="translate(28, 310)">
-          <circle cx="5" cy="5" r="3.5" fill="#10B981"/>
-          <text x="16" y="9" class="font-sans" font-size="12px" font-weight="600" fill="#FFFFFF">XML</text>
-          <text x="380" y="9" class="font-mono" font-size="11px" font-weight="600" fill="#8BB9FE" text-anchor="end">29 mins (3.9%)</text>
-          
-          <!-- Progress Bar Track & Fill -->
-          <rect x="0" y="16" width="380" height="6" rx="3" fill="#081426"/>
-          <rect x="0" y="16" width="14" height="6" rx="3" fill="#10B981">
-            <animate attributeName="width" from="0" to="14" dur="1.2s" fill="freeze"/>
+          <rect x="0" y="16" width="380" height="6" rx="3" fill="#60A5FA">
+            <animate attributeName="width" from="0" to="380" dur="1.2s" fill="freeze"/>
           </rect>
         </g>
         
