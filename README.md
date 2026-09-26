@@ -302,7 +302,7 @@
 | Recognition | Details |
 |:--|:--|
 | 🏆&nbsp; Hackathon Winner | Mediathon Hackathon |
-| 🧠&nbsp; Problem Solving | 285+ problems solved on LeetCode |
+| 🧠&nbsp; Problem Solving | 286+ problems solved on LeetCode |
 | 📘&nbsp; Problem Solving | 168+ problems solved on GeeksforGeeks |
 | 💼&nbsp; Industry Experience | Web Development Internship — Queenbug Technologies |
 | 🚀&nbsp; Project Delivery | Multiple full-stack projects built end-to-end (React + Spring Boot + MySQL) |
