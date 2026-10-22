@@ -55,17 +55,17 @@
       <g transform="rotate(-90)">
         <!-- Hard -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FF375F" stroke-width="9"
-          stroke-dasharray="14.36 289.03" stroke-dashoffset="-0.00"/>
+          stroke-dasharray="14.31 289.03" stroke-dashoffset="-0.00"/>
         <!-- Medium -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FFC01E" stroke-width="9"
-          stroke-dasharray="150.26 289.03" stroke-dashoffset="-14.36"/>
+          stroke-dasharray="149.76 289.03" stroke-dashoffset="-14.31"/>
         <!-- Easy -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#00B8A3" stroke-width="9"
-          stroke-dasharray="124.42 289.03" stroke-dashoffset="-164.61"/>
+          stroke-dasharray="124.96 289.03" stroke-dashoffset="-164.07"/>
       </g>
 
       <!-- Center Text -->
-      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">302</text>
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">303</text>
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
@@ -80,7 +80,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#0B1E3B"/>
         <rect x="74" y="11" width="12" height="6" rx="3" fill="#00B8A3"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">130</tspan><tspan class="t-diff-total"> / 972</tspan>
+          <tspan class="t-diff-val">131</tspan><tspan class="t-diff-total"> / 972</tspan>
         </text>
       </g>
 
@@ -120,7 +120,7 @@
     <!-- Metric 1: Total Solved -->
     <g transform="translate(0, 0)">
       <rect width="104" height="52" rx="8" fill="#1E293B"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">302</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">303</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">TOTAL SOLVED</text>
     </g>
 
