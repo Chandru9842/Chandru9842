@@ -4,7 +4,7 @@
     viewBox="0 0 495 220"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
-    aria-label="Chandru9842's most used languages: TypeScript 80.8%, JavaScript 8.0%, Java 5.0%, HTML 2.4%, CSS 2.1%">
+    aria-label="Chandru9842's most used languages: TypeScript 80.4%, JavaScript 7.8%, Java 4.9%, HTML 2.3%, Python 2.3%">
 
   <title>Most Used Languages — Chandru9842</title>
 
@@ -53,7 +53,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        80.8%
+        80.4%
       </text>
 
       <rect
@@ -67,7 +67,7 @@
       <rect
         x="0"
         y="16"
-        width="361.0327973149966"
+        width="359.4160884753222"
         height="7"
         rx="3.5"
         fill="#3178c6"/>
@@ -98,7 +98,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        8.0%
+        7.8%
       </text>
 
       <rect
@@ -112,7 +112,7 @@
       <rect
         x="0"
         y="16"
-        width="35.80443640133799"
+        width="35.030438395783754"
         height="7"
         rx="3.5"
         fill="#f1e05a"/>
@@ -143,7 +143,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        5.0%
+        4.9%
       </text>
 
       <rect
@@ -157,7 +157,7 @@
       <rect
         x="0"
         y="16"
-        width="22.4184685466581"
+        width="21.882661232620304"
         height="7"
         rx="3.5"
         fill="#b07219"/>
@@ -188,7 +188,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        2.4%
+        2.3%
       </text>
 
       <rect
@@ -202,7 +202,7 @@
       <rect
         x="0"
         y="16"
-        width="10.6160086014278"
+        width="10.42462139208237"
         height="7"
         rx="3.5"
         fill="#e34c26"/>
@@ -215,7 +215,7 @@
         cx="5"
         cy="5"
         r="5"
-        fill="#663399"/>
+        fill="#3572A5"/>
 
       <text
         x="16"
@@ -223,7 +223,7 @@
         font-family="'Segoe UI', Ubuntu, Sans-Serif"
         font-size="12"
         fill="#F8FAFC">
-        CSS
+        Python
       </text>
 
       <text
@@ -233,7 +233,7 @@
         font-size="11"
         fill="#94A3B8"
         text-anchor="end">
-        2.1%
+        2.3%
       </text>
 
       <rect
@@ -247,10 +247,10 @@
       <rect
         x="0"
         y="16"
-        width="9.485986854759638"
+        width="10.156753226681849"
         height="7"
         rx="3.5"
-        fill="#663399"/>
+        fill="#3572A5"/>
 
     </g>
 
