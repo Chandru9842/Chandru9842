@@ -905,7 +905,7 @@
 ## 🔄 &nbsp;Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. ❗ Opened issue [#1](https://github.com/Chandru9842/Chandru9842/issues/1) in [Chandru9842/Chandru9842](https://github.com/Chandru9842/Chandru9842)
+1. 💪 Opened PR [#6027](undefined) in [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops)
 <!--END_SECTION:activity-->
 
 <br/>
