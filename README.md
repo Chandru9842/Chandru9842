@@ -905,7 +905,7 @@
 ## 🔄 &nbsp;Recent GitHub Activity
 
 <!--START_SECTION:activity-->
-1. ❌ Merged PR [#6027](undefined) in [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops)
+1. 🗣 Commented on [#6027](https://github.com/career-ops-hq/career-ops/pull/6027#issuecomment-6529103479) in [career-ops-hq/career-ops](https://github.com/career-ops-hq/career-ops)
 <!--END_SECTION:activity-->
 
 <br/>
