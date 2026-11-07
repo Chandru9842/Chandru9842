@@ -17,7 +17,7 @@
   <g transform="translate(32, 22)">
     <circle cx="6" cy="11" r="4.5" fill="#00E8FF"/>
     <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#00E8FF">Daily Developer Wisdom</text>
-    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Software Craftsmanship</text>
+    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#8BB9FE">// Architecture &amp; Quality</text>
 
     <!-- Daily Sync Badge -->
     <g transform="translate(618, 0)">
@@ -31,13 +31,13 @@
 
   <!-- Quote Body -->
   <text class="font-sans" font-size="14.5px" font-weight="600" fill="#FFFFFF">
-    <tspan x="36" y="86" xml:space="preserve">It is not enough for code to work. It must be clean, readable,</tspan><tspan x="36" y="110" xml:space="preserve">and resilient to change.</tspan>
+    <tspan x="36" y="86" xml:space="preserve">Make it work, make it right, make it fast — in that exact</tspan><tspan x="36" y="110" xml:space="preserve">order.</tspan>
   </text>
 
   <!-- Author Attribution -->
   <g transform="translate(36, 150)">
-    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="#00E8FF">— Robert C. Martin</text>
-    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="#8BB9FE">Author of Clean Code &amp; Design Principles</text>
+    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="#00E8FF">— Kent Beck</text>
+    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="#8BB9FE">Creator of Extreme Programming &amp; Test-Driven Development</text>
   </g>
 
 </svg>
