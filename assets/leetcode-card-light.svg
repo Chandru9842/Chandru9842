@@ -55,17 +55,17 @@
       <g transform="rotate(-90)">
         <!-- Hard -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FF375F" stroke-width="9"
-          stroke-dasharray="17.05 289.03" stroke-dashoffset="-0.00"/>
+          stroke-dasharray="17.90 289.03" stroke-dashoffset="-0.00"/>
         <!-- Medium -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FFC01E" stroke-width="9"
-          stroke-dasharray="149.90 289.03" stroke-dashoffset="-17.05"/>
+          stroke-dasharray="149.43 289.03" stroke-dashoffset="-17.90"/>
         <!-- Easy -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#00B8A3" stroke-width="9"
-          stroke-dasharray="122.07 289.03" stroke-dashoffset="-166.95"/>
+          stroke-dasharray="121.70 289.03" stroke-dashoffset="-167.33"/>
       </g>
 
       <!-- Center Text -->
-      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">322</text>
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">323</text>
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
@@ -106,7 +106,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#F8FAFC"/>
         <rect x="74" y="11" width="2" height="6" rx="3" fill="#FF375F"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">19</tspan><tspan class="t-diff-total"> / 989</tspan>
+          <tspan class="t-diff-val">20</tspan><tspan class="t-diff-total"> / 989</tspan>
         </text>
       </g>
     </g>
@@ -120,7 +120,7 @@
     <!-- Metric 1: Total Solved -->
     <g transform="translate(0, 0)">
       <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">322</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">323</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">TOTAL SOLVED</text>
     </g>
 
