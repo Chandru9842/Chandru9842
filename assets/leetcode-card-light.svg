@@ -55,17 +55,17 @@
       <g transform="rotate(-90)">
         <!-- Hard -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FF375F" stroke-width="9"
-          stroke-dasharray="17.84 289.03" stroke-dashoffset="-0.00"/>
+          stroke-dasharray="17.79 289.03" stroke-dashoffset="-0.00"/>
         <!-- Medium -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#FFC01E" stroke-width="9"
-          stroke-dasharray="148.97 289.03" stroke-dashoffset="-17.84"/>
+          stroke-dasharray="149.40 289.03" stroke-dashoffset="-17.79"/>
         <!-- Easy -->
         <circle cx="0" cy="0" r="46" fill="none" stroke="#00B8A3" stroke-width="9"
-          stroke-dasharray="122.21 289.03" stroke-dashoffset="-166.81"/>
+          stroke-dasharray="121.84 289.03" stroke-dashoffset="-167.19"/>
       </g>
 
       <!-- Center Text -->
-      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">324</text>
+      <text x="0" y="4" text-anchor="middle" class="font-mono t-num-big">325</text>
       <text x="0" y="19" text-anchor="middle" class="font-sans t-lbl-sm">SOLVED</text>
     </g>
 
@@ -93,7 +93,7 @@
         <rect x="74" y="11" width="100" height="6" rx="3" fill="#F8FAFC"/>
         <rect x="74" y="11" width="7" height="6" rx="3" fill="#FFC01E"/>
         <text x="280" y="18" text-anchor="end" class="font-mono">
-          <tspan class="t-diff-val">167</tspan><tspan class="t-diff-total"> / 2148</tspan>
+          <tspan class="t-diff-val">168</tspan><tspan class="t-diff-total"> / 2148</tspan>
         </text>
       </g>
 
@@ -120,7 +120,7 @@
     <!-- Metric 1: Total Solved -->
     <g transform="translate(0, 0)">
       <rect width="104" height="52" rx="8" fill="#EDF2F7"/>
-      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">324</text>
+      <text x="52" y="24" text-anchor="middle" class="font-mono t-bottom-num" fill="#FFA116">325</text>
       <text x="52" y="41" text-anchor="middle" class="font-sans t-bottom-lbl">TOTAL SOLVED</text>
     </g>
 
