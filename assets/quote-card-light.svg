@@ -17,7 +17,7 @@
   <g transform="translate(32, 22)">
     <circle cx="6" cy="11" r="4.5" fill="#0284C7"/>
     <text x="18" y="15" class="font-sans" font-size="15px" font-weight="700" fill="#0284C7">Daily Developer Wisdom</text>
-    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#475569">// Algorithmic Efficiency</text>
+    <text x="195" y="15" class="font-mono" font-size="11.5px" font-weight="600" fill="#475569">// Software Craftsmanship</text>
 
     <!-- Daily Sync Badge -->
     <g transform="translate(618, 0)">
@@ -31,13 +31,13 @@
 
   <!-- Quote Body -->
   <text class="font-sans" font-size="14.5px" font-weight="600" fill="#0F172A">
-    <tspan x="36" y="86" xml:space="preserve">Premature optimization is the root of all evil in software</tspan><tspan x="36" y="110" xml:space="preserve">engineering.</tspan>
+    <tspan x="36" y="86" xml:space="preserve">It is not enough for code to work. It must be clean, readable,</tspan><tspan x="36" y="110" xml:space="preserve">and resilient to change.</tspan>
   </text>
 
   <!-- Author Attribution -->
   <g transform="translate(36, 150)">
-    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="#0284C7">— Donald Knuth</text>
-    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="#475569">Author of The Art of Computer Programming</text>
+    <text x="0" y="0" class="font-sans" font-size="13px" font-weight="700" fill="#0284C7">— Robert C. Martin</text>
+    <text x="12" y="16" class="font-sans" font-size="11.5px" font-weight="500" fill="#475569">Author of Clean Code &amp; Design Principles</text>
   </g>
 
 </svg>
